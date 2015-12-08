@@ -1,0 +1,489 @@
+/* ----------------------------- */
+/* ==reset */
+/* ----------------------------- */
+
+/* base font-size corresponds to 10px and is adapted to rem unit */
+html {
+    font-size: 62.5%;
+}
+body {
+    background-color: #fff;
+    color: #000;
+    font-family: "Century Gothic", helvetica, arial, sans-serif;
+    font-size: 1.4em; /* equiv 14px */
+    line-height: 1.5; /* adapt to your design */
+}
+
+/* font-sizing for content */
+/* preserve vertical-rythm, thanks to http://soqr.fr/vertical-rhythm/ */
+p,
+ul,
+ol,
+dl,
+blockquote,
+pre,
+td,
+th,
+label,
+textarea,
+caption,
+details, 
+figure, 
+hgroup {
+    font-size: 1em; /* equiv 14px */
+    line-height: 1.5;
+    margin: 1.5em 0 0;
+}
+h1, .h1-like {
+    font-size: 1.8571em; /* equiv 26px */
+    font-weight: normal;
+    line-height: 1.6154em;
+    margin: .8077em 0 0 0;
+}
+h2, .h2-like {
+    font-size: 1.7143em; /* equiv 24px */
+    font-weight: normal;
+    line-height: 1.75em;
+    margin: .875em 0 0 0;
+}
+h3, .h3-like {
+    font-size: 1.5714em; /* equiv 22px */
+    font-weight: normal;
+    line-height: 1.909em;
+    margin: .9545em 0 0 0;
+}
+h4, .h4-like {
+    font-size: 1.4286em; /* equiv 20px */
+    font-weight: normal;
+    line-height: 1.05em;
+    margin:  1.05em 0 0 0;
+}
+h5, .h5-like {
+    font-size: 1.2857em; /* equiv 18px */
+    font-weight: normal;
+    line-height: 1.1667em;
+    margin:  1.1667em 0 0 0;
+}
+h6, .h6-like {
+    font-size: 1.1429em; /* equiv 16px */
+    font-weight: normal;
+    line-height: 1.3125em;
+    margin:  1.3125em 0 0 0;
+}
+
+/* alternate font-sizing */
+.smaller {
+    font-size: .7143em; /* equiv 10px */
+    line-height: 2.1em;
+}
+.small {
+    font-size: .8571em; /* equiv 12px */
+    line-height: 1.75em;
+}
+.big {
+    font-size: 1.1429em; /* equiv 16px */
+    line-height: 1.3125em;
+}
+.bigger {
+    font-size: 1.2857em; /* equiv 18px */
+    line-height: 1.1667em;
+}
+.biggest {
+    font-size: 1.4286em; /* equiv 20px */
+    line-height: 1.05em;
+}
+
+/* soft reset */
+html,
+body,
+textarea,
+figure,
+label {
+    margin: 0;
+    padding: 0;
+}
+ul,
+ol {
+    padding-left: 2em;
+}
+code, 
+pre,
+samp {
+    white-space: pre-wrap;
+    font-family: consolas, 'DejaVu Sans Mono', courier, monospace;
+}
+code { line-height: 1em; }
+table { margin-bottom: 1.5em; }
+
+/* avoid top margins on first content element */
+p:first-child,
+ul:first-child,
+ol:first-child,
+dl:first-child,
+blockquote:first-child,
+pre:first-child,
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+    margin-top: 0;
+}
+
+/* avoid margins on nested elements */
+li p,
+li ul,
+li ol {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* HTML5 tags */
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+    display: block;
+}
+
+/* max values */
+img, table, td, blockquote, code, pre, textarea, input, video {
+    max-width: 100%;
+}
+
+/* you shall not pass */
+div, textarea, table, td, th, code, pre, samp {
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -o-hyphens: auto;
+    hyphens: auto;
+}
+
+/* pictures */
+img {
+    width: auto;
+    height: auto;
+    vertical-align: middle;
+}
+a img { border: 0; }
+
+/* scripts */
+body > script {display: none !important;}
+
+/* skip-links */
+.skip-links {
+    position: absolute;
+}
+.skip-links a {
+    position: absolute;
+    left: -9999px;
+    padding: 0.5em;
+    background: #000;
+    color:#fff;
+    text-decoration: none;
+}
+.skip-links a:focus {
+    position: static;
+}
+
+/*---------------*/
+/* FIN DU RESET*/
+/*-------------*/
+
+/* General */
+body{
+    background : #DCDCDC;
+}
+header {
+    background : #A9A9A9;
+}
+ul {
+    margin-right : 10px;
+}
+
+li {
+    display : inline-block;
+}
+nav {
+	background : #ff8410;
+	font-size: 2.0em;
+}
+.menu li {
+	display : inline-block;
+	}
+.menu li a {
+	color: white;
+}
+.tiret{
+	color: black;
+	font-size: 2em;
+}
+p {
+	margin: 20px;
+}
+
+a {
+ text-decoration:none;
+ display : inline-block;
+}
+	h1
+{
+    font-size: 2em;
+    font-family:Comfortaa, serif;
+
+}
+
+/* Entete */
+
+#entete {
+    float: right;
+    margin-top: 0px;
+    padding-top :0px;
+}
+
+/* pied de page*/
+
+footer{
+	background: #ff8410;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+#logo2{
+        height : 142px;
+        overflow: hidden;
+        -webkit-border-radius:120px;
+        -moz-border-radius:120px;
+        border-radius:120px;
+}
+
+/* bandeau */
+#bandeau {
+	height: 444px;
+	font-size: 22px;
+	background-image: url("image/couple.jpg");
+        background-repeat:no-repeat;
+	color: white;
+	text-align: center;
+        background-size :cover;
+}
+#slogan{
+	font-size: 70px;
+	color:yellow;
+	width : 50%;
+	margin-left : 377px;
+	margin-bottom : 42px;
+}
+#logo{
+	float : left;
+	margin-left: 150px;
+	margin-top: 33px;
+	height: 42%;
+        overflow:hidden;
+        -webkit-border-radius:90px;
+        -moz-border-radius:90px;
+        border-radius:90px;
+}
+/* page d'acceuil*/
+.recherche {
+	line-height: 0%;
+	height: 2em;
+	-moz-border-radius:1px;
+	-webkit-border-radius:1px;
+	border-radius:1px;
+	border: 1px solid #000000;
+        position : relative;
+        right : 10%;
+        top : 333px;
+
+}
+
+#jeunes {
+	height : 250px;
+	float : right;
+	}
+
+#description{
+	display : inline-block;
+	font-size : 1.5em;
+}
+.gras{
+	font-weight : bold;
+}
+#slogan2 {
+	color : gray;
+	font-size : 4.2em;
+	text-align: center;
+}
+
+#slogan3 {
+	text-align : center;
+}
+
+.images {
+	display :inline-block;
+	height : 200px;
+	}
+.text_image {
+	text-align : center;
+	padding-left : 100px;
+	padding-right : 100px;
+	background-color : #ff8410;
+}
+
+.even{
+  border: 2px;
+  margin: 25px;
+  float: left;
+  width: 350px;
+  text-align: center;
+}
+.conteneur {
+  width: 100%;
+}
+.spacer {
+  clear: both;
+}
+
+#recherche_avance {
+	text-align: center;
+	font-size: 2em;
+
+}
+#app {
+	background-color: #ed4580;
+	border : solid;
+	border-color: #ed4580;
+	border-radius: 10px 5px 10px 5px;
+        padding-right : 3%;
+        padding-left : 3%;
+}
+
+/*page incription*/
+#formulaire {
+    background-color: white;
+    width : 25%;
+    float : right;
+    color : black;
+    border : solid;
+}
+.valider{
+    background-color:pink;
+    border : solid;
+}
+.information {
+    background-color : yellow;
+    border:solid;
+    border-radius: 5px 5px 5px 5px;
+    text-align : center;
+}
+.inscriptions {
+    border : solid;
+}
+
+/*page d'identification*/
+
+#sloganID{
+    font-size: 3.7em;
+    color:yellow;
+    width : 40%;
+    margin-left : 30px;
+    margin-bottom : 550px;
+}
+
+#formulaire2{
+    background-color: #ffe599;
+    width : 40%;
+    height : 70%;
+    float : right;
+    color : black;
+    border : solid;
+    border-radius: 10px 5px 10px 5px;
+}
+
+.Identification{
+    font-size : 0.7em;
+    background-color:white;
+}
+
+.connexion{
+    background-color:pink;
+}
+.ID{
+    font-size:0.9em; 
+    text-decoration:underline;
+}
+
+/*Contactez-nous*/
+
+#fond{
+    background-color: #ffe599;
+}
+.contact{
+    font-size: 1.5em;
+    text-align: center;
+}
+.envoyer{
+    background-color: pink
+}
+
+/* création d'évènement */
+#creation_even {
+    width : 100%;
+    color : black;
+    font-size : 16px;
+    margin-left : 2%;
+}
+
+label {
+    padding-left : 33px;
+    display: block;
+    width: 30%;
+    float: left;
+    font-size: 16px;
+}
+.creation{
+    font-size : 16px;
+    width: 422px;
+    font-family: arial, serif;
+    
+}
+
+#creation_valider{
+    background-color:pink;
+    border : solid;
+    font-size : 16px;
+}
+.erreur {
+    text-align: center;
+    margin : 33px;
+}
+/*page de profil*/
+.profil {
+    font-size : 22px;
+    margin-left : 444px;
+}
+.image_profil{
+    float : left;
+    width : 300px;
+}
+#modifier1{
+    float:right;
+    margin-right : 666px;
+}
+.modifier{
+    font-size : 16px;
+    border : solid;
+    border-color : gray;
+}
+
+/* page even*/
+.nom_even{
+    background-color:pink;
+    margin-left: 42px;
+    margin-top: 10px;
+    font-size : 20px;
+    padding-left:20px;
+    padding-right:20px;
+    width : 55px;
+}

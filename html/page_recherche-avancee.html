@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8"/>
+	<title> Sharetime</title>
+	<link rel="stylesheet" href="style_APP.css"/>
+
+	</head>
+	<body>
+	<header>
+            <nav>
+		<ul class="menu">
+			<li><a href="#"><span class="tiret">|</span> Accueil <span class="tiret">|</span></a></li>
+			<li><a href="#">Trouver un évènements <span class="tiret">|</span></a></li>
+			<li><a href="#">proposer un évènements <span class="tiret">|</span></a></li>
+			<li><a href="#">aide <span class="tiret">|</span></a></li>
+			<li><a href="#">nous contacter <span class="tiret">|</span></a></li>
+		</ul>
+            </nav>
+	</header>
+
+	<div id="bandeau">
+            <div id="formulaire">
+                <p> Trouver un événement, c'est tout simple</p>
+                <form name="recherche_avancee" method="post" action="recherche-avancee.php">
+                    <input class="information" type="text" name="nom-event" placeholder="Nom"/>
+                    <input class="information" type="date" name="date-event" placeholder="Date"/><br/>
+                    <input class="information" type="text" name="type-event" placeholder="Type d'événement"/></br>
+		    <label for="type-public">Type de public :</label><br/>
+		    <select class="inscriptions" name="type-public" id="type-public">
+		<option></option>
+		<option value="0-8">0-8 ans</option>
+		<option value="9-13">9-13 ans</option>
+		<option value="14-17">14-17 ans</option>
+		<option value="18-25">18-25 ans</option>
+		<option value="26-35">26-35 ans</option>
+		<option value="36-55">36-55 ans</option>
+		<option value="55+">55+</option>
+	</select> </br>
+                    Localisation : <br/> 
+                    <input class="inscriptions" type="text" name="adresse" placeholder="Adresse"/><br/>
+                    <input class="inscriptions" type="text" name="code_postal" placeholder="Code Postal"/>
+                    <input class="inscriptions" type="text" name="ville" placeholder="Ville"/><br/>
+                    <input class="inscriptions" type="text" name="departement" placeholder="Département"/>
+                    <input class="inscriptions" type="text" name="region" placeholder="Région"/><br/>
+                    <input class="inscriptions" type="text" name="pays" placeholder="Pays"/><br/>
+                    <input class="valider" type="submit" name="valider" value="Je valide"/>
+                    </form>
+            </div>
+            <img id="logo" src ="image/logo.png" alt="Logo sharetime">
+            <p id ="slogan"> Partage ton temps, <br/>
+            rencontre des gens </p>
+        </div>
+	<footer>
+	<ul class="menu">
+			<li><a href="#"> <span class="tiret">|</span> Comment ça marche <span class="tiret">|</span></a></li>
+			<li><a href="#">Qui somme nous? <span class="tiret">|</span></a></li>
+			<li><a href="#">Fonctionnalités <span class="tiret">|</span></a></li>
+			<li><a href="#">Forum <span class="tiret">|</span></a></li>
+			<li><a href="#">Conditions générales et confidentialité <span class="tiret">|</span></a></li>
+			<li><a href="#">Langues <span class="tiret">|</span></a></li>
+		</ul>
+	<p id="réseaux_sociaux"> Rejoignez-nous sur : </p>
+
+	</footer>
+
+	</body>
+
+
+</html>
