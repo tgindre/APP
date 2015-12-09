@@ -34,27 +34,81 @@ if (isset($_POST['image_profil'])) {
     header('Location: ../vue/profil_V.php?erreur=' . $erreur);
 }
 
-if (isset($_POST['modifier'])) {
-    foreach ($_POST as $cle => $element) {
-        if ($element = '') {
-            $element = $_SESSION['$cle'];
-        }
+    if (isset($_POST['modifier_pseudo'])) {
+        $req = $bdd->prepare('UPDATE utilisateur SET pseudo= :pseudo WHERE ID_utilisateur= :id');
+        $req->execute(array(      
+            'pseudo' => $_POST['pseudo'],
+            'id' => $_SESSION['id'])
+        );
+     $req->closeCursor();   
     }
-    $req = $bdd->prepare('UPDATE utilisateur SET mail= :mail, nom= :nom, prenom= :prenom, pseudo= :pseudo,date_n= :date, adresse= :adresse, code_postal= :code_postal, ville= :ville, pays= :pays WHERE ID_utilisateur= :id');
-    $req->execute(array(
-        'mail' => $_POST['mail'],
-        'nom' => $_POST['nom'],
-        'prenom' => $_POST['prenom'],
-        'pseudo' => $_POST['pseudo'],
-        'date' => $_POST['date'],
-        'adresse' => $_POST['adresse'],
-        'code_postal' => $_POST['code_postal'],
-        'ville' => $_POST['ville'],
-        'pays' => $_POST['pays'],
-        'id' => $_SESSION['id'])
-    );
-    $mail = $_POST['mail'];
-    $connexion_req = 'SELECT * FROM utilisateur WHERE mail = "' . $mail . '"';
+    if (isset($_POST['modifier_mail'])) {
+        $req = $bdd->prepare('UPDATE utilisateur SET mail= :mail WHERE ID_utilisateur= :id');
+        $req->execute(array(      
+            'mail' => $_POST['mail'],
+            'id' => $_SESSION['id'])
+        );
+        $req->closeCursor();   
+    }
+    if (isset($_POST['modifier_nom'])) {
+        $req = $bdd->prepare('UPDATE utilisateur SET nom= :nom WHERE ID_utilisateur= :id');
+        $req->execute(array(      
+            'nom' => $_POST['nom'],
+            'id' => $_SESSION['id'])
+        );
+        $req->closeCursor();   
+    }
+    if (isset($_POST['modifier_prenom'])) {
+        $req = $bdd->prepare('UPDATE utilisateur SET prenom= :prenom WHERE ID_utilisateur= :id');
+        $req->execute(array(      
+           'prenom' => $_POST['prenom'],
+           'id' => $_SESSION['id'])
+        );
+        $req->closeCursor();   
+    }
+    if (isset($_POST['modifier_adresse'])) {
+        $req = $bdd->prepare('UPDATE utilisateur SET adresse= :adresse WHERE ID_utilisateur= :id');
+        $req->execute(array(      
+            'adresse' => $_POST['adresse'],
+            'id' => $_SESSION['id'])
+        );
+        $req->closeCursor();   
+    }
+    if (isset($_POST['modifier_date_n'])) {
+     $req = $bdd->prepare('UPDATE utilisateur SET date-n= :date WHERE ID_utilisateur= :id');
+     $req->execute(array(      
+         'date' => $_POST['date'],
+         'id' => $_SESSION['id'])
+      );
+      $req->closeCursor();   
+    }
+        if (isset($_POST['modifier_code_postal'])) {
+     $req = $bdd->prepare('UPDATE utilisateur SET code_postal= :code_postal WHERE ID_utilisateur= :id');
+     $req->execute(array(      
+         'code_postal' => $_POST['code_postal'],
+         'id' => $_SESSION['id'])
+      );
+      $req->closeCursor();   
+    }
+        if (isset($_POST['modifier_ville'])) {
+     $req = $bdd->prepare('UPDATE utilisateur SET ville= :ville WHERE ID_utilisateur= :id');
+     $req->execute(array(      
+         'ville' => $_POST['ville'],
+         'id' => $_SESSION['id'])
+      );
+      $req->closeCursor();   
+    }
+        if (isset($_POST['modifier_pays'])) {
+     $req = $bdd->prepare('UPDATE utilisateur SET pays= :pays WHERE ID_utilisateur= :id');
+     $req->execute(array(      
+         'pays' => $_POST['pays'],
+         'id' => $_SESSION['id'])
+      );
+      $req->closeCursor();   
+    }
+
+    $id=$_SESSION['id'];
+    $connexion_req = 'SELECT * FROM utilisateur WHERE ID_utilisateur = "' . $id . '"';
     $connexion = $bdd->query($connexion_req);
     $connect = $connexion->fetch();
     $_SESSION['pseudo'] = $connect['pseudo'];
@@ -69,4 +123,3 @@ if (isset($_POST['modifier'])) {
     $connexion->closeCursor();
 
     header('Location: ../vue/profil_V.php');
-}

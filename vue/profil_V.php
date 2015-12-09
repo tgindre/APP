@@ -9,24 +9,23 @@
         <?php $formulaire='';
               include("entete.php");
               include('nom.php');
-              echo $_SESSION['id'] .'-'.$_SESSION['pseudo'];
         if(!isset($_GET['modifier'])){
         if(isset($_SESSION['photo'])){ ?>
         
         <div class="image_profil">
             <p><img src ="<?php echo $_SESSION['photo'] ?>" alt="Photo de profil"><span class='modifier'><a href="profil_V.php?modifier='0'">Modifier</a></span></p>
         </div>
-        <div id='modifier1'><p><span class='modifier'><a href="profil_V.php?modifier=1">Modifier</a></span></p></div>
         <?php } else { ?>
         <div class="image_profil">
             <p><img src ="image/point-d-interrogation2.jpg" alt="?"> <span class='modifier'><a href="profil_V.php?modifier='0'">Modifier</a></span></p>
         </div>
-        <div id='modifier1'><p><span class='modifier'><a href="profil_V.php?modifier=1">Modifier</a></span></p></div>
         <?php }
-              echo '<p class="profil"> Pseudo : ' . htmlentities($_SESSION['pseudo']) .' <span class=\'modifier\'><a href="profil_V.php?modifier=1">Modifier</a></span><br/> Email : '.htmlentities($_SESSION['mail']).'<br/> Nom : '. htmlentities($_SESSION['nom']) . '<br/> Prénom : '.htmlentities($_SESSION['prenom']).'</p>'; 
-              echo '<p class="profil"> Date de naissance : ' . htmlentities($_SESSION['date_n']) .'<br/> Adresse : '.htmlentities($_SESSION['adresse']).'<br/> Code postal : '. htmlentities($_SESSION['code_postal']) . '<br/> Ville : '.htmlentities($_SESSION['ville']).'<br/> Pays : '.htmlentities($_SESSION['pays']).'</p>';
+              echo '<p class="profil"> Pseudo : ' . htmlentities($_SESSION['pseudo']) .' <span class=\'modifier\'><a href="profil_V.php?modifier=1">Modifier</a></span><br/> Email : '.htmlentities($_SESSION['mail']).' <span class=\'modifier\'><a href="profil_V.php?modifier=2">Modifier</a></span><br/> Nom : '. htmlentities($_SESSION['nom']) . ' <span class=\'modifier\'><a href="profil_V.php?modifier=3">Modifier</a></span><br/> Prénom : '.htmlentities($_SESSION['prenom']).'<span class=\'modifier\'><a href="profil_V.php?modifier=4">Modifier</a></span><br/> Date de naissance : ' . htmlentities($_SESSION['date_n']) .' <span class=\'modifier\'><a href="profil_V.php?modifier=5">Modifier</a></span></p>'; 
+              echo '<p class="profil"> Adresse : '.htmlentities($_SESSION['adresse']).' <span class=\'modifier\'><a href="profil_V.php?modifier=6">Modifier</a></span><br/> Code postal : '. htmlentities($_SESSION['code_postal']) . ' <span class=\'modifier\'><a href="profil_V.php?modifier=7">Modifier</a></span><br/> Ville : '.htmlentities($_SESSION['ville']).' <span class=\'modifier\'><a href="profil_V.php?modifier=8">Modifier</a></span><br/> Pays : '.htmlentities($_SESSION['pays']).' <span class=\'modifier\'><a href="profil_V.php?modifier=9">Modifier</a></span></p>';
         } else {
-             switch ($_GET['modifier']) {
+            
+            /* modification du profil ligne par ligne*/ 
+            switch ($_GET['modifier']) { 
         case 0: ?>
         <form method="post" action="../controller/modif_profil_C.php" enctype="multipart/form-data">
             <label for="mon_fichier">Fichier (tous formats | max. 1 Mo) :</label><br />
@@ -37,27 +36,81 @@
         <?php
         break;
         case 1: ?>
-                  <div id="creation_even">
-                <p> Rejoignez-vous, c'est tout simple</p>
+                <div id="creation_even">
                 <form name="inscription" method="post" action="../controller/modif_profil_C.php">
-                    <label class="creation">Nom :</label><input class="creation" type="text" name="nom" placeholder="Nom"/><br/>
-                    <label class="creation">Prénom :</label><input class="creation" type="text" name="prenom" placeholder="prenom"/><br/>
-                    <label class="creation">Date de naissance : </label><input class="creation" type="text" name="date" placeholder="jj/mm/aaaa"/><br/>
                     <label class="creation">Pseudo</label><input class="creation" type="text" name="pseudo" placeholder="Pseudo"/><br/>
-                    <label class="creation">Adresse mail :</label><input class="creation" type="email" name="mail" placeholder="Email"/><br/>                   
-                    Localisation : <br/> 
-                    <label class="creation">Adresse</label><input class="creation" type="text" name="adresse" placeholder="Adresse"/><br/>
-                    <label class="creation">Code Postal :</label><input class="creation" type="text" name="code_postal" placeholder="Code Postal"/><br/>
-                    <label class="creation">Ville :</label><input class="creation" type="text" name="ville" placeholder="Ville"/><br/>
-                    <label class="creation">Pays :</label><input class="creation" type="text" name="pays" placeholder="Pays"/><br/>
-                    <input class="valider" type="submit" name="modifier" value="modifier"/><br/>
+                    <input class="valider" type="submit" name="modifier_pseudo" value="modifier"/><br/>
                 </form>
             </div> <?php
-            
+        break;
+            case 2: ?>
+                <div id="creation_even">
+                <form name="inscription" method="post" action="../controller/modif_profil_C.php">
+                    <label class="creation">Adresse mail :</label><input class="creation" type="email" name="mail" placeholder="Email"/><br/>
+                    <input class="valider" type="submit" name="modifier_mail" value="modifier"/><br/>
+                </form>
+            </div> <?php    
+        break;
+                case 3: ?>
+                <div id="creation_even">
+                <form name="inscription" method="post" action="../controller/modif_profil_C.php">
+                    <label class="creation">Nom :</label><input class="creation" type="text" name="nom" placeholder="Nom"/><br/>
+                    <input class="valider" type="submit" name="modifier_nom" value="modifier"/><br/>
+                </form>
+            </div> <?php    
+        break;
+                case 4: ?>
+                <div id="creation_even">
+                <form name="inscription" method="post" action="../controller/modif_profil_C.php">
+                    <label class="creation">Prénom :</label><input class="creation" type="text" name="prenom" placeholder="prenom"/><br/>
+                    <input class="valider" type="submit" name="modifier_prenom" value="modifier"/><br/>
+                </form>
+            </div> <?php    
+        break;
+                case 5: ?>
+                <div id="creation_even">
+                <form name="inscription" method="post" action="../controller/modif_profil_C.php">
+                    <label class="creation">Date de naissance : </label><input class="creation" type="text" name="date" placeholder="jj/mm/aaaa"/><br/>
+                    <input class="valider" type="submit" name="modifier_date_n" value="modifier"/><br/>
+                </form>
+            </div> <?php    
+        break;
+                case 6: ?>
+                <div id="creation_even">
+                <form name="inscription" method="post" action="../controller/modif_profil_C.php">
+                    <label class="creation">Adresse</label><input class="creation" type="text" name="adresse" placeholder="Adresse"/><br/>
+                    <input class="valider" type="submit" name="modifier_adresse" value="modifier"/><br/>
+                </form>
+            </div> <?php    
+        break;
+                case 7: ?>
+                <div id="creation_even">
+                <form name="inscription" method="post" action="../controller/modif_profil_C.php">
+                    <label class="creation">Code Postal :</label><input class="creation" type="text" name="code_postal" placeholder="Code Postal"/><br/>
+                    <input class="valider" type="submit" name="modifier_code_postal" value="modifier"/><br/>
+                </form>
+            </div> <?php    
+        break;
+                case 8: ?>
+                <div id="creation_even">
+                <form name="inscription" method="post" action="../controller/modif_profil_C.php">
+                    <label class="creation">Ville :</label><input class="creation" type="text" name="ville" placeholder="Ville"/><br/>
+                    <input class="valider" type="submit" name="modifier_ville" value="modifier"/><br/>
+                </form>
+            </div> <?php    
+        break;
+                case 8: ?>
+                <div id="creation_even">
+                <form name="inscription" method="post" action="../controller/modif_profil_C.php">
+                    <label class="creation">Pays :</label><input class="creation" type="text" name="pays" placeholder="Pays"/><br/>
+                    <input class="valider" type="submit" name="modifier_pays" value="modifier"/><br/>
+                </form>
+            </div> <?php    
         break;
             }
-        }
-        
+            }
+
+            
         if(isset($_GET['erreur'])){
             switch ($_GET['erreur']) {
                 case 0 : 
@@ -74,9 +127,6 @@
                 break;*/
                 }
             
-        }
-        if($_SESSION['adresse']==''){
-            echo 'adresse est vide';
         }
 ?>
         <h1>Evènement crée</h1>
