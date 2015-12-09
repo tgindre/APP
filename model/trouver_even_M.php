@@ -10,4 +10,4 @@ while ($donnees = $even->fetch()){
         $i++;
 }
 $even->closeCursor();
-header('Location: ../vue/trouver_even_V.php');
+?>

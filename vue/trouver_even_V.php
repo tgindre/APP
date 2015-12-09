@@ -24,7 +24,7 @@
         </div>
             <?php }
               echo '<p class="profil">' . htmlentities($_SESSION['nom_even'.$i]) .'<br/> '.htmlentities($_SESSION['description'.$i]).'<br/> '.htmlentities($_SESSION['adresse_even'.$i]).'</p>'; 
-            }
+            $i++;}
           include("pied_de_page.php");
            
            
