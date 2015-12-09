@@ -284,6 +284,23 @@ footer{
         -moz-border-radius:90px;
         border-radius:90px;
 }
+/* nom */
+#logo_profil{
+	float : left;
+	margin-left: 100px;
+	height: 142px;
+        overflow:hidden;
+        -webkit-border-radius:90px;
+        -moz-border-radius:90px;
+        border-radius:90px;
+}
+#slogan_profil{
+	font-size: 55px;
+	color:gray;
+	margin-left : 355px;
+	margin-bottom : 88px;
+}
+
 /* page d'acceuil*/
 .recherche {
 	line-height: 0%;

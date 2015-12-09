@@ -26,7 +26,6 @@
                         break;
                 }
             }
-            include("bandeau.php");
             $formulaire = 'evenement';
             include('formulaire.php');
         } else {

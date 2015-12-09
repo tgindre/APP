@@ -21,6 +21,7 @@ if (isset($_POST['creation_even'])) {
             $error = 2;
             header('Location: ../vue/creation_even_V.php?erreur=' . $error);
         }
+        $insert->closeCursor();
     } else {
         $error = 1;
         header('Location: ../vue/inscription_V.php?erreur='. $error);

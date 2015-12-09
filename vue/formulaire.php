@@ -52,17 +52,7 @@
                     <div id="creation_evenement2">
                     <label class="creation">Adresse de l'évènement : </label><input class="creation" type="text" name="adresse_even" placeholder="Adresse de l'évènement"/><br/>
                     <label class="creation">Ville</label><input class="creation" type="text" name="ville_even" placeholder="Ville de l'évènement"/><br/>
-					<label class="creation" for="type-public">Type de public :</label>					
-						<select class="creation" name="type-public" id="type-public">
-							<option></option>
-							<option value="0-8">0-8 ans</option>
-							<option value="9-13">9-13 ans</option>
-							<option value="14-17">14-17 ans</option>
-							<option value="18-25">18-25 ans</option>
-							<option value="26-35">26-35 ans</option>
-							<option value="36-55">36-55 ans</option>
-							<option value="55+">55+</option>
-						</select> </br>
+                    <label class="creation">type de public </label><input class="creation" type="text" name="type_public" placeholder="type de public"/><br/>
                     <label class="creation">Date de début : </label><input class="creation" type="text" name="date_debut"/><br/>
                     <label class="creation">Date de fin : </label><input class="creation" type="text" name="date_fin"/><br/>
                     <label class="creation">Horaire de l'évènement: </label><input class="creation" type="text" name="horaire" placeholder="ex : 4h42 - 17h30"/><br/>               

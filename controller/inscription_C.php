@@ -20,8 +20,7 @@ if(isset($_POST['inscr'])){
         $_SESSION['adresse'] = $_POST['adresse']; 
         $_SESSION['code_postal'] = $_POST['code_postal'];
         $_SESSION['ville'] = $_POST['ville'];
-        $_SESSION['pays'] = $_POST['pays']; 
-            header('Location: ../vue/profil_V.php'); 
+        $_SESSION['pays'] = $_POST['pays'];  
         } else {
             print_r($bdd->errorInfo());
             $error =2;
@@ -33,8 +32,14 @@ if(isset($_POST['inscr'])){
         $error = 1;
         header('Location: ../vue/inscription_V.php?erreur='.$error);
     }
-}else{
+} else{
     header('Location: ../vue/inscription_V.php');
 }
-
+    $mail = $_POST['mail'];
+    $inscription_req = 'SELECT * FROM utilisateur WHERE mail = "' . $mail . '"';
+    $inscription = $bdd->query($inscription_req);
+    $inscript = $inscription->fetch();
+    $_SESSION['id'] = $connect['ID_utilisateur'];
+    $inscription->closeCursor();
+    header('Location: ../vue/profil_V.php');
 
