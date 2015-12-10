@@ -484,7 +484,7 @@ label {
     float : left;
     width : 300px;
 }
-#modifier1{
+.modifier1{
     float:right;
     margin-right : 666px;
 }
@@ -503,4 +503,9 @@ label {
     padding-left:20px;
     padding-right:20px;
     width : 55px;
+}
+
+/* page trouver evenement*/
+.touver_even {
+    display : inline-block;
 }

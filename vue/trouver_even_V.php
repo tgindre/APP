@@ -8,10 +8,12 @@
     </head>
        <body>
            <?php include('entete.php');
+           include('nom.php');
            include('../model/trouver_even_M.php');
            $i=1;
            while($i<=4){
         $_SESSION['n_even']=$i; ?>
+           <div class ="trouver_even">
            <a href="even_V.php">
        <?php echo'<div class="nom_even">'.htmlentities($_SESSION['ville_even'.$i]) .'</div>';
         
@@ -27,7 +29,7 @@
             <?php }
               echo '<p class="profil">' . htmlentities($_SESSION['nom_even'.$i]) .'<br/> '.htmlentities($_SESSION['description'.$i]).'<br/> '.htmlentities($_SESSION['adresse_even'.$i]).'</p>'; 
             $i++; ?>
-            </a>
+           </a></div>
         <?php }
             
           include("pied_de_page.php");

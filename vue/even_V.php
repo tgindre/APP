@@ -7,37 +7,38 @@
     </head>
     <body>
         <?php $formulaire='';
+              $i=$_SESSION['n_even'];
               include("entete.php");
               include("bandeau.php");
-              if($_SESSION['tarif_min']==$_SESSION['tarif_max']){
-                  $tarif=$_SESSION['tarif_min'];
+              if($_SESSION['tarif_min'.$i]==$_SESSION['tarif_max'.$i]){
+                  $tarif=$_SESSION['tarif_min'.$i];
               } else {
-                 $tarif=$_SESSION['tarif_min'].'€-'.$_SESSION['tarif_max'].'€'; 
+                 $tarif=$_SESSION['tarif_min'.$i].'€-'.$_SESSION['tarif_max'.$i].'€'; 
               }
-              if($_SESSION['date_debut']==$_SESSION['date_fin']){
-                  $date=$_SESSION['date_debut'];
+              if($_SESSION['date_debut'.$i]==$_SESSION['date_fin'.$i]){
+                  $date=$_SESSION['date_debut'.$i];
               } else {
-                 $date='de'.$_SESSION['date_debut'].'à'.$_SESSION['date_fin'].'€'; 
+                 $date='de'.$_SESSION['date_debut'.$i].'à'.$_SESSION['date_fin'.$i].'€'; 
               }
               if(!isset($_GET['modifier'])){
-        echo'<div class="nom_even">'.htmlentities($_SESSION['ville_even']) .'</div>';
+        echo'<div class="nom_even">'.htmlentities($_SESSION['ville_even'.$i]) .'</div>';
         
-        if(isset($_SESSION['photo_even'])){ ?>
+        if(isset($_SESSION['photo_even'.$i])){ ?>
         
         <div class="image_profil">
             <p><a href="even_V.php?modifier='0'">Modifier</a><br/>
-                <img src ="<?php echo $_SESSION['photo_even'] ?>" alt="Photo de l'evenement"></p>
+                <img src ="<?php echo $_SESSION['photo_even'.$i] ?>" alt="Photo de l'evenement"></p>
         </div>
-        <div id='modifier1'><p><span class='modifier_even'><a href="even_V.php?modifier='1'">Modifier</a></span></p></div>
+        <div class='modifier1'><p><span class='modifier'><a href="even_V.php?modifier='1'">Modifier</a></span></p></div>
         <?php } else { ?>
         <div class="image_profil">
-            <p><span class='modifier1'><a href="even_V.php?modifier='0'">Modifier</a></span><br/>
+            <p><span><a href="even_V.php?modifier='0'">Modifier</a></span><br/>
                 <img src ="image/point-d-interrogation2.jpg" alt="?"></p>
         </div>
-        <div id='modifier1'><p><span class='modifier'><a href="even_V.php?modifier='1'">Modifier</a></span></p></div>
+        <div class='modifier1'><p><span class='modifier'><a href="even_V.php?modifier='1'">Modifier</a></span></p></div>
         <?php }
-              echo '<p class="profil">' . htmlentities($_SESSION['nom_even']) .'<br/> '.htmlentities($_SESSION['description']).'<br/> '.htmlentities($_SESSION['adresse_even']).'</p>'; 
-              echo '<p class="profil"> Type de public '.htmlentities($_SESSION['type_public']).'<br/> ' . htmlentities($date) .'<br/> Horaire '.htmlentities($_SESSION['horaire']). '<br/> Tarif : '.htmlentities($tarif).'<br/> Nombre de place : '.htmlentities($_SESSION['nb_participants']).'<br/> </p>';
+              echo '<p class="profil">' . htmlentities($_SESSION['nom_even'.$i]) .'<br/> '.htmlentities($_SESSION['description'.$i]).'<br/> '.htmlentities($_SESSION['adresse_even'.$i]).'</p>'; 
+              echo '<p class="profil"> Type de public '.htmlentities($_SESSION['type_public'.$i]).'<br/> ' . htmlentities($date) .'<br/> Horaire '.htmlentities($_SESSION['horaire'.$i]). '<br/> Tarif : '.htmlentities($tarif).'<br/> Nombre de place : '.htmlentities($_SESSION['nb_participants'.$i]).'<br/> </p>';
               } else {
               switch ($_GET['modifier']) {
         case 0: ?>
