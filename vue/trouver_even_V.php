@@ -11,7 +11,9 @@
            include('../model/trouver_even_M.php');
            $i=1;
            while($i<=4){
-        echo'<div class="nom_even">'.htmlentities($_SESSION['ville_even'.$i]) .'</div>';
+        $_SESSION['n_even']=$i; ?>
+           <a href="even_V.php">
+       <?php echo'<div class="nom_even">'.htmlentities($_SESSION['ville_even'.$i]) .'</div>';
         
         if(isset($_SESSION['photo_even'.$i])){ ?>
         
@@ -24,7 +26,10 @@
         </div>
             <?php }
               echo '<p class="profil">' . htmlentities($_SESSION['nom_even'.$i]) .'<br/> '.htmlentities($_SESSION['description'.$i]).'<br/> '.htmlentities($_SESSION['adresse_even'.$i]).'</p>'; 
-            $i++;}
+            $i++; ?>
+            </a>
+        <?php }
+            
           include("pied_de_page.php");
            
            

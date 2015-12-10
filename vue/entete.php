@@ -1,7 +1,7 @@
 	<header>
              <div id="entete">
                  <?php if(isset($_SESSION['pseudo'])){
-                ?>
+                ?> 
                  <ul>   <li><a href="profil_V.php"><?php echo htmlentities($_SESSION['pseudo']) ?> <span class="tiret">|</span></a></li>
 			<li><a href="../controller/deconnexion_C.php">deconnexion</a></li>
 		</ul>

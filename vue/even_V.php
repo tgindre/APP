@@ -25,20 +25,20 @@
         if(isset($_SESSION['photo_even'])){ ?>
         
         <div class="image_profil">
-            <p><a href="#">Modifier</a><br/>
-                <img src ="<?php echo $_SESSION['photo_even'] ?>" alt="Photo de profil"></p>
+            <p><a href="even_V.php?modifier='0'">Modifier</a><br/>
+                <img src ="<?php echo $_SESSION['photo_even'] ?>" alt="Photo de l'evenement"></p>
         </div>
-        <div id='modifier1'><p><span class='modifier_even'><a href="#">Modifier</a></span></p></div>
+        <div id='modifier1'><p><span class='modifier_even'><a href="even_V.php?modifier='1'">Modifier</a></span></p></div>
         <?php } else { ?>
         <div class="image_profil">
-            <p><span class='modifier'><a href="#">Modifier</a></span><br/>
+            <p><span class='modifier1'><a href="even_V.php?modifier='0'">Modifier</a></span><br/>
                 <img src ="image/point-d-interrogation2.jpg" alt="?"></p>
         </div>
-        <div id='modifier1'><p><span class='modifier'><a href="#">Modifier</a></span></p></div>
+        <div id='modifier1'><p><span class='modifier'><a href="even_V.php?modifier='1'">Modifier</a></span></p></div>
         <?php }
               echo '<p class="profil">' . htmlentities($_SESSION['nom_even']) .'<br/> '.htmlentities($_SESSION['description']).'<br/> '.htmlentities($_SESSION['adresse_even']).'</p>'; 
               echo '<p class="profil"> Type de public '.htmlentities($_SESSION['type_public']).'<br/> ' . htmlentities($date) .'<br/> Horaire '.htmlentities($_SESSION['horaire']). '<br/> Tarif : '.htmlentities($tarif).'<br/> Nombre de place : '.htmlentities($_SESSION['nb_participants']).'<br/> </p>';
-              }
+              } else {
               switch ($_GET['modifier']) {
         case 0: ?>
         <form method="post" action="../controller/modif_even_C.php" enctype="multipart/form-data">
@@ -49,6 +49,7 @@
         </form>
             <?php
               break;}
+              }
               
               if(isset($_GET['erreur'])){
             switch ($_GET['erreur']) {

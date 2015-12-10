@@ -3,7 +3,7 @@
 include('../model/model.php');
 $maxsize = 1048576;
 $nom = '';
-if (isset($_POST['image_profil'])) {
+if (isset($_POST['image_even'])) {
     if ($_FILES['image']['error'] > 0) {
         $erreur = 0;
         header('Location: ../vue/even_V.php?erreur=' . $erreur);
@@ -21,7 +21,7 @@ if (isset($_POST['image_profil'])) {
         $erreur = 2;
         header('Location: ../vue/even_V.php?erreur=' . $erreur);
     } else {
-        $nom = "../vue/image/profil/{$_SESSION['id']}.{$extension_upload}";
+        $nom = "../vue/image/even/{$_SESSION['id']}.{$extension_upload}";
         $resultat = move_uploaded_file($_FILES['image']['tmp_name'], $nom);
         /* if ($resultat) {$erreur=3;} */
     }
