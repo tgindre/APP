@@ -120,6 +120,7 @@ if (isset($_POST['image_profil'])) {
     $_SESSION['code_postal'] = $connect['code_postal'];
     $_SESSION['ville'] = $connect['ville'];
     $_SESSION['pays'] = $connect['pays'];
+    $_SESSION['photo'] = $connect['photo'];
     $connexion->closeCursor();
 
     header('Location: ../vue/profil_V.php');
