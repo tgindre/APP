@@ -18,9 +18,9 @@
         case 1:
         echo "Vos deux mots de passe ne sont pas les mêmes";
         break;
-        //case 2:
-        //echo "Probleme dans l'insertion du formulaire dans la base de donnée";
-        //break;
+        case 2:
+        echo "Probleme dans l'insertion du formulaire dans la base de donnée";
+        break;
     }
 } 
         include("bandeau.php") ?>
