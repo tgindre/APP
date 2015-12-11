@@ -5,9 +5,9 @@
         <meta charset="utf-8"/>
         <title> Sharetime</title>
         <link rel="stylesheet" href="style_APP.css"/>
+        <script type="text/javascript" src="app.js"></script>
     </head>
     <body>
-        
         <?php include("entete.php");
         $formulaire='inscription';
         if(isset($_GET['erreur'])){
@@ -18,9 +18,9 @@
         case 1:
         echo "Vos deux mots de passe ne sont pas les mêmes";
         break;
-        case 2:
-        echo "Probleme dans l'insertion du formulaire dans la base de donnée";
-        break;
+        //case 2:
+        //echo "Probleme dans l'insertion du formulaire dans la base de donnée";
+        //break;
     }
 } 
         include("bandeau.php") ?>

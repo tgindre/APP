@@ -3,14 +3,14 @@
        ?>
           <div id="formulaire">
                 <p> Rejoignez-vous, c'est tout simple</p>
-                <form name="inscription" method="post" action="../controller/inscription_C.php">
+                <form name="inscription" onsubmit="return verif_champ()" method="post" action="../controller/inscription_C.php">
                     <input class="information" type="text" name="nom" placeholder="Nom"/>
                     <input class="information" type="text" name="prenom" placeholder="prenom"/><br/>
                     Date de naissance : <br/> <input class="information" type="text" name="date" placeholder="jj/mm/aaaa"/><br/>
                     <input class="inscriptions" type="radio" name="genre" value="Femme"/>Femme<input class="inscriptions" type="radio" name="genre" value="Homme"/>Homme<br/>
-                    <input class="information" type="text" name="pseudo" placeholder="Pseudo"/>
-                    <input class="information" type="email" name="mail" placeholder="Email"/><br/>
-                    <input class="information" type="password" name="password" placeholder="Mot de passe"/>
+                    <input id="pseudo" class="information" type="text" name="pseudo" placeholder="Pseudo"/>
+                    <input id="email" class="information" type="email" name="mail" placeholder="Email"/><br/>
+                    <input id="mdp" class="information" type="password" name="password" placeholder="Mot de passe"/>
                     <input class="information" type='password' name='password_verif' placeholder="Retape ton mot de passe" /><br/>                   
                     Localisation (facultatif) : <br/> 
                     <input class="inscriptions" type="text" name="adresse" placeholder="Adresse"/><br/>
