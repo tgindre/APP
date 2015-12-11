@@ -25,7 +25,7 @@ if (isset($_POST['image_even'])) {
         $resultat = move_uploaded_file($_FILES['image']['tmp_name'], $nom);
         /* if ($resultat) {$erreur=3;} */
     }
-    $req = $bdd->prepare('UPDATE utilisateur SET photo= :photo WHERE ID_utilisateur= :id');
+    $req = $bdd->prepare('UPDATE utilisateur SET image= :photo WHERE ID_utilisateur= :id');
     $req->execute(array(
         'photo' => $nom,
         'id' => $_SESSION['id']

@@ -13,7 +13,7 @@ while ($donnees = $even->fetch()){
         $_SESSION['tarif_min'.$i] = $donnees['tarif_min'];
         $_SESSION['tarif_max'.$i] = $donnees['tarif_max'];
         $_SESSION['nb_participants'.$i] = $donnees['nb_participants'];
-        /*$_SESSION['photo'.$i] = $donnees['photo'];*/
+        $_SESSION['photo'.$i] = $donnees['image'];
         $_SESSION['nb']=$i;
         $i++;
 }
