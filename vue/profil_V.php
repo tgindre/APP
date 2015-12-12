@@ -138,7 +138,8 @@
            $_SESSION['n_even']=$i; ?>
            <div class ="trouver_even">
            <a href="even_V.php">
-       <?php echo'<div class="nom_even">'.htmlentities($_SESSION['ville_even'.$i]) .'</div>';
+       <?php
+       echo'<div class="nom_even">'.htmlentities($_SESSION['ville_even'.$i]) .'</div>';
         
         if(isset($_SESSION['photo_even'.$i])){ ?>
         

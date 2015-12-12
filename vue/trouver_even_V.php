@@ -11,8 +11,8 @@
            include('nom.php');
            include('../model/trouver_even_M.php');
            $i=1;
-           while($i<=4){
-        $_SESSION['n_even']=$i; ?>
+           while($i<=$_SESSION['nb']){
+        $_SESSION['n_even']=$i; /* Pour reconnaitre l'evenement dans la page even_V */?>
            <div class ="trouver_even">
            <a href="even_V.php">
        <?php echo'<div class="nom_even">'.htmlentities($_SESSION['ville_even'.$i]) .'</div>';

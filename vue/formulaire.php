@@ -23,11 +23,11 @@
 <?php
     } if($formulaire=='recherche'){
      ?>
-<form name="recherche" method="post" action="recherche.php">
+<form name="recherche" method="post" action="../controller/recherche_C.php">
 		<input class="recherche" type="text" name="date" placeholder="Date">
 		<input class="recherche" type="text" name="lieu" placeholder="Lieu">
-		<input class="recherche" type="text" name="type d'évènement" placeholder="type d'évènement">
-		<input class="recherche" type="submit" name="valider" value="Recherche"/>
+		<input class="recherche" type="text" name="type_even" placeholder="type d'évènement">
+		<input class="recherche" type="submit" name="recherche" value="Recherche"/>
                 </form>
 <?php 
     } if ($formulaire =='connexion'){
@@ -48,7 +48,8 @@
                 <h1>Création d'évènement</h1>
                 <form name="creation_evenement" method="post" action="../controller/creation_even_C.php">
                     <label class="creation">Nom de l'évènement :</label><input class="creation" type="text" name="nom_even" placeholder="Nom de l'évènement"/><br/>
-                    <label class="creation">descriptions de l'évènement : </label><textarea class="creation" name="description" placeholder="décription de l'évènement" rows="4"></textarea><br/>
+                    <label class="creation">Descriptions de l'évènement : </label><textarea class="creation" name="description" placeholder="décription de l'évènement" rows="4"></textarea><br/>
+                    <label class="creation">Type d'évènement </label><input class="creation" type="text" name="type_even" placeholder="type d'évènement"/><br/>
                     <div id="creation_evenement2">
                     <label class="creation">Adresse de l'évènement : </label><input class="creation" type="text" name="adresse_even" placeholder="Adresse de l'évènement"/><br/>
                     <label class="creation">Ville</label><input class="creation" type="text" name="ville_even" placeholder="Ville de l'évènement"/><br/>

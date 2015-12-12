@@ -6,6 +6,7 @@ $i=1;
 while ($donnees = $even_cree->fetch(PDO::FETCH_ASSOC)){
         $_SESSION['nom_even'.$i] = $donnees['nom_even'];
         $_SESSION['description'.$i] = $donnees['description']; 
+        $_SESSION['type_even'.$i] = $donnees['type_even'];
         $_SESSION['adresse_even'.$i] = $donnees['adresse_even']; 
         $_SESSION['ville_even'.$i] = $donnees['ville_even'];
         $_SESSION['type_public'.$i] = $donnees['type_public'];

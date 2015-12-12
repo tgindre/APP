@@ -1,10 +1,16 @@
-<?php
-$i=1;
-$even = $bdd->query('SELECT *  FROM evenement ORDER BY ID_even DESC LIMIT 0, 4');
-while ($donnees = $even->fetch()){
+<?php include('../model/model.php');
+if(isset($_POST['recherche'])){
+    $_SESSION['type']='recherche';
+        $req = $bdd->prepare('SELECT *  FROM evenement WHERE (adresse_even= :lieu OR ville_even= :lieu OR type_even= :type_even OR (date_debut<= :date AND date_fin>= :date) ORDER BY ID_even DESC');
+        $req->execute(array(      
+            'lieu' => $_POST['lieu'],
+            'date' => $_SESSION['date'],
+            'type_even' => $_POST['type_even'])
+        );
+        while ($donnees = $req->fetch()){
         $_SESSION['nom_even'.$i] = $donnees['nom_even'];
         $_SESSION['description'.$i] = $donnees['description'];
-        $_SESSION['type_even'.$i] = $donnees['type_even'];
+        $_SESSION['type_public'.$i] = $donnees['type_even'];
         $_SESSION['adresse_even'.$i] = $donnees['adresse_even']; 
         $_SESSION['ville_even'.$i] = $donnees['ville_even'];
         $_SESSION['type_public'.$i] = $donnees['type_public'];
@@ -18,5 +24,7 @@ while ($donnees = $even->fetch()){
         $_SESSION['nb']=$i;
         $i++;
 }
-$even->closeCursor();
-?>
+  $req->closeCursor();      
+}
+    header('Location: ../vue/trouver_even_V.php');
+

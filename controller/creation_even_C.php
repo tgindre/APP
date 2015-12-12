@@ -1,11 +1,12 @@
 <?php
 include('../model/model.php');
 if (isset($_POST['creation_even'])) {
-        $insert = $bdd->prepare("INSERT INTO evenement (ID_createur, nom_even, description, adresse_even, ville_even, type_public , date_debut, date_fin, horaire, tarif_min, tarif_max, nb_participants) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        if ($insert->execute(array($_SESSION['id'] ,$_POST['nom_even'], $_POST['description'], $_POST['adresse_even'], $_POST['ville_even'], $_POST['type_public'], $_POST['date_debut'], $_POST['date_fin'], $_POST['horaire'], $_POST['tarif_min'], $_POST['tarif_max'], $_POST['nb_place']))) { 
+        $insert = $bdd->prepare("INSERT INTO evenement (ID_createur, nom_even, description, type_even, adresse_even, ville_even, type_public , date_debut, date_fin, horaire, tarif_min, tarif_max, nb_participants) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        if ($insert->execute(array($_SESSION['id'] ,$_POST['nom_even'], $_POST['description'], $_POST['type_even'] , $_POST['adresse_even'], $_POST['ville_even'], $_POST['type_public'], $_POST['date_debut'], $_POST['date_fin'], $_POST['horaire'], $_POST['tarif_min'], $_POST['tarif_max'], $_POST['nb_place']))) { 
         $i=0;
         $_SESSION['nom_even'.$i] = $_POST['nom_even'];
-        $_SESSION['description'.$i] = $_POST['description']; 
+        $_SESSION['description'.$i] = $_POST['description'];
+        $_SESSION['type_even'.$i] = $_POST['type_even'];
         $_SESSION['adresse_even'.$i] = $_POST['adresse_even']; 
         $_SESSION['ville_even'.$i] = $_POST['ville_even'];
         $_SESSION['type_public'.$i] = $_POST['type_public'];
