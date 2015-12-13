@@ -137,7 +137,7 @@
            while($i<=$_SESSION['nb']){
            $_SESSION['n_even']=$i; ?>
            <div class ="trouver_even">
-           <a href="even_V.php">
+               <a href="even_V.php?nb=<?php echo $i?>" >
        <?php
        echo'<div class="nom_even">'.htmlentities($_SESSION['ville_even'.$i]) .'</div>';
         

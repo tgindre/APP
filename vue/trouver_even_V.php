@@ -9,12 +9,17 @@
        <body>
            <?php include('entete.php');
            include('nom.php');
+           $formulaire='recherche_avancée';
+           include('formulaire.php');
+           if(!(isset($_SESSION['type']))){
+               echo 'recherche';
            include('../model/trouver_even_M.php');
+           }
            $i=1;
            while($i<=$_SESSION['nb']){
         $_SESSION['n_even']=$i; /* Pour reconnaitre l'evenement dans la page even_V */?>
            <div class ="trouver_even">
-           <a href="even_V.php">
+           <a href="even_V.php?nb=<?php echo $i?>" >
        <?php echo'<div class="nom_even">'.htmlentities($_SESSION['ville_even'.$i]) .'</div>';
         
         if(isset($_SESSION['photo_even'.$i])){ ?>

@@ -7,9 +7,9 @@
     </head>
     <body>
         <?php $formulaire='';
-              $i=$_SESSION['n_even'];
               include("entete.php");
               include("bandeau.php");
+              $i=htmlentities($_GET['nb']);
               if($_SESSION['tarif_min'.$i]==$_SESSION['tarif_max'.$i]){
                   $tarif=$_SESSION['tarif_min'.$i];
               } else {
@@ -68,4 +68,5 @@
                 break;*/
               }
             }
+         
             include("pied_de_page.php"); ?>

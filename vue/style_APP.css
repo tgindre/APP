@@ -206,7 +206,7 @@ li {
 }
 nav {
 	background : #ff8410;
-	font-size: 2.0em;
+	font-size: 1.7em;
 }
 .menu li {
 	display : inline-block;
@@ -216,7 +216,7 @@ nav {
 }
 .tiret{
 	color: black;
-	font-size: 2em;
+	font-size: 1.7em;
 }
 p {
 	margin: 20px;
@@ -508,4 +508,12 @@ label {
 /* page trouver evenement*/
 .touver_even {
     display : inline-block;
+}
+
+#recherche_avancée{
+    width : 100%;
+    color : black;
+    font-size : 16px;
+    margin-left : 2%;
+    margin-bottom: 2%;
 }
