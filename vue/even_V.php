@@ -9,7 +9,7 @@
         <?php $formulaire='';
               include("entete.php");
               include("bandeau.php");
-              $i=htmlentities($_GET['nb']);
+              if (isset($_GET['nb'])){$i=htmlentities($_GET['nb']);}
               if($_SESSION['tarif_min'.$i]==$_SESSION['tarif_max'.$i]){
                   $tarif=$_SESSION['tarif_min'.$i];
               } else {
@@ -26,16 +26,16 @@
         if(isset($_SESSION['photo_even'.$i])){ ?>
         
         <div class="image_profil">
-            <p><a href="even_V.php?modifier='0'">Modifier</a><br/>
+            <p><a href="even_V.php?modifier='0'&nb=<?php echo $i?>">Modifier</a><br/>
                 <img src ="<?php echo $_SESSION['photo_even'.$i] ?>" alt="Photo de l'evenement"></p>
         </div>
-        <div class='modifier1'><p><span class='modifier'><a href="even_V.php?modifier='1'">Modifier</a></span></p></div>
+        <div class='modifier1'><p><span class='modifier'><a href="even_V.php?modifier='1'&nb=<?php echo $i?>">Modifier</a></span></p></div>
         <?php } else { ?>
         <div class="image_profil">
-            <p><span><a href="even_V.php?modifier='0'">Modifier</a></span><br/>
+            <p><span><a href="even_V.php?modifier='0'&nb=<?php echo $i?>">Modifier</a></span><br/>
                 <img src ="image/point-d-interrogation2.jpg" alt="?"></p>
         </div>
-        <div class='modifier1'><p><span class='modifier'><a href="even_V.php?modifier='1'">Modifier</a></span></p></div>
+        <div class='modifier1'><p><span class='modifier'><a href="even_V.php?modifier='1'&nb=<?php echo $i?>">Modifier</a></span></p></div>
         <?php }
               echo '<p class="profil">' . htmlentities($_SESSION['nom_even'.$i]) .'<br/> '.htmlentities($_SESSION['description'.$i]).'<br/>'.htmlentities($_SESSION['type_even'.$i]).'<br/> '.htmlentities($_SESSION['adresse_even'.$i]).'</p>'; 
               echo '<p class="profil"> Type de public '.htmlentities($_SESSION['type_public'.$i]).'<br/> ' . htmlentities($date) .'<br/> Horaire '.htmlentities($_SESSION['horaire'.$i]). '<br/> Tarif : '.htmlentities($tarif).'<br/> Nombre de place : '.htmlentities($_SESSION['nb_participants'.$i]).'<br/> </p>';
