@@ -8,8 +8,8 @@
     <body>
         <?php $formulaire='';
               include("entete.php");
-              include("bandeau.php");
-              if (isset($_GET['nb'])){$i=htmlentities($_GET['nb']);}
+              include("nom.php");
+              if (isset($_GET['nb'])){$i=htmlentities($_GET['nb']);}              
               if($_SESSION['tarif_min'.$i]==$_SESSION['tarif_max'.$i]){
                   $tarif=$_SESSION['tarif_min'.$i];
               } else {
@@ -44,8 +44,9 @@
         case 0: ?>
         <form method="post" action="../controller/modif_even_C.php" enctype="multipart/form-data">
             <label for="mon_fichier">Fichier (tous formats | max. 1 Mo) :</label><br />
-            <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
+            <input type="hidden" name="MAX_FILE_SIZE" value="4194304" />
             <input type="file" name="image" id="mon_fichier" /><br />
+            <input type="hidden" name="numero" value=<?php echo $i?> />
             <input type="submit" name="image_even" value="modifier" />
         </form>
             <?php

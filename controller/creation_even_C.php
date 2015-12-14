@@ -18,7 +18,7 @@ if (isset($_POST['creation_even'])) {
         $_SESSION['nb_participants'.$i] = $_POST['nb_participants'];
         $_SESSION['n_even']=$i;
         
-            header('Location: ../vue/even_V.php');
+            header('Location: ../vue/even_V.php?nb='.$i);
         } else {
             print_r($bdd->errorInfo());
             $error = 2;

@@ -1,16 +1,17 @@
 <?php
 
 include('../model/model.php');
-$maxsize = 1048576;
+$maxsize = 4194304;
 $nom = '';
+$i=$_POST['numero'];
 if (isset($_POST['image_even'])) {
     if ($_FILES['image']['error'] > 0) {
         $erreur = 0;
-        header('Location: ../vue/even_V.php?erreur=' . $erreur);
-    }
+        header('Location: ../vue/even_V.php?erreur=' . $erreur.'&nb='.$i);
+    } else {$erreur=42;}
     if ($_FILES['image']['size'] > $maxsize) {
         $erreur = 1;
-        header('Location: ../vue/even_V.php?erreur=' . $erreur);
+        header('Location: ../vue/even_V.php?erreur=' . $erreur.'&nb='.$i);
     }
     $extensions_valides = array('jpg', 'jpeg', 'gif', 'png');
     //1. strrchr renvoie l'extension avec le point (« . »).
@@ -19,19 +20,19 @@ if (isset($_POST['image_even'])) {
     $extension_upload = strtolower(substr(strrchr($_FILES['image']['name'], '.'), 1));
     if (!in_array($extension_upload, $extensions_valides)) {
         $erreur = 2;
-        header('Location: ../vue/even_V.php?erreur=' . $erreur);
+        header('Location: ../vue/even_V.php?erreur=' . $erreur.'&nb='.$i);
     } else {
-        $nom = "../vue/image/even/{$_SESSION['id']}.{$extension_upload}";
+        $nom = "../vue/image/even/{$_SESSION['id_even'.$i]}.{$extension_upload}";
         $resultat = move_uploaded_file($_FILES['image']['tmp_name'], $nom);
         /* if ($resultat) {$erreur=3;} */
     }
-    $req = $bdd->prepare('UPDATE utilisateur SET image= :photo WHERE ID_utilisateur= :id');
+    $req = $bdd->prepare('UPDATE evenement SET image= :photo WHERE ID_even= :id');
     $req->execute(array(
         'photo' => $nom,
-        'id' => $_SESSION['id']
+        'id' => $_SESSION['id_even'.$i]
     ));
-    $_SESSION['photo'] = $nom;
-    header('Location: ../vue/even_V.php?erreur=' . $erreur);
+    $_SESSION['photo_even'.$i] = $nom;
+    header('Location: ../vue/even_V.php?erreur=' . $erreur.'&nb='.$i);
 }
 
 if (isset($_POST['modifier'])) {

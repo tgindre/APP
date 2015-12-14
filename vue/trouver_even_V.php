@@ -12,7 +12,7 @@
            $formulaire='recherche_avancée';
            include('formulaire.php');
            if(!(isset($_SESSION['type']))){
-               echo 'recherche';
+               echo 'pas de recherche<br/>';
            include('../model/trouver_even_M.php');
            }
            $i=1;
@@ -25,7 +25,7 @@
         if(isset($_SESSION['photo_even'.$i])){ ?>
         
         <div class="image_profil">
-                <img src ="<?php echo $_SESSION['photo_even'.$i] ?>" alt="Photo de profil">
+                <img src ="<?php echo $_SESSION['photo_even'.$i] ?>" alt="Photo de l'evenement">
         </div>
         <?php } else { ?>
         <div class="image_profil">
