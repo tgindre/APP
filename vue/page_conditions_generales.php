@@ -7,29 +7,22 @@
 
 	</head>
 	<body>
-	<?php $formulaire= 'recherche' ?>
-    <?php include("entete.php"); ?>
+<?php $formulaire= 'recherche';
+ include("entete.php"); ?>
 	
 <div id="fond"> 
-	<head>
-		<label for="ameliorer">
-		<span class="cou1">Conditions générales</span>
-		</label>
-		<br></br>
-	</head>
-	<body>
-		<label for="ameliorer">
+		<h1 class="cou1">Conditions générales</h1>
 		<span class="texgrand">Bienvenue sur ShareTime.</span><br/>
 		<span classe="tiret">En devenant membre de ShareTime vous vous engagez à respecter toutes les conditions énumérées ci-dessous. ShareTime se réserve le droit de retirer sans avertissement, le profil de toute personne qui n'observe pas l'une des conditions suivantes.<br/>L'espace membre de ShareTime est uniquement accessible aux personnes de plus de 18 ans.<br/>Pour être Membre de ShareTime, vous devez être une personne physique, âgé(e) au minimum de 16 ans, avoir rempli l'ensemble des champs obligatoires figurant dans les formulaires d'inscription à ShareTime et avoir lu et accepté les présentes conditions d'utilisation lors de votre inscription. <br/>
 Les mineurs, gés de 16 et 17 ans peuvent s'inscrire sur ShareTime après avoir obtenu l'autorisation préalable de la ou les personne(s) compétente(s) pour exercer l'autorité parentale. ShareTime se reserve le droit d'en demander la justification écrite à tout moment. Etant rappelé qu'il appartient aux parents ou tuteur légal de surveiller l'utilisation faite par leur(s) enfant(s) des Services proposés, ShareTime pourra supprimer immédiatement tout Compte d'utilisateur mineur qui n'aurait pas obtenu l'autorisation de son (ou ses) tuteur(s) légal (légaux) ou dont les parents demandent la fermeture du Compte. <br/>
 Le Membre garantit que les données qu'il communique sont exactes et conformes à la réalité. ShareTime se réserve la possibilité de demander à tout Membre de justifier de son âge et de son identité et de résilier tout Compte d'un Membre qui aurait fourni de fausses informations lors de la création de son Compte ou qui ne respecterait pas ses obligations décrites dans les présentes conditions d'utilisation ou les lois et règlements en vigueur. Le Membre s'engage à informer ShareTime sans délai en cas de modification des données qu'il a communiquées lors de son inscription ou, le cas échéant, à procéder lui-même à ces modifications au sein de son espace personnel sur le Site. <br/>
 L'inscription à un ou plusieurs services de ShareTime ainsi que l'utilisation du présent site suppose l'acceptation pleine et entière des présentes par le Membre. En cochant la case désignant la phrase "Je confirme avoir lu et approuver le règlement (CGU)" située au bas de la page de l'inscription pour la valider, le Membre reconnaÓt qu'il est tenu par l'ensemble des dispositions des présentes conditions d'utilisation. <br/>
-</span><br></br>
+</span><br/>
 		
 		<span class="texgrand">Article 1. DEFINITIONS</span><br/>
 		<span classe="tiret">ShareTime est un site Internet disponible à l'adresse http://www.ShareTime.com. <br/>
 Membre(s) désigne l'ensemble des utilisateurs du service ShareTime qui se sont inscrits et ont accepté le présent règlement. <br/>
-</span><br></br>
+</span><br/>
 		
 		<span class="texgrand">Article 2. ACCES ET INSCRIPTION A ShareTime</span><br/>
 		<span classe="tiret">Les équipements (ordinateur, logiciels, moyens de télécommunications, etc.) permettant l'accès aux services sont à la charge exclusive du Membre, de même que les frais de télécommunications induits par leur utilisation. <br/>
@@ -42,7 +35,7 @@ Le Membre sera seul responsable de l'utilisation de ces éléments d'identificat
 ShareTime se réserve le droit de modifier à tout moment une fiche d'un Membre ne respectant pas les règles de bonne conduite. Par ailleurs, le Membre autoriseShareTime à diffuser sur son site Internet les photos et vidéos où il s'y trouve lors de chaque événement parrainé, organisé, ou sponsorisé par ShareTime. Le Membre autorise également ShareTime à publier sa photo pour une durée infinie dans la section Tops membres si jamais il gagne le concours mensuel. Le Membre autoriseShareTime a lui envoyer tout type d'offre ou promotion concernant le site dans sa boite de réception interne. <br/>
 Lorsqu'un Membre souhaite fournir à ShareTime les coordonnées d'un tiers, il s'engage à avoir préalablement obtenu de ce dernier le consentement au traitement de ses données par ShareTime. Il est par ailleurs exclusivement responsable à l'égard deShareTime de ce tiers, des conséquences de la transmission à ShareTime de ses coordonnées. <br/>
 ShareTime se réserve le droit de supprimer les comptes des membres qui n'ont pas utilisé le service durant une période supérieure ou égale à 6 mois, ou s'ils ne sont toujours pas venus sur leur compte 10 jours après leur inscription. La date de fin d'utilisation du service prise en compte pour le calcul de la durée de la période se définit de la manière suivante : la date de la dernière connexion au service ShareTime. <br/>
-</span><br></br>
+</span><br/>
 		
 		<span class="texgrand">Article 3. UTILISATION DE ShareTime</span><br/>
 		<span classe="tiret">Une fois inscrit, le Membre bénéficie d'un accès aux services (gratuits ou non selon qu'il souscrit à un abonnement ou non) disponibles sur ShareTime. Dans le cadre de l'utilisation des services, le Membre s'engage notamment à respecter les règles suivantes : <br/>
@@ -51,7 +44,7 @@ Ne pas utiliser ShareTime à des fins professionnelles ou commerciales (prospect
 Ne poster ou diffuser sous quelque forme que ce soit que des informations ou contenus conformes à la réalité. <br/>
 Ne choisir aucun pseudonyme ayant une connotation vulgaire, violente, raciste ou pédophile et ne pas contrevenir à aucun des règlements en vigueur. ShareTimerefusera tout pseudonyme qui va à l'encontre des règlements émis. <br/>
 Ne pas proférer des propos ou diffuser sous quelque forme que ce soit des contenus contrevenant aux droits d'autrui ou à caractère diffamatoire, injurieux, obscène, offensant, violent ou incitant à la violence, politique, raciste ou xénophobe et de manière générale tout contenu contraire à l'objet de ShareTime, aux lois et règlements en vigueur ou aux bonnes múurs. En particulier, les photos, vidéos et toutes informations, données ou fichiers fournis par un Membre à ShareTime doivent être décents et se rapporter exclusivement au Membre. Mettre une photo principale récente de lui-même ou alors ne pas en fournir. Il peut également déposer jusqu'à dix photos secondaires. En aucun cas, les photos mises ne doivent être pornographiques ou tout simplement inciter à la violence, à la guerre, ou d'une manière générale, à toute pensée contraire à l'esprit du site. Les administrateurs de ShareTime se réservent le droit de modifier les photos des membres qui ne correspondent pas à l'image du site sans aucun préavis, voire désactiver ou supprimer les comptes dans les cas extrêmes. Ne pas poster ni diffuser sous quelque forme que ce soit des informations ou contenus ayant pour effet de diminuer, de désorganiser, d'empêcher l'utilisation normale des services, d'interrompre et/ou de ralentir la circulation normale des communications entre les Membres par l'intermédiaire des services, tels que des logiciels, virus, bombes logiques, envoi massif de messages, etc. ShareTime se réserve le droit de supprimer les messages qui sont envoyés massivement par les membres afin de préserver une qualité d'utilisation normale du service auprès des autres membres. La transmission de toute forme de message non sollicité pouvant être interprétée comme un prospectus publicitaire est interdite. Ne pas poster ni diffuser sous quelque forme que ce soit des informations ou contenus intégrant des liens vers d'autres sites à caractère illégal, contraires aux bonnes múurs et/ou non conformes à l'objet de ShareTime. Ne pas poster des messages violant les droits de tiers (notamment les droits de propriété intellectuelle ou industrielle tels que marques, dessins, modèles, brevet, savoir-faire etc.) ; les lois et réglementations en vigueur en France, dans son pays de résidence ou dans le pays où ses données sont destinées à être reçue. Sans préjudice des dispositions de l'article 6 "Résiliation", en cas de manquement par un Membre à une ou plusieurs de ces règles, ShareTime se réserve le droit de supprimer les comptes des Membres concernés, de supprimer automatiquement les messages litigieux, d'empêcher la publication de tout ou partie du profil d'un Membre, et/ou de bloquer son accès à tout ou partie des services, de façon temporaire ou définitive, sans contrepartie, indemnité ou remboursement éventuel. ShareTime ne peut être tenue pour responsable des fausses déclarations faites par un Membre. Il est donc important de prendre certaines précautions lors de rencontres avec un autre Membre.ShareTime dégage toute responsabilité lors de rencontres entre Membres deShareTime, sur ShareTime ou lors de rencontres entre Membres et/ou non-membres, suite à l'utilisation de son site et de ses services. Dans ce cadre, ShareTime rappelle à ses Membres qu'il peut-être recommandé de prévenir une personne proche et de préférer un lieu public (café, restaurant, etc.) pour une première rencontre. <br/>
-</span><br></br>
+</span><br/>
 
         <span class="texgrand">Article 4. VIE PRIVEE ET PROTECTION DES DONNEES DU MEMBRE</span><br/>
 		<span classe="tiret">ShareTime respecte les normes les plus contraignantes de protection de la vie privée et a fait l'objet d'une déclaration à la Commission Nationale de l'Informatique et des Libertés. Certaines informations ou contenus (photographie ou vidéo) que les Membres peuvent fournir à titre facultatif sont susceptibles, sous la responsabilité du Membre concerné, de révéler l'origine ethnique du Membre, sa nationalité, sa religion et/ou ses orientations sexuelles. En fournissant de telles informations, le Membre concerné consent expressément au traitement de ces données par ShareTime et en prend la responsabilité exclusive. En application de la loi n° 78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertés, le Membre dispose des droits d'opposition (art. 26 de la loi), d'accès (art. 34 à 38 de la loi) et de rectification (art. 36 de la loi) des données le concernant. Ainsi, le Membre peut exiger que soient rectifiées, complétées, clarifiées, mises à jour ou effacées les informations le concernant qui sont inexactes, incomplètes, équivoques ou périmées. Chaque Membre peut par conséquent par courrier électronique en remplissant le formulaire contact en prenant le soin d'indiquer ses identifiants personnels, accéder ou demander à accéder aux informations le concernant pour les faire modifier ou supprimer. <br/>
@@ -64,7 +57,7 @@ Les informations personnelles recueillies par ShareTime peuvent inclure les nom,
 2. ShareTime est susceptible de faire parvenir aux Membres, sauf s'ils s'y opposent, des offres promotionnelles de certains de ses partenaires sans que leurs informations ne leur soient transmises. <br/>
 3. ShareTime peut parfois partager des informations socio-démographiquesgénérales non nominatives avec des partenaires sélectionnés pour leur permettre de cibler leurs annonces (par catégories d'âge, de sexe, etc.). Dans ces cas, ShareTime ne leur transmettons pas d'informations qui leur permettraient d'identifier ses Membres. <br/>
 4. Les informations composant les annonces et la présentation des Membres sont accessibles sur ShareTime, sur le Web www.ShareTime.com, www.ShareTime.fr, par e-mail (newsletters). En outre, elles sont susceptibles d'être diffusées auprès de personnes intéressées par ShareTime, par le biais de newsletters ou de sites Web tiers. <br/>
-</span><br></br>
+</span><br/>
 
         <span class="texgrand">Article 5. PROPRIETE INTELLECTUELLE</span><br/>
 		<span classe="tiret">5.1 Contenus diffusés par ShareTime <br/>
@@ -94,16 +87,18 @@ Le Membre doit disposer des compétences, des matériels et des logiciels requis
         <span class="texgrand">Article 10. DROIT APPLICABLE - ATTRIBUTION DE JURIDICTION</span><br/>
 		<span classe="tiret">Ces conditions d'utilisation sont régies, interprétées et appliquées conformément au droit français. Les tribunaux français et notamment le tribunal de commerce de Versailles sera seul compétent pour connaÓtre de tout litige relatif au présentes, y compris, sans que cette énumération soit limitative, leur validité, leur interprétation, leur exécution et/ou leur résiliation et ses conséquences.
 
-</span><br></br>
-		
-		</label>
-</div>
+</span><br/>
 
-	<?php include("pied_de_page.php"); ?>
+
+</div>	
+<?php include("pied_de_page.php"); ?>
+
+		</body>
+</html>
+
 	
-	</body>
-	
-	
+
+
 	
 	
 
