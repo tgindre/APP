@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php include('../model/model.php'); ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -7,9 +7,10 @@
 	<link rel="stylesheet" href="style_APP.css"/>
 	</head>
 	<body>
-    <?php $formulaire= 'recherche' ?>
-    <?php include("entete.php"); ?>
-    <?php include("bandeau.php"); ?>
+    <?php $formulaire= 'recherche'; 
+    include("entete.php"); 
+    include("bandeau.php");
+    $nb_even=3;?>
             
 	  <h1 style="color: #f16a99;">Parce que ShareTime n'est pas qu'un site, c'est :</h1>
 	<div id="description">
@@ -23,21 +24,31 @@
 	<p id="slogan2"> Où que tu sois, il y a un évènement pour toi ! </p>
 	<p id = "slogan3" > Trouvez votre bonheur en recherchant dans le fil d'actualité l'évènement, près de chez vous, qui vous correspond </p>
 
-			<div class ="conteneur">
-				<p class="even"> <a href="#"><img class="images" src="image/pique-nique.jpg" alt="even_pique-nique"><br/> <span class="text_image">Paris, en famille</span> </a> </p>
-				<p class="even"> <a href="#"><img class="images" src="image/DIRTY-DANCING-TOURNEE.jpg" alt="even_dirty-dancing_tournee"><br/> <span class="text_image">Lille, entre amis</span></a> </p>
-				<p class="even"> <a href="#"><img class="images" src="image/couple-a-velo.jpg" alt="even_balade_?_velo"><br/> <span class="text_image">Nice en amoureux</span></a> </p>
-			  <div class="spacer"> </div>
-			</div>
+       <div class ="conteneur">
+      <?php include('../model/trouver_even_M.php');  
+           $i=1;
+           while($i<=$_SESSION['nb']){
+        /*$_SESSION['n_even']=$i;  Pour reconnaitre l'evenement dans la page even_V */
+               if(isset($_SESSION['photo_even'.$i])){ ?>
+           <div class="even"> <a href="even_V.php?nb=<?php echo $i?>" >
+           <img class="images" src="<?php echo $_SESSION['photo_even'.$i] ?>" alt="photo de l'évènement"><p class="text_image"><?php echo $_SESSION['nom_even'.$i]?></p> </a> </div>
+        <?php } else { ?>
+          <div class="even"> <a href="even_V.php?nb=<?php echo $i?>" >
+           <img class="images" src="image/point-d-interrogation2.jpg" alt="photo de l'évènement"><p class="text_image"><?php echo $_SESSION['nom_even'.$i]?></p> </a> </div>
+            <?php }
+            $i++; 
+            }
+            ?>
+        <div class="spacer"> </div>
+       </div>
 
 			<div id = "recherche_avance"> <p> Recherche avancées <br/>
 					<mark id ="app">Appuyer ici</mark> </p>
 			</div>
 
-
-	<?php include("pied_de_page.php"); ?>
-
-	</body>
+        <?php
+        include("pied_de_page.php"); ?>
+        </body>
 
 
 </html>

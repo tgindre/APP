@@ -3,7 +3,6 @@ $i=1;
 if(isset($_POST['recherche_av'])){
     $_SESSION['type']='recherche';
         foreach($_POST as $cle => $element){
-            echo $cle.'-'.$element.'<- <br/>';
             $_POST[$cle]='%'.$element.'%';
         }
         $req = $bdd->prepare('SELECT *  FROM evenement WHERE nom_even LIKE :nom AND (adresse_even LIKE :lieu OR ville_even LIKE :lieu) AND type_even LIKE :type_even AND type_public LIKE :type_public AND (date_debut LIKE :date OR date_fin LIKE :date) ORDER BY ID_even DESC');
@@ -36,8 +35,8 @@ if(isset($_POST['recherche_av'])){
   header('Location: ../vue/trouver_even_V.php');
 
 } else{
-echo 'pas de post du formulaire recherche av';
-$even = $bdd->query('SELECT *  FROM evenement ORDER BY ID_even DESC LIMIT 0, 10');
+/*echo 'pas de post du formulaire recherche av';*/
+$even = $bdd->query('SELECT *  FROM evenement ORDER BY ID_even DESC LIMIT 0,'.$nb_even);
 while ($donnees = $even->fetch()){
         $_SESSION['id_even'.$i] = $donnees['ID_even'];
         $_SESSION['nom_even'.$i] = $donnees['nom_even'];
