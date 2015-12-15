@@ -129,7 +129,7 @@
             
         }
 ?>
-        <h1>Evènement crée</h1>
+        <h1>Evènement créé</h1>
            
 <?php        include('../model/profil_M.php');
         

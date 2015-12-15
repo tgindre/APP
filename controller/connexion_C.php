@@ -4,8 +4,9 @@ if(isset($_POST['connexion'])){
     //vérifie qu'on a appuyer sur le bouton de connexion
     if($nb['nb']>0){
         //vérifie que le pseudo existe
-        if($_POST['password'] == $connect['pass']){
-            //vérifie que le mot de passe taper correspond au mot de passe associé au pseudo dans la bdd
+        $pass_hache2 = sha1('gz' . htmlspecialchars($_POST['password']));// hachage du mot de passe passe entré
+        if($pass_hache2 == $connect['pass']){
+            //vérifie que le mot de passe tapé haché correspond au mot de passe haché associé au pseudo dans la bdd
             $success = 'true';
             $_SESSION['pseudo'] = $connect['pseudo'];
             $_SESSION['id']=$connect['ID_utilisateur'];

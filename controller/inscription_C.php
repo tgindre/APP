@@ -4,6 +4,7 @@
 include('../model/model.php');
 if(isset($_POST['inscr'])){
     if($_POST['password'] == $_POST['password_verif']) {
+        $pass_hache = sha1('gz' . htmlspecialchars($_POST['password']));// Hachage du mot de passe pour le crypter
         if ($_POST['genre']=='Femme'){
             $genre=True;
         } else {
@@ -11,7 +12,7 @@ if(isset($_POST['inscr'])){
         }
         $admin=False;
         $insert=$bdd->prepare("INSERT INTO utilisateur (mail, pass, nom, prenom, pseudo,date_n, adresse, code_postal, ville, pays, sexe, administrateur) VALUES (?, ?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        if ($insert->execute(array($_POST['mail'], $_POST['password'], $_POST['nom'], $_POST['prenom'], $_POST['pseudo'], $_POST['date'], $_POST['adresse'], $_POST['code_postal'],$_POST['ville'], $_POST['pays'], $genre, $admin))){
+        if ($insert->execute(array($_POST['mail'], $pass_hache, $_POST['nom'], $_POST['prenom'], $_POST['pseudo'], $_POST['date'], $_POST['adresse'], $_POST['code_postal'],$_POST['ville'], $_POST['pays'], $genre, $admin))){
         $_SESSION['mail'] = $_POST['mail']; 
         $_SESSION['nom'] = $_POST['nom'];
         $_SESSION['prenom'] = $_POST['prenom']; 
