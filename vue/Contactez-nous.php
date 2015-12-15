@@ -7,19 +7,12 @@
 
 	</head>
 	<body>
-	<header>
-		<ul class="menu">
-			<li><a href="#"><span class="tiret">|</span> Accueil <span class="tiret">|</span></a></li>
-			<li><a href="#">Trouver un évènement <span class="tiret">|</span></a></li>
-			<li><a href="#">Proposer un évènement <span class="tiret">|</span></a></li>
-			<li><a href="#">Aide <span class="tiret">|</span></a></li>
-			<li><a href="#">Nous contacter <span class="tiret">|</span></a></li>
-		</ul>
-	</header>
-	
+
+<?php include("entete.php"); ?>
+            
 <div id="fond"> 
 	<p class="contact"> Dites-nous si vous avez une question ou besoin d'un conseil ! </p> 	
-	<form method="poste" action="traitement php"
+        <form method="POST" action="traitement php">
 	<p>
 		<label for="ameliorer">
 		Sujet
@@ -28,8 +21,7 @@
 		
 		<textarea name="sujet" rows="2" cols="50">
 		</textarea>
-	</form>
-	<form method="poste" action="traitement php"
+        </p>
 	<p>
 		<label for="ameliorer">
 		Votre mail
@@ -38,8 +30,7 @@
 		
 		<textarea name="sujet" rows="2" cols="50">
 		</textarea>
-	</form>
-	<form method="poste" action="traitement php"
+        </p>       
 	<p>
 		<label for="ameliorer">
 		Message
@@ -48,24 +39,15 @@
 		
 		<textarea name="sujet" rows="12" cols="50">
 		</textarea>
-	</form>
-	<input type="checkbox" name="Copie" id="copie" /> <label for="copie">J'aimerais recevoir une copie de mon message</label></br>
+        </p>
+        <input type="checkbox" name="Copie" id="copie" /> <label for="copie">J'aimerais recevoir une copie de mon message</label></br>
 	<input class="envoyer" type="submit" name="envoyer" value="envoyer"/></br>
+        </form>
 </div>
 		
 	
 <div id = "recherche_avancé"> <p> Recherche avancée <br/>
 <mark id ="app"> &nbsp&nbspAppuyer ici&nbsp&nbsp </mark> </p>
 </div>
+            <?php include("pied_de_page.php")?>
 	</body>
-	<footer>
-					<img id="logoID" src ="image/logo.jpg" alt="Logo sharetime">
-	<ul class="menu">
-			<li><a href="#"><span class="tiret">|</span> Qui sommes-nous? <span class="tiret">|</span></a></li>
-			<li><a href="#">Fonctionnalités <span class="tiret">|</span></a></li>
-			<li><a href="#">Forum <span class="tiret">|</span></a></li>
-			<li><a href="#">Conditions générales et confidentialité <span class="tiret">|</span></a></li>
-	</ul>
-<p id="réseaux_sociaux"> Rejoignez-nous sur : </p>
-
-	</footer>
