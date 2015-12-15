@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <title> Sharetime</title>
+        <title>Sharetime</title>
         <link rel="stylesheet" href="style_APP.css"/>
     </head>
     <body>
@@ -129,32 +129,36 @@
             
         }
 ?>
-        <h1>Evènement créé</h1>
            
 <?php        include('../model/profil_M.php');
         
         $i=1;
-           while($i<=$_SESSION['nb']){
-           $_SESSION['n_even']=$i; ?>
-           <div class ="trouver_even">
-               <a href="even_V.php?nb=<?php echo $i?>" >
-       <?php
-       echo'<div class="nom_even">'.htmlentities($_SESSION['ville_even'.$i]) .'</div>';
+        if (isset($_SESSION['nb'])){
+            echo '<h1 class="profil">Evènement créé</h1>' ;
+            while($i<=$_SESSION['nb']){
+            $_SESSION['n_even']=$i; ?>
+            <div class ="trouver_even">
+                <a href="even_V.php?nb=<?php echo $i?>" >
+            <?php
+            echo'<div class="nom_even">'.htmlentities($_SESSION['ville_even'.$i]) .'</div>';
         
-        if(isset($_SESSION['photo_even'.$i])){ ?>
+            if(isset($_SESSION['photo_even'.$i])){ ?>
         
-        <div class="image_profil">
+            <div class="image_profil">
                 <img src ="<?php echo $_SESSION['photo_even'.$i] ?>" alt="Photo de profil">
-        </div>
-        <?php } else { ?>
-        <div class="image_profil">
+            </div>
+            <?php } else { ?>
+            <div class="image_profil">
                 <img src ="image/point-d-interrogation2.jpg" alt="?">
-        </div>
-            <?php }
-              echo '<p class="profil">' . htmlentities($_SESSION['nom_even'.$i]) .'<br/> '.htmlentities($_SESSION['description'.$i]).'<br/> '.htmlentities($_SESSION['adresse_even'.$i]).'</p>';
-              $i++; ?>
-           </a></div>
+            </div>
+                <?php }
+                echo '<p class="profil">' . htmlentities($_SESSION['nom_even'.$i]) .'<br/> '.htmlentities($_SESSION['description'.$i]).'<br/> '.htmlentities($_SESSION['adresse_even'.$i]).'</p>';
+                $i++; ?>
+            </a></div>
         <?php
+        }}
+        else {
+            echo '<h1 class="profil">Aucun évènement créé</h1>' ;
         }
              include("pied_de_page.php"); ?>
        </body>
