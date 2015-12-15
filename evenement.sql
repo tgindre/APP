@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 03 Décembre 2015 à 22:41
+-- Généré le :  Mar 15 Décembre 2015 à 14:52
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -31,6 +31,7 @@ CREATE TABLE IF NOT EXISTS `evenement` (
   `ID_createur` int(11) NOT NULL,
   `nom_even` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
+  `type_even` varchar(255) NOT NULL,
   `adresse_even` varchar(255) NOT NULL,
   `ville_even` varchar(255) NOT NULL,
   `type_public` varchar(255) NOT NULL,
@@ -43,14 +44,19 @@ CREATE TABLE IF NOT EXISTS `evenement` (
   `image` varchar(255) NOT NULL,
   `lien` varchar(255) NOT NULL,
   PRIMARY KEY (`ID_even`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
 -- Contenu de la table `evenement`
 --
 
-INSERT INTO `evenement` (`ID_even`, `ID_createur`, `nom_even`, `description`, `adresse_even`, `ville_even`, `type_public`, `date_debut`, `date_fin`, `horaire`, `tarif_min`, `tarif_max`, `nb_participants`, `image`, `lien`) VALUES
-(1, 4, 'Grande Réponse', 'Pensée profonde donne la réponse à la Question sur la vie l''univers, et le reste', '', 'Terre', 'Tous', '0000-00-00', '0000-00-00', '19h30-20h', 0, 0, 2147483647, '', '');
+INSERT INTO `evenement` (`ID_even`, `ID_createur`, `nom_even`, `description`, `type_even`, `adresse_even`, `ville_even`, `type_public`, `date_debut`, `date_fin`, `horaire`, `tarif_min`, `tarif_max`, `nb_participants`, `image`, `lien`) VALUES
+(1, 4, 'Grande Réponse', 'Pensée profonde donne la réponse à la Question sur la vie l''univers, et le reste', '', '', 'Terre', 'Tous', '0000-00-00', '0000-00-00', '19h30-20h', 0, 0, 2147483647, '../vue/image/even/1.jpg', ''),
+(7, 15, 'Iron squid', 'Tournoi de SC2', '', '6 Passage Thiéré', 'Paris', 'Tous', '12/12/2015', '14/12/2015', '19h30-20h', 0, 0, 0, '../vue/image/even/7.jpg', ''),
+(9, 8, 'Iron squid', '', '', '', '', '', '', '', '', 0, 0, 0, '../vue/image/even/9.jpg', ''),
+(10, 8, 'la nuit des longs couteaux', 'révolution', '', 'la bastille', 'Paris', 'Tous', '', '', '', 0, 0, 0, '../vue/image/even/10.jpg', ''),
+(11, 15, 'kayak', 'Sortie en kayak et pique-nique sur une ile', '', '', 'Lannion', 'Tous', '', '', '', 0, 0, 0, '../vue/image/even/11.jpg', ''),
+(12, 15, 'kayak', 'sortie en kayak et pique nique sur une ile', '', '', 'Lannion', 'Tous', '', '', '', 0, 0, 0, '../vue/image/even/12.jpg', '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
