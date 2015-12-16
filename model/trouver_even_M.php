@@ -14,6 +14,7 @@ if(isset($_POST['recherche_av'])){
             'type_even' => $_POST['type_even'])
                 );
         while ($donnees = $req->fetch()){
+        $_SESSION['id_createur'.$i] = $donnees['ID_createur'];
         $_SESSION['id_even'.$i] = $donnees['ID_even'];
         $_SESSION['nom_even'.$i] = $donnees['nom_even'];
         $_SESSION['description'.$i] = $donnees['description'];
@@ -38,6 +39,7 @@ if(isset($_POST['recherche_av'])){
 /*echo 'pas de post du formulaire recherche av';*/
 $even = $bdd->query('SELECT *  FROM evenement ORDER BY ID_even DESC LIMIT 0,'.$nb_even);
 while ($donnees = $even->fetch()){
+        $_SESSION['id_createur'.$i] = $donnees['ID_createur'];
         $_SESSION['id_even'.$i] = $donnees['ID_even'];
         $_SESSION['nom_even'.$i] = $donnees['nom_even'];
         $_SESSION['description'.$i] = $donnees['description'];

@@ -47,7 +47,7 @@
 		
 	
 <div id = "recherche_avancé"> <p> Recherche avancée <br/>
-<mark id ="app"> &nbsp&nbspAppuyer ici&nbsp&nbsp </mark> </p>
+<mark id ="app"> Appuyer ici </mark> </p>
 </div>
-            <?php include("pied_de_page.php")?>
+   <?php include("pied_de_page.php")?>
 	</body>
