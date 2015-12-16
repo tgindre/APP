@@ -339,12 +339,12 @@ footer{
 
 .images {
 	display :inline-block;
-	height : 200px;
+	height : 150px;
 	}
 .text_image {
 	text-align : center;
-	padding-left : 100px;
-	padding-right : 100px;
+	padding-left : 20px;
+	padding-right : 20px;
 	background-color : #ff8410;
 }
 
@@ -463,6 +463,7 @@ label {
     font-size : 16px;
     width: 422px;
     font-family: arial, serif;
+    margin:5px;
     
 }
 
@@ -502,7 +503,7 @@ label {
     font-size : 20px;
     padding-left:20px;
     padding-right:20px;
-    width : 55px;
+    width : 77px;
 }
 
 /* page trouver evenement*/
@@ -517,3 +518,26 @@ label {
     margin-left : 2%;
     margin-bottom: 2%;
 }
+
+/* page condition generale */
+
+.cou1{
+	font-size: 2em;
+	font-family: Comic Sans MS;
+	color: black;
+	font-style: italic;
+	font-weight: bold;
+	text-decoration: underline;
+	
+}
+.texgrand{
+	font-size: large; 
+	color:black;
+	text-decoration: underline;
+	font-style: italic;
+	font-weight: bold;
+}
+
+
+
+

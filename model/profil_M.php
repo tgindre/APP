@@ -4,6 +4,7 @@ $even_cree->bindParam('id', $_SESSION['id'], PDO::PARAM_INT);
 $even_cree->execute();
 $i=1;
 while ($donnees = $even_cree->fetch(PDO::FETCH_ASSOC)){
+        $_SESSION['id_createur'.$i] = $donnees['ID_createur'];
         $_SESSION['id_even'.$i] = $donnees['ID_even'];
         $_SESSION['nom_even'.$i] = $donnees['nom_even'];
         $_SESSION['description'.$i] = $donnees['description']; 

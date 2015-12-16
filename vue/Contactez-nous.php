@@ -7,11 +7,17 @@
 
 	</head>
 	<body>
+<<<<<<< HEAD
 	<?php include("entete.php"); ?>
 	
+=======
+
+<?php include("entete.php"); ?>
+            
+>>>>>>> origin/master
 <div id="fond"> 
 	<p class="contact"> Dites-nous si vous avez une question ou besoin d'un conseil ! </p> 	
-	<form method="poste" action="traitement php"
+        <form method="POST" action="traitement php">
 	<p>
 		<label for="ameliorer">
 		Sujet
@@ -20,8 +26,7 @@
 		
 		<textarea name="sujet" rows="2" cols="50">
 		</textarea>
-	</form>
-	<form method="poste" action="traitement php"
+        </p>
 	<p>
 		<label for="ameliorer">
 		Votre mail
@@ -30,8 +35,7 @@
 		
 		<textarea name="sujet" rows="2" cols="50">
 		</textarea>
-	</form>
-	<form method="poste" action="traitement php"
+        </p>       
 	<p>
 		<label for="ameliorer">
 		Message
@@ -40,12 +44,14 @@
 		
 		<textarea name="sujet" rows="12" cols="50">
 		</textarea>
-	</form>
-	<input type="checkbox" name="Copie" id="copie" /> <label for="copie">J'aimerais recevoir une copie de mon message</label></br>
+        </p>
+        <input type="checkbox" name="Copie" id="copie" /> <label for="copie">J'aimerais recevoir une copie de mon message</label></br>
 	<input class="envoyer" type="submit" name="envoyer" value="envoyer"/></br>
+        </form>
 </div>
 		
 	
+<<<<<<< HEAD
 
 	<footer>
 					<img id="logoID" src ="image/logo.jpg" alt="Logo sharetime">
@@ -59,3 +65,10 @@
 
 	</footer>
 		</body>
+=======
+<div id = "recherche_avancé"> <p> Recherche avancée <br/>
+<mark id ="app"> Appuyer ici </mark> </p>
+</div>
+   <?php include("pied_de_page.php")?>
+	</body>
+>>>>>>> origin/master

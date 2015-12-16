@@ -22,9 +22,10 @@
               }
               if(!isset($_GET['modifier'])){
         echo'<div class="nom_even">'.htmlentities($_SESSION['ville_even'.$i]) .'</div>';
-        
-        if(isset($_SESSION['photo_even'.$i])){ ?>
-        
+        if(!isset($_SESSION['id'])){$_SESSION['id']=-1;}
+        if($_SESSION['id_createur'.$i]==$_SESSION['id']){
+        if(isset($_SESSION['photo_even'.$i])){
+        ?>
         <div class="image_profil">
             <p><a href="even_V.php?modifier='0'&nb=<?php echo $i?>">Modifier</a><br/>
                 <img src ="<?php echo $_SESSION['photo_even'.$i] ?>" alt="Photo de l'evenement"></p>
@@ -39,7 +40,21 @@
         <?php }
               echo '<p class="profil">' . htmlentities($_SESSION['nom_even'.$i]) .'<br/> '.htmlentities($_SESSION['description'.$i]).'<br/>'.htmlentities($_SESSION['type_even'.$i]).'<br/> '.htmlentities($_SESSION['adresse_even'.$i]).'</p>'; 
               echo '<p class="profil"> Type de public '.htmlentities($_SESSION['type_public'.$i]).'<br/> ' . htmlentities($date) .'<br/> Horaire '.htmlentities($_SESSION['horaire'.$i]). '<br/> Tarif : '.htmlentities($tarif).'<br/> Nombre de place : '.htmlentities($_SESSION['nb_participants'.$i]).'<br/> </p>';
-              } else {
+        } else{
+           if(isset($_SESSION['photo_even'.$i])){
+        ?>
+        <div class="image_profil">
+            <p><img src ="<?php echo $_SESSION['photo_even'.$i] ?>" alt="Photo de l'evenement"></p>
+        </div>
+        <?php } else { ?>
+        <div class="image_profil">
+            <p><img src ="image/point-d-interrogation2.jpg" alt="?"></p>
+        </div>
+         <?php }
+              echo '<p class="profil">' . htmlentities($_SESSION['nom_even'.$i]) .'<br/> '.htmlentities($_SESSION['description'.$i]).'<br/>'.htmlentities($_SESSION['type_even'.$i]).'<br/> '.htmlentities($_SESSION['adresse_even'.$i]).'</p>'; 
+              echo '<p class="profil"> Type de public '.htmlentities($_SESSION['type_public'.$i]).'<br/> ' . htmlentities($date) .'<br/> Horaire '.htmlentities($_SESSION['horaire'.$i]). '<br/> Tarif : '.htmlentities($tarif).'<br/> Nombre de place : '.htmlentities($_SESSION['nb_participants'.$i]).'<br/> </p>';
+        }
+        } else {
               switch ($_GET['modifier']) {
         case 0: ?>
         <form method="post" action="../controller/modif_even_C.php" enctype="multipart/form-data">
