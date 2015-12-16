@@ -7,15 +7,7 @@
 
 	</head>
 	<body>
-	<header>
-		<ul class="menu">
-			<li><a href="#"><span class="tiret">|</span> Accueil <span class="tiret">|</span></a></li>
-			<li><a href="#">Trouver un évènement <span class="tiret">|</span></a></li>
-			<li><a href="#">Proposer un évènement <span class="tiret">|</span></a></li>
-			<li><a href="#">Aide <span class="tiret">|</span></a></li>
-			<li><a href="#">Nous contacter <span class="tiret">|</span></a></li>
-		</ul>
-	</header>
+	<?php include("entete.php"); ?>
 	
 <div id="fond"> 
 	<p class="contact"> Dites-nous si vous avez une question ou besoin d'un conseil ! </p> 	
@@ -54,10 +46,7 @@
 </div>
 		
 	
-<div id = "recherche_avancé"> <p> Recherche avancée <br/>
-<mark id ="app"> &nbsp&nbspAppuyer ici&nbsp&nbsp </mark> </p>
-</div>
-	</body>
+
 	<footer>
 					<img id="logoID" src ="image/logo.jpg" alt="Logo sharetime">
 	<ul class="menu">
@@ -69,3 +58,4 @@
 <p id="réseaux_sociaux"> Rejoignez-nous sur : </p>
 
 	</footer>
+		</body>
