@@ -7,7 +7,7 @@
                     <input class="information" type="text" name="nom" placeholder="Nom"/>
                     <input class="information" type="text" name="prenom" placeholder="prenom"/><br/>
                     Date de naissance : <br/> <input class="information" type="text" name="date" placeholder="jj/mm/aaaa"/><br/>
-                    <input class="inscriptions" type="radio" name="genre" value="Femme"/>Femme<input class="inscriptions" type="radio" name="genre" value="Homme"/>Homme<br/>
+                    <input class="inscriptions" type="radio" name="genre" value="Femme"/>Femme<input class="inscriptions" type="radio" name="genre" value="Homme" checked="checked"/>Homme<br/>
                     <input id="pseudo" class="information" type="text" name="pseudo" placeholder="Pseudo"/>
                     <input id="email" class="information" type="email" name="mail" placeholder="Email"/><br/>
                     <input id="mdp" class="information" type="password" name="password" placeholder="Mot de passe"/>
