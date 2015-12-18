@@ -1,12 +1,10 @@
 <?php
 // Femme == true ; Homme == false;
 
-//include('../model/model.php');
-
 if(isset($_POST['inscr']))
 {
     include('../model/inscription_M.php');
-    if($resultat['mail'] == $_POST['mail'])
+    if($resultat)
     {
         $error =3;
         header('Location: ../vue/inscription_V.php?erreur='.$error);
