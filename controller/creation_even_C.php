@@ -5,7 +5,7 @@ include('../model/cree_bdd.php');
 
 if (isset($_POST['creation_even'])) {
         $rep=creation_even($_SESSION['id'] ,$_POST['nom_even'], $_POST['description'], $_POST['type_even'] , $_POST['adresse_even'], $_POST['ville_even'], $_POST['type_public'], $_POST['date_debut'], $_POST['date_fin'], $_POST['horaire'], $_POST['tarif_min'], $_POST['tarif_max'], $_POST['nb_place']); 
-        if(rep){
+        if($rep){
         $i=0;
         $nom_even=$_POST['nom_even'];
         $donnees= select_evenement_cree('nom_even',$nom_even);
@@ -31,7 +31,6 @@ if (isset($_POST['creation_even'])) {
             $error = 2;
             header('Location: ../vue/creation_even_V.php?erreur=' . $error);
         }
-        $insert->closeCursor();
     } else {
         $error = 1;
         header('Location: ../vue/inscription_V.php?erreur='. $error);
