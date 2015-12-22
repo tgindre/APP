@@ -1,17 +1,13 @@
-<?php include('../model/model.php');
+<?php 
+include('../model/modif_bdd.php');
+include('../model/select_bdd.php');
 if(isset($_POST['recherche'])){
     $i=1;
     $_SESSION['type']='recherche';
         foreach($_POST as $cle => $element){
             $_POST[$cle]='%'.$element.'%';
         }
-
-        $req = $bdd->prepare('SELECT *  FROM evenement WHERE (adresse_even LIKE :lieu OR ville_even LIKE :lieu) AND type_even LIKE :type_even AND (date_debut LIKE :date OR date_fin LIKE :date) ORDER BY ID_even DESC');
-        $req->execute(array(      
-            'lieu' => $_POST['lieu'],
-            'date' => $_POST['date'],
-            'type_even' => $_POST['type_even'])
-                );
+        $req =recherche($_POST['lieu'],$_POST['date'],$_POST['type_even']);
        while ($donnees = $req->fetch()){
         $_SESSION['id_createur'.$i] = $donnees['ID_createur'];
         $_SESSION['id_even'.$i] = $donnees['ID_even'];

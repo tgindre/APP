@@ -21,9 +21,9 @@
         /*$_SESSION['n_even']=$i;  Pour reconnaitre l'evenement dans la page even_V */?>
            <div class ="trouver_even">
            <a href="even_V.php?nb=<?php echo $i?>" >
-       <?php echo'<div class="nom_even">'.htmlentities($_SESSION['ville_even'.$i]) .'</div>';
+       <?php echo'<div><span class="nom_even">'.htmlentities($_SESSION['ville_even'.$i]) .'</span></div>';
         
-        if(isset($_SESSION['photo_even'.$i])){ ?>
+        if(isset($_SESSION['photo_even'.$i])&& $_SESSION['photo_even'.$i]!=''){ ?>
         
         <div class="image_profil">
                 <img src ="<?php echo $_SESSION['photo_even'.$i] ?>" alt="Photo de l'evenement">

@@ -10,7 +10,7 @@
               include("entete.php");
               include('nom.php');
         if(!isset($_GET['modifier'])){
-        if(isset($_SESSION['photo'])){ ?>
+        if(isset($_SESSION['photo']) && $_SESSION['photo']!=''){ ?>
         
         <div class="image_profil">
             <p><img src ="<?php echo $_SESSION['photo'] ?>" alt="Photo de profil"><span class='modifier'><a href="profil_V.php?modifier='0'">Modifier</a></span></p>
@@ -70,7 +70,7 @@
                 case 5: ?>
                 <div id="creation_even">
                 <form name="inscription" method="post" action="../controller/modif_profil_C.php">
-                    <label class="creation">Date de naissance : </label><input class="creation" type="text" name="date" placeholder="jj/mm/aaaa"/><br/>
+                    <label class="creation">Date de naissance : </label><input class="creation" type="text" name="date" /><br/>
                     <input class="valider" type="submit" name="modifier_date_n" value="modifier"/><br/>
                 </form>
             </div> <?php    
@@ -99,7 +99,7 @@
                 </form>
             </div> <?php    
         break;
-                case 8: ?>
+                case 9: ?>
                 <div id="creation_even">
                 <form name="inscription" method="post" action="../controller/modif_profil_C.php">
                     <label class="creation">Pays :</label><input class="creation" type="text" name="pays" placeholder="Pays"/><br/>
@@ -133,16 +133,16 @@
 <?php        include('../model/profil_M.php');
         
         $i=1;
-        if (isset($_SESSION['nb'])){
+        if (isset($even)){
             echo '<h1 class="profil">Evènement créé</h1>' ;
             while($i<=$_SESSION['nb']){
             $_SESSION['n_even']=$i; ?>
             <div class ="trouver_even">
                 <a href="even_V.php?nb=<?php echo $i?>" >
             <?php
-            echo'<div class="nom_even">'.htmlentities($_SESSION['ville_even'.$i]) .'</div>';
+            echo'<div><span class="nom_even">'.htmlentities($_SESSION['ville_even'.$i]) .'</span></div>';
         
-            if(isset($_SESSION['photo_even'.$i])){ ?>
+           if(isset($_SESSION['photo_even'.$i]) && $_SESSION['photo_even'.$i]!=''){ ?>
         
             <div class="image_profil">
                 <img src ="<?php echo $_SESSION['photo_even'.$i] ?>" alt="Photo de profil">

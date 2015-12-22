@@ -56,7 +56,7 @@
                     <label class="creation">type de public </label><input class="creation" type="text" name="type_public" placeholder="type de public"/><br/>
                     <label class="creation">Date de début : </label><input class="creation" type="text" name="date_debut"/><br/>
                     <label class="creation">Date de fin : </label><input class="creation" type="text" name="date_fin"/><br/>
-                    <label class="creation">Horaire de l'évènement: </label><input class="creation" type="text" name="horaire" placeholder="ex : 4h42 - 17h30"/><br/>               
+                    <label class="creation">Horaire de l'évènement : </label><input class="creation" type="text" name="horaire" placeholder="ex : 4h42 - 17h30"/><br/>               
                     <label class="creation">Tarif min : </label><input class="creation" type="number" name="tarif_min"/><br/>
                     <label class="creation">Tarif max : </label><input class="creation" type="number" name="tarif_max"/><br/>
                     <label class="creation">Nombre de place de l'évènement : </label><input class="creation" type="number" name="nb_place"/><br/>

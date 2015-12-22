@@ -21,6 +21,7 @@ while ($donnees = $even_cree->fetch(PDO::FETCH_ASSOC)){
         $_SESSION['photo_even'.$i] = $donnees['image'];
         $_SESSION['nb']=$i;
         $i++;
+        $even=true;
 }
 $even_cree->closeCursor();
 
