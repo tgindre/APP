@@ -36,7 +36,7 @@ if(isset($_POST['inscr']))
             $_SESSION['nom'] = $inscript['nom'];
             $_SESSION['prenom'] = $inscript['prenom'];
             $_SESSION['pseudo'] = $inscript['pseudo'];
-            $_SESSION['date_n'] = $inscript['date'];
+            $_SESSION['date_n'] = $inscript['date_n'];
             $_SESSION['adresse'] = $inscript['adresse'];
             $_SESSION['code_postal'] = $inscript['code_postal'];
             $_SESSION['ville'] = $inscript['ville'];
