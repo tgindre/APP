@@ -74,6 +74,7 @@
                     <label class="creation">type de public </label><input class="creation" type="text" name="type_public"/><br/>
                     <label class="creation">Lieu</label><input class="creation" type="text" name="lieu"/><br/>                    
                     <label class="creation">Date l'évènement : </label><input class="creation" type="text" name="date_even"/><br/>
+                    <input type="hidden" name="page" value=<?php echo htmlentities($_GET['page'])?> />
                     <input id="creation_valider" type="submit" name="recherche_av" value="recherche avancée"/>
                 </form>
                 </div>
