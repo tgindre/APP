@@ -44,7 +44,7 @@ if (isset($_POST['recherche_av']) || (isset($_GET['recherche']) && $_GET['recher
         $i++;
     }
 
-    header('Location: ../vue/trouver_even_V.php?nbp='.$nombreDePages.'&recherche='.$recherche.'&page='.$page);
+    header('Location: ../vue/gerer_even.php?nbp='.$nombreDePages.'&recherche='.$recherche.'&page='.$page);
 }  else {
    $nb = select_nb_evenement_def();
     $totalDesMessages = $nb['nb_messages'];

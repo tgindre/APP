@@ -14,7 +14,21 @@
                 <?php } ?>
             </div>
             <img id="nom" src ="image/nom.png" alt="sharetime">
-           <nav>
+         <?php  
+         if(isset($_SESSION['admin'])){ ?>
+             <nav>
+		<ul class="menu">
+			<li><a href="page_accueil.php"><span class="tiret">|</span> Accueil <span class="tiret">|</span></a></li>
+			<li><a href="trouver_even_V.php">Trouver un évènement <span class="tiret">|</span></a></li>
+			<li><a href="creation_even_V.php">Proposer un évènement <span class="tiret">|</span></a></li>
+			<li><a href="#">Aide <span class="tiret">|</span></a></li>
+			<li><a href="#">Forum  <span class="tiret">|</span></a></li>
+                        <li><a href="admin_V.php">Espace administrateur<span class="tiret">|</span></a></li>
+		</ul>
+                </nav>
+            
+         <?php } else { ?>
+            <nav>
 		<ul class="menu">
 			<li><a href="page_accueil.php"><span class="tiret">|</span> Accueil <span class="tiret">|</span></a></li>
 			<li><a href="trouver_even_V.php">Trouver un évènement <span class="tiret">|</span></a></li>
@@ -23,4 +37,5 @@
 			<li><a href="#">Forum  <span class="tiret">|</span></a></li>
 		</ul>
                 </nav>
+         <?php } ?>
 	</header>

@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="style_APP.css"/>
     </head>
        <body>
-           <?php include('entete.php');
+           <?php include('entete_admin.php');
            include('nom.php');
             if(!isset($nombreDePages)){
         if(isset($_GET['nbp'])){
@@ -19,7 +19,7 @@
     }
            $nb_even=10;
            $nombreParPage = 20;
-           $formulaire='recherche_avancée';
+           $formulaire='recherche_avancée_admin';
            if(!isset($_GET['page'])){
               $_GET['page']=1;
            }
@@ -40,7 +40,7 @@
         /*$_SESSION['n_even']=$i;  Pour reconnaitre l'evenement dans la page even_V */
                ?>
            <div class ="trouver_even">
-           <a href="even_V.php?nb=<?php echo $i?>" >
+           <a href="even_admin.php?nb=<?php echo $i?>" >
        <?php echo'<div><span class="nom_even">'.htmlentities($_SESSION['ville_even'.$i]) .'</span></div>';
         
         if(isset($_SESSION['photo_even'.$i])&& $_SESSION['photo_even'.$i]!=''){ ?>

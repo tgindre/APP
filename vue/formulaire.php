@@ -79,6 +79,20 @@
                 </form>
                 </div>
         
-   <?php }  else { }
+   <?php } if($formulaire=='recherche_avancée_admin'){ ?>
+         <div id="recherche_avancée">
+                <h1>Recherche d'évènement</h1>
+                <form name="creation_evenement" method="post" action="../controller/trouver_even_C_admin.php">
+                    <label class="creation">Nom de l'évènement :</label><input class="creation" type="text" name="nom_even"/><br/>
+                    <label class="creation">Type d'évènement </label><input class="creation" type="text" name="type_even"/><br/>
+                    <label class="creation">type de public </label><input class="creation" type="text" name="type_public"/><br/>
+                    <label class="creation">Lieu</label><input class="creation" type="text" name="lieu"/><br/>                    
+                    <label class="creation">Date l'évènement : </label><input class="creation" type="text" name="date_even"/><br/>
+                    <input type="hidden" name="page" value=<?php echo htmlentities($_GET['page'])?> />
+                    <input id="creation_valider" type="submit" name="recherche_av" value="recherche avancée"/>
+                </form>
+                </div>
+        
+   <?php } else { }
        
  

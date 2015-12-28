@@ -58,7 +58,7 @@ function select_evenement_def(){
     global $bdd;
     global $premierMessageAafficher;
     global $nombreParPage;
-    $select = $bdd->query('SELECT *  FROM evenement ORDER BY ID_even DESC LIMIT ' . $premierMessageAafficher . ', ' . $nombreParPage);
+    $select = $bdd->query('SELECT *  FROM evenement ORDER BY ID_even DESC');
     return($select);
 }
 
