@@ -43,7 +43,7 @@ function recherche_avancee($nom, $lieu, $date, $type_even, $type_public){
         global $bdd;
         global $premierMessageAafficher;
         global $nombreParPage;
-        $req = $bdd->prepare('SELECT *  FROM evenement WHERE nom_even LIKE :nom AND (adresse_even LIKE :lieu OR ville_even LIKE :lieu) AND type_even LIKE :type_even AND type_public LIKE :type_public AND (date_debut LIKE :date OR date_fin LIKE :date) ORDER BY ID_even DESC LIMIT ' . $premierMessageAafficher . ', ' . $nombreParPage);
+        $req = $bdd->prepare('SELECT *  FROM evenement WHERE nom_even LIKE :nom AND (adresse_even LIKE :lieu OR ville_even LIKE :lieu) AND type_even LIKE :type_even AND type_public LIKE :type_public AND (date_debut LIKE :date OR date_fin LIKE :date) ORDER BY ID_even DESC');
         $req->execute(array(
             'nom' => $nom,
             'lieu' => $lieu,

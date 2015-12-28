@@ -10,22 +10,32 @@
        <body>
            <?php include('entete.php');
            include('nom.php');
+            if(!isset($nombreDePages)){
+        if(isset($_GET['nbp'])){
+            $nombreDePages=$_GET['nbp'];
+        } else {
+            $nombreDePages=1;
+        }
+    }
            $nb_even=10;
+           $nombreParPage = 1;
            $formulaire='recherche_avancée';
            if(!isset($_GET['page'])){
               $_GET['page']=1;
            }
-           if(!isset($_GET['recherche'])){
+          if(!isset($_GET['recherche'])){
                $_GET['recherche']=false;
            }
-               
+           $derniereven=($_GET['page'])*$nombreParPage;  
+           $premiereven=($_GET['page']-1)*$nombreParPage+1;
            include('formulaire.php');
-           if(!(isset($_GET['rech_av']) && $_GET['rech_av'])){
-               echo '$_GET[\'rech_av\']';
+           
+           if(!(isset($_GET['recherche']) && $_GET['recherche'])){
+               echo 'pas de recheche';
            include('../controller/trouver_even_C.php');
            }
-           $i=1;
-           while($i<=$_SESSION['nb']){
+           $i=$premiereven;
+           while($i<=$derniereven){
         /*$_SESSION['n_even']=$i;  Pour reconnaitre l'evenement dans la page even_V */
                ?>
            <div class ="trouver_even">
@@ -50,18 +60,12 @@
            <p class="pages">
         
 <?php
- if(!isset($nombreDePages)){
-    if(isset($_GET['nbp'])){
-        $nombreDePages=$_GET['nbp'];
-    } else {
-        $nombreDePages=1;
-    }
-}
+
 
 echo 'Page : ';
 
 for ($p = 1 ; $p <= $nombreDePages ; $p++){ ?>
-    <a href='trouver_even_V.php?page= <?php echo $p?>&nbp=<?php echo $nombreDePages?>&recherche='<?php echo $_GET['recherche']?> > <?php echo $p ?>  </a> 
+    <a href='trouver_even_V.php?page= <?php echo $p?>&nbp=<?php echo $nombreDePages?>&recherche=<?php echo $_GET['recherche']?>' > <?php echo $p ?>  </a> 
  
 <?php  }
 
