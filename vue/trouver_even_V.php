@@ -15,10 +15,13 @@
            if(!isset($_GET['page'])){
               $_GET['page']=1;
            }
+           if(!isset($_GET['recherche'])){
+               $_GET['recherche']=false;
+           }
                
            include('formulaire.php');
-           if(!(isset($_GET['recherche']) && $_GET['recherche'])){
-               echo 'pas de recherche';
+           if(!(isset($_GET['rech_av']) && $_GET['rech_av'])){
+               echo '$_GET[\'rech_av\']';
            include('../controller/trouver_even_C.php');
            }
            $i=1;
