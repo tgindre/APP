@@ -17,9 +17,8 @@
             $nombreDePages=1;
         }
     }
-           $nb_even=10;
            $nombreParPage = 20;
-           $formulaire='recherche_avancée_admin';
+           $formulaire='utilisateur_admin';
            if(!isset($_GET['page'])){
               $_GET['page']=1;
            }
@@ -33,27 +32,27 @@
            
            if(!(isset($_GET['recherche']) && $_GET['recherche'])){
                echo 'pas de recheche';
-           include('../controller/trouver_even_C_admin.php');
+           include('../controller/trouver_utilisateur_C_admin.php');
            }
            $i=$premiereven;
            while($i<=$derniereven){
         /*$_SESSION['n_even']=$i;  Pour reconnaitre l'evenement dans la page even_V */
                ?>
            <div class ="trouver_even">
-           <a href="even_admin.php?nb=<?php echo $i?>" >
-       <?php echo'<div><span class="nom_even">'.htmlentities($_SESSION['ville_even'.$i]) .'</span></div>';
+           <a href="profil_admin.php?nb=<?php echo $i?>" >
+       <?php echo'<div><span class="nom_even">'.htmlentities($_SESSION['pseudo'.$i]) .'</span></div>';
         
-        if(isset($_SESSION['photo_even'.$i])&& $_SESSION['photo_even'.$i]!=''){ ?>
+        if(isset($_SESSION['photo'.$i])&& $_SESSION['photo'.$i]!=''){ ?>
         
         <div class="image_profil">
-                <img src ="<?php echo $_SESSION['photo_even'.$i] ?>" alt="Photo de l'evenement">
+                <img src ="<?php echo $_SESSION['photo'.$i] ?>" alt="Photo de l'utilisateur">
         </div>
         <?php } else { ?>
         <div class="image_profil">
                 <img src ="image/point-d-interrogation2.jpg" alt="?">
         </div>
             <?php }
-              echo '<p class="profil">' . htmlentities($_SESSION['nom_even'.$i]) .'<br/> '.htmlentities($_SESSION['description'.$i]).'<br/> '.htmlentities($_SESSION['adresse_even'.$i]).'</p>'; 
+              echo '<p class="profil">' . htmlentities($_SESSION['nom'.$i]) .'<br/> '.htmlentities($_SESSION['prenom'.$i]).'<br/> '.htmlentities($_SESSION['ville'.$i]).'</p>'; 
             $i++; ?>
            </a></div>
         <?php } ?>

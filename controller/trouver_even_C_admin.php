@@ -2,7 +2,6 @@
 include('../model/model.php');
 include('../model/select_bdd.php');
 $nombreParPage = 20;
-$premierMessageAafficher = 0;
 $i = 1;
 
 if (isset($_POST['recherche_av']) || (isset($_GET['recherche']) && $_GET['recherche'])) {

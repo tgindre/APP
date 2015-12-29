@@ -93,6 +93,21 @@
                 </form>
                 </div>
         
-   <?php } else { }
+   <?php } if($formulaire=='utilisateur_admin'){ ?>
+         <div id="recherche_avancée">
+                <h1>Recherche d'utilisateur</h1>
+                <form name="creation_evenement" method="post" action="../controller/trouver_utilisateur_C_admin.php">
+                    <label class="creation">Nom de l'utilisateur :</label><input class="creation" type="text" name="nom"/><br/>
+                    <label class="creation">Prénom de l'utilisateur : </label><input class="creation" type="text" name="prenom"/><br/>
+                    <label class="creation">Pseudo de l'utilisateur :</label><input class="creation" type="text" name="pseudo"/><br/>
+                    <label class="creation">Email de l'utilisateur : </label><input class="creation" type="email" name="mail"/><br/>                    
+                    <label class="creation">Lieu </label><input class="creation" type="text" name="lieu"/><br/>
+                    <input type="hidden" name="page" value=<?php echo htmlentities($_GET['page'])?> />
+                    <input id="creation_valider" type="submit" name="utilisateur" value="recherche avancée"/>
+                </form>
+                </div>
+        
+   <?php }
+   else { }
        
  

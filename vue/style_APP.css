@@ -541,6 +541,18 @@ label {
 	font-weight: bold;
 }
 
+/* Espace administrateur */
+#admin_admin_liste li {
+    margin-top : 10px;
+}
 
+#description_admin{
+	display : inline-block;
+	font-size : 2em;
+}
 
+#slogan_description_admin{
+    color: #f16a99;
+    font-size : 2em;
+}
 

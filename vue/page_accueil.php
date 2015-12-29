@@ -8,6 +8,7 @@
 	</head>
 	<body>
     <?php $formulaire= 'recherche'; 
+    $page_accueil=true;
     include("entete.php"); 
     include("bandeau.php");
     $nb_even=3;?>
@@ -25,7 +26,7 @@
 	<p id = "slogan3" > Trouvez votre bonheur en recherchant dans le fil d'actualité l'évènement, près de chez vous, qui vous correspond </p>
 
        <div class ="conteneur">
-      <?php include('../model/trouver_even_M.php');  
+      <?php include('../controller/trouver_even_C.php');
            $i=1;
            while($i<=$_SESSION['nb']){
         /*$_SESSION['n_even']=$i;  Pour reconnaitre l'evenement dans la page even_V */
