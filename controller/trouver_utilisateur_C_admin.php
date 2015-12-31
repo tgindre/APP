@@ -4,7 +4,7 @@ include('../model/select_bdd.php');
 $nombreParPage = 20;
 $i = 1;
 
-if (isset($_POST['utilisateur']) || (isset($_GET['recherche']) && $_GET['recherche'])) {
+if (isset($_POST['utilisateur'])) {
     $recherche =true;
     
     if (isset($_POST['page'])) {

@@ -17,15 +17,15 @@
         if(isset($_SESSION['photo'.$i]) && $_SESSION['photo'.$i]!=''){ ?>
         
         <div class="image_profil">
-            <p><img src ="<?php echo $_SESSION['photo'.$i] ?>" alt="Photo de profil"><span class='modifier'><a href="profil_admin.php?modifier='0'">Modifier</a></span></p>
+            <p><img src ="<?php echo $_SESSION['photo'.$i] ?>" alt="Photo de profil"><span class='modifier'><a href="profil_admin.php?modifier='0'&nb=<?php echo $i?>">Modifier</a></span></p>
         </div>
         <?php } else { ?>
         <div class="image_profil">
-            <p><img src ="image/point-d-interrogation2.jpg" alt="?"> <span class='modifier'><a href="profil_admin.php?modifier='0'">Modifier</a></span></p>
+            <p><img src ="image/point-d-interrogation2.jpg" alt="?"> <span class='modifier'><a href="profil_admin.php?modifier='0'&nb=<?php echo $i?>">Modifier</a></span></p>
         </div>
         <?php }
-              echo '<p class="profil"> Pseudo : ' . htmlentities($_SESSION['pseudo'.$i]) .' <span class=\'modifier\'><a href="profil_admin.php?modifier=1">Modifier</a></span><br/> Email : '.htmlentities($_SESSION['mail'.$i]).' <span class=\'modifier\'><a href="profil_admin.php?modifier=2">Modifier</a></span><br/> Nom : '. htmlentities($_SESSION['nom'.$i]) . ' <span class=\'modifier\'><a href="profil_admin.php?modifier=3">Modifier</a></span><br/> Prénom : '.htmlentities($_SESSION['prenom'.$i]).'<span class=\'modifier\'><a href="profil_admin?modifier=4">Modifier</a></span><br/> Date de naissance : ' . htmlentities($_SESSION['date_n'.$i]) .' <span class=\'modifier\'><a href="profil_admin.php?modifier=5">Modifier</a></span></p>'; 
-              echo '<p class="profil"> Adresse : '.htmlentities($_SESSION['adresse'.$i]).' <span class=\'modifier\'><a href="profil_admin?modifier=6">Modifier</a></span><br/> Code postal : '. htmlentities($_SESSION['code_postal'.$i]) . ' <span class=\'modifier\'><a href="profil_admin.php?modifier=7">Modifier</a></span><br/> Ville : '.htmlentities($_SESSION['ville'.$i]).' <span class=\'modifier\'><a href="profil_admin.php?modifier=8">Modifier</a></span><br/> Pays : '.htmlentities($_SESSION['pays'.$i]).' <span class=\'modifier\'><a href="profil_admin.php?modifier=9">Modifier</a></span></p>';
+              echo '<p class="profil"> Pseudo : ' . htmlentities($_SESSION['pseudo'.$i]) .' <span class=\'modifier\'><a href="profil_admin.php?modifier=1&nb='.$i.'">Modifier</a></span><br/> Email : '.htmlentities($_SESSION['mail'.$i]).' <span class=\'modifier\'><a href="profil_admin.php?modifier=2&nb='.$i.'">Modifier</a></span><br/> Nom : '. htmlentities($_SESSION['nom'.$i]) . ' <span class=\'modifier\'><a href="profil_admin.php?modifier=3&nb='.$i.'">Modifier</a></span><br/> Prénom : '.htmlentities($_SESSION['prenom'.$i]).'<span class=\'modifier\'><a href="profil_admin?modifier=4&nb='.$i.'">Modifier</a></span><br/> Date de naissance : ' . htmlentities($_SESSION['date_n'.$i]) .' <span class=\'modifier\'><a href="profil_admin.php?modifier=5&nb='.$i.'">Modifier</a></span></p>'; 
+              echo '<p class="profil"> Adresse : '.htmlentities($_SESSION['adresse'.$i]).' <span class=\'modifier\'><a href="profil_admin?modifier=6&nb='.$i.'">Modifier</a></span><br/> Code postal : '. htmlentities($_SESSION['code_postal'.$i]) . ' <span class=\'modifier\'><a href="profil_admin.php?modifier=7&nb='.$i.'">Modifier</a></span><br/> Ville : '.htmlentities($_SESSION['ville'.$i]).' <span class=\'modifier\'><a href="profil_admin.php?modifier=8&nb='.$i.'">Modifier</a></span><br/> Pays : '.htmlentities($_SESSION['pays'.$i]).' <span class=\'modifier\'><a href="profil_admin.php?modifier=9&nb='.$i.'">Modifier</a></span></p>';
         } else {
             
             /* modification du profil ligne par ligne*/ 
@@ -144,30 +144,30 @@
         }
 ?>
            
-<?php        include('../model/profil_M.php');
+<?php        include('../controller/profil_admin_C.php');
         
-        $i=1;
+        $k=1;
         if (isset($even)){
             echo '<h1 class="profil">Evènement créé</h1>' ;
-            while($i<=$_SESSION['nb']){
-            $_SESSION['n_even']=$i; ?>
+            while($k<=$_SESSION['nb']){
+            $_SESSION['n_even']=$k; ?>
             <div class ="trouver_even">
-                <a href="even_V.php?nb=<?php echo $i?>" >
+                <a href="even_V.php?nb=<?php echo $k?>" >
             <?php
-            echo'<div><span class="nom_even">'.htmlentities($_SESSION['ville_even'.$i]) .'</span></div>';
+            echo'<div><span class="nom_even">'.htmlentities($_SESSION['ville_even'.$k]) .'</span></div>';
         
-           if(isset($_SESSION['photo_even'.$i]) && $_SESSION['photo_even'.$i]!=''){ ?>
+           if(isset($_SESSION['photo_even'.$i]) && $_SESSION['photo_even'.$k]!=''){ ?>
         
             <div class="image_profil">
-                <img src ="<?php echo $_SESSION['photo_even'.$i] ?>" alt="Photo de profil">
+                <img src ="<?php echo $_SESSION['photo_even'.$k] ?>" alt="Photo de profil">
             </div>
             <?php } else { ?>
             <div class="image_profil">
                 <img src ="image/point-d-interrogation2.jpg" alt="?">
             </div>
                 <?php }
-                echo '<p class="profil">' . htmlentities($_SESSION['nom_even'.$i]) .'<br/> '.htmlentities($_SESSION['description'.$i]).'<br/> '.htmlentities($_SESSION['adresse_even'.$i]).'</p>';
-                $i++; ?>
+                echo '<p class="profil">' . htmlentities($_SESSION['nom_even'.$k]) .'<br/> '.htmlentities($_SESSION['description'.$k]).'<br/> '.htmlentities($_SESSION['adresse_even'.$k]).'</p>';
+                $k++; ?>
             </a></div>
         <?php
         }}

@@ -130,7 +130,7 @@
         }
 ?>
            
-<?php        include('../model/profil_M.php');
+<?php        include('../controller/profil_C.php');
         
         $i=1;
         if (isset($even)){

@@ -112,7 +112,7 @@ function recherche_utilisateur($nom, $prenom, $pseudo, $mail, $lieu){
             'nom' => $nom,
             'prenom' => $prenom,
             'pseudo' => $pseudo,
-            '$mail' => $mail,
+            'mail' => $mail,
             'lieu' => $lieu)
                 );
         return($req);
@@ -143,4 +143,12 @@ function select_utilisateur_def(){
     global $bdd;
     $select = $bdd->query('SELECT *  FROM utilisateur ORDER BY ID_utilisateur DESC');
     return($select);
+}
+
+function select_even_utilisateur_($id){
+    global $bdd;
+    $even_cree=$bdd->prepare('SELECT * FROM evenement WHERE ID_createur= :id ORDER BY ID_even DESC');
+    $even_cree->bindParam('id', $id, PDO::PARAM_INT);
+    $even_cree->execute();
+    return($even_cree);
 }

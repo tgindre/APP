@@ -40,7 +40,6 @@
         }
         $i = $premiereven;
         while ($i <= $derniereven) {
-            /* $_SESSION['n_even']=$i;  Pour reconnaitre l'evenement dans la page even_V */
             ?>
             <div class ="trouver_even">
                 <a href="even_V.php?nb=<?php echo $i ?>" >
