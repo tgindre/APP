@@ -38,11 +38,37 @@
         <input class="Identification" type="email" name="mail" placeholder="Email"> </br>
         <input class="Identification" type="password" name="password" placeholder="Mot de passe"></br>
         <input class="connexion" type="submit" name="connexion" value="Connexion"/>
-    <p class="ID" ><a href="#"> Mot de passe oublié ? </a></br>
+    <p class="ID" ><a href="page_apresmdpoublier.php"> Mot de passe oublié ? </a></br>
     <a href="inscription_V.php"> Pas encore inscrit ? Viens t'inscrire gratuitement !</a></p>
     </form>
     </div>
-   <?php } if ($formulaire == 'evenement') {
+<?php 
+    } if ($formulaire =='mdpoublier'){
+        ?>
+            <div id = "formulaire2"> 
+    <p1><strong>Mot de passe perdu?</strong> </p1> <br/>
+	<p2> Vous ne vous souvenez plus de votre mot de passe ? Entrez votre adresse email et nous vous en enverrons un nouveau dans votre boîte mail. </p2> <br/>
+    <form name="Identification" method="post" action="page_reconnecter.php"&&"renvoie_nouveau_mdp.php">
+        <input class="Identification" type="email" name="mail" placeholder="Email"> </br>
+        <input class="Validation" type="submit" name="Valide" value="Valide"/>
+    <a href="inscription_V.php"> Pas encore inscrit ? Viens t'inscrire gratuitement !</a></p>
+    </form>
+    </div>	
+<?php 
+    } if ($formulaire =='reconnexion'){
+        ?>
+            <div id = "formulaire2"> 
+    <p> Identification </p> <br/>
+    <form name="Identification" method="post" action="../controller/connexion_C.php">
+	    <?php echo "Vos identifiants vous ont été envoyés à l'adresse email saisie.</br>"; ?>
+        <input class="Identification" type="email" name="mail" placeholder="Email"> </br>
+        <input class="Identification" type="password" name="password" placeholder="Mot de passe"></br>
+        <input class="connexion" type="submit" name="connexion" value="Connexion"/>
+    <p class="ID" ><a href="page_apresmdpoublier.php"> Mot de passe oublié ? </a></br>
+    <a href="inscription_V.php"> Pas encore inscrit ? Viens t'inscrire gratuitement !</a></p>
+    </form>
+    </div>
+<?php } if ($formulaire == 'evenement') {
        ?>       
                 <div id="creation_even">
                 <h1>Création d'évènement</h1>
