@@ -1,4 +1,5 @@
 <?php
+
 $mail = htmlentities(addslashes( $_POST['mail'])); // Déclaration de l'adresse de destination.
 if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $mail)) // On filtre les serveurs qui rencontrent des bogues.
 {
@@ -42,21 +43,18 @@ for ($i=0;$i<$no;$i++)
   $mot_de_passe = $result[$i]; 
 }
 
-$message.= $passage_ligne."--".$boundary."--"$passage_ligne;
 //=====Ajout du message au format HTML
 $message.= "Content-Type: text/html; charset=\"ISO-8859-1\"".$passage_ligne;
 $message.= "Content-Transfer-Encoding: 8bit".$passage_ligne;
-$message.= <img id="logo" src ="image/logo.png" alt="Logo sharetime"></br>"Cher membre,</br>
+$message.= "Cher membre,</br>
 Suite à votre demande voici vos identifiants de connexion à votre compte</br>
 Login de connexion : ".$pseudo."</br>
 Mot de passe : ".$mot_de_passe."</br>";
-$message.= $passage_ligne.$message_html.$passage_ligne;
 //==========
 
-$message.= $passage_ligne."--".$boundary."--".$passage_ligne;
-//==========
  
 //=====Envoi de l'e-mail.
 mail($mail,$sujet,$message,$header);
 //==========
+header ('Location:../vue/page_reconnecter.php');
 ?>

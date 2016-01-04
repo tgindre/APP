@@ -233,6 +233,20 @@ a {
 
 }
 
+h6
+{
+	font-size: 1.5em;
+	margin-bottom : 0px;
+	padding-top : 10px;
+}
+
+p1
+{
+	font-size: 1em;
+	margin-top: 5px;
+	padding-top: 5px;
+}
+
 /* Entete */
 
 #entete {

@@ -46,12 +46,11 @@
     } if ($formulaire =='mdpoublier'){
         ?>
             <div id = "formulaire2"> 
-    <h1><strong>Mot de passe perdu?</strong> </h1> <br/>
-	<h2> Vous ne vous souvenez plus de votre mot de passe ? Entrez votre adresse email et nous vous en enverrons un nouveau dans votre boîte mail. </h2> <br/>
+    <h6><strong>Mot de passe perdu?</strong></h6>
+	<p class="p1"> Vous ne vous souvenez plus de votre mot de passe ? Entrez votre adresse email et nous vous en enverrons un nouveau dans votre boîte mail.</p>
     <form name="Identification" method="post" action="../controller/renvoie_nouveau_mdp.php">
         <input class="Identification" type="email" name="mail" placeholder="Email"> </br>
         <input class="Validation" type="submit" name="Valide" value="Valide"/>
-    <a href="inscription_V.php"> Pas encore inscrit ? Viens t'inscrire gratuitement !</a></p>
     </form>
     </div>	
 <?php 
