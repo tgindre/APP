@@ -27,15 +27,15 @@ else{
 	<!DOCTYPE html>
 	<head>
 		<meta charset='utf-8' />
-		<title>Mon super forum !</title>
+		<title>Forum de ShareTime</title>
 		<meta name="author" content="Timothee Gindre">
-		<link rel="stylesheet" type="text/css" href="css/forum_general.css" />
+		<link rel="stylesheet" type="text/css" href="forum_general.css" />
 		<link rel="stylesheet" href="style_APP.css"/>
 		<link href='http://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css' >
 	<head>
 	<body>
 		<?php include("entete.php"); ?>
-		<h1>Bienvenue sur mon super forum !</h1>
+		<h1>Bienvenue sur le forum de ShareTime !</h1>
 		<div id="Cforum">
 			<?php
 
@@ -63,9 +63,11 @@ else{
 						$requete2 = $bdd->prepare('SELECT * FROM utilisateur WHERE ID_utilisateur = :ID_utilisateur');
 						$requete2->execute(array('ID_utilisateur'=>$reponse['propri']));
 						$utilisateur = $requete2->fetch();
-						echo $utilisateur['pseudo'] . ' : <br>';
+						echo $utilisateur['pseudo'] . ' : ';
 
-						echo $reponse['contenu'];
+						echo '<br>' . $reponse['contenu'] . '<br>';
+						setlocale (LC_TIME, 'fr_FR.utf8','fra'); 
+						echo (strftime("%c"));
 						?>
 
 					</div>
