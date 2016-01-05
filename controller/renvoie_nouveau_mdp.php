@@ -31,7 +31,6 @@ $header.= "Content-Type: multipart/alternative;".$passage_ligne." boundary=\"$bo
 //=====Création du message
 
 $mail = htmlentities(addslashes( $_POST['mail']));
-$pseudo = htmlentities(addslashes( $_POST['pseudo']));
 //fonction pour avoir un mdp quelconque
 $numbers = range (1,10000);
 shuffle ($numbers); 
@@ -48,13 +47,16 @@ $message.= "Content-Type: text/html; charset=\"ISO-8859-1\"".$passage_ligne;
 $message.= "Content-Transfer-Encoding: 8bit".$passage_ligne;
 $message.= "Cher membre,</br>
 Suite à votre demande voici vos identifiants de connexion à votre compte</br>
-Login de connexion : ".$pseudo."</br>
+Login de connexion : ".$mail."</br>
 Mot de passe : ".$mot_de_passe."</br>";
 //==========
-
+header ('Location:../vue/page_reconnecter.php');
  
 //=====Envoi de l'e-mail.
 mail($mail,$sujet,$message,$header);
 //==========
-header ('Location:../vue/page_reconnecter.php');
+
+
+
+
 ?>
