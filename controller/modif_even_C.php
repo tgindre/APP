@@ -1,6 +1,6 @@
 <?php
-
-include('../model/model.php');
+include('../model/modif_bdd.php');
+include('../model/select_bdd.php');
 $maxsize = 4194304;
 $nom = '';
 $i=$_POST['numero'];
@@ -26,49 +26,57 @@ if (isset($_POST['image_even'])) {
         $resultat = move_uploaded_file($_FILES['image']['tmp_name'], $nom);
         /* if ($resultat) {$erreur=3;} */
     }
-    $req = $bdd->prepare('UPDATE evenement SET image= :photo WHERE ID_even= :id');
-    $req->execute(array(
-        'photo' => $nom,
-        'id' => $_SESSION['id_even'.$i]
-    ));
+    modif_evenement('image', $nom, $_SESSION['id_even'.$i]);
     $_SESSION['photo_even'.$i] = $nom;
     header('Location: ../vue/even_V.php?erreur=' . $erreur.'&nb='.$i);
 }
 
-if (isset($_POST['modifier'])) {
-    foreach ($_POST as $cle => $element) {
-        if ($element = '') {
-            $element = $_SESSION['$cle'];
-        }
+    if (isset($_POST['modif_nom_even'])) {
+        modif_evenement('nom_even', $_POST['nom_even'], $_SESSION['id_even'.$i]);  
     }
-    $req = $bdd->prepare('UPDATE utilisateur SET mail= :mail, nom= :nom, prenom= :prenom, pseudo= :pseudo,date_n= :date, adresse= :adresse, code_postal= :code_postal, ville= :ville, pays= :pays WHERE ID_utilisateur= :id');
-    $req->execute(array(
-        'mail' => $_POST['mail'],
-        'nom' => $_POST['nom'],
-        'prenom' => $_POST['prenom'],
-        'pseudo' => $_POST['pseudo'],
-        'date' => $_POST['date'],
-        'adresse' => $_POST['adresse'],
-        'code_postal' => $_POST['code_postal'],
-        'ville' => $_POST['ville'],
-        'pays' => $_POST['pays'],
-        'id' => $_SESSION['id'])
-    );
-    $mail = $_POST['mail'];
-    $connexion_req = 'SELECT * FROM utilisateur WHERE mail = "' . $mail . '"';
-    $connexion = $bdd->query($connexion_req);
-    $connect = $connexion->fetch();
-    $_SESSION['pseudo'] = $connect['pseudo'];
-    $_SESSION['nom'] = $connect['nom'];
-    $_SESSION['prenom'] = $connect['prenom'];
-    $_SESSION['mail'] = $connect['mail'];
-    $_SESSION['date_n'] = $connect['date_n'];
-    $_SESSION['adresse'] = $connect['adresse'];
-    $_SESSION['code_postal'] = $connect['code_postal'];
-    $_SESSION['ville'] = $connect['ville'];
-    $_SESSION['pays'] = $connect['pays'];
-    $connexion->closeCursor();
+        if (isset($_POST['modif_type_even'])) {
+        modif_evenement('type_even', $_POST['type_even'], $_SESSION['id_even'.$i]);  
+    }
+       if (isset($_POST['modif_adresse_even'])) {
+        modif_evenement('adresse_even', $_POST['adresse_even'], $_SESSION['id_even'.$i]);  
+    }
+        if (isset($_POST['modif_ville_even'])) {
+        modif_evenement('ville_even', $_POST['ville_even'], $_SESSION['id_even'.$i]);  
+    }
+        if (isset($_POST['modif_type_public'])) {
+        modif_evenement('type_public', $_POST['type_public'], $_SESSION['id_even'.$i]);  
+    }
+        if (isset($_POST['modif_date_even'])) {
+        modif_evenement('date_debut', $_POST['date_debut'], $_SESSION['id_even'.$i]);
+        modif_evenement('mdate_fin', $_POST['date_fin'], $_SESSION['id_even'.$i]);
+    }
+        if (isset($_POST['modif_horaire'])) {
+        modif_evenement('horaire', $_POST['horaire'], $_SESSION['id_even'.$i]);  
+    }
+        if (isset($_POST['modif_tarif'])) {
+        modif_evenement('tarif_min', $_POST['tarif_min'], $_SESSION['id_even'.$i]);
+        modif_evenement('tarif_max', $_POST['tarif_max'], $_SESSION['id_even'.$i]);
+    }
+        if (isset($_POST['modif_nb_place'])) {
+        modif_evenement('nb_participants', $_POST['nb_place'], $_SESSION['id_even'.$i]);  
+    }
 
-    header('Location: ../vue/profil_V.php');
-}
+    $id_even = $_SESSION['id_even'.$i];
+    $donnees= select_evenement('ID_even',$id_even);
+        $_SESSION['id_createur'.$i] = $donnees['ID_createur'];
+        $_SESSION['id_even'.$i] = $donnees['ID_even'];
+        $_SESSION['nom_even'.$i] = $donnees['nom_even'];
+        $_SESSION['description'.$i] = $donnees['description']; 
+        $_SESSION['type_even'.$i] = $donnees['type_even'];
+        $_SESSION['adresse_even'.$i] = $donnees['adresse_even']; 
+        $_SESSION['ville_even'.$i] = $donnees['ville_even'];
+        $_SESSION['type_public'.$i] = $donnees['type_public'];
+        $_SESSION['date_debut'.$i] = $donnees['date_debut'];
+        $_SESSION['date_fin'.$i] = $donnees['date_fin'];
+        $_SESSION['horaire'.$i] = $donnees['horaire'];
+        $_SESSION['tarif_min'.$i] = $donnees['tarif_min'];
+        $_SESSION['tarif_max'.$i] = $donnees['tarif_max'];
+        $_SESSION['nb_participants'.$i] = $donnees['nb_participants'];
+        $_SESSION['photo_even'.$i] = $donnees['image'];
+    header('Location: ../vue/even_V.php?nb='.$i);
 

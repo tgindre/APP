@@ -19,6 +19,7 @@ if(isset($_POST['connexion'])){
             $_SESSION['ville']=$connect['ville'];
             $_SESSION['pays']=$connect['pays'];
             $_SESSION['photo']=$connect['photo'];
+            $_SESSION['admin'] = $connect['administrateur'];
             
         }else{
             $erreur = 'Votre mot de passe ne correspond pas';

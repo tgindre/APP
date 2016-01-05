@@ -233,6 +233,20 @@ a {
 
 }
 
+h6
+{
+	font-size: 1.5em;
+	margin-bottom : 0px;
+	padding-top : 10px;
+}
+
+p1
+{
+	font-size: 1em;
+	margin-top: 5px;
+	padding-top: 5px;
+}
+
 /* Entete */
 
 #entete {
@@ -302,6 +316,9 @@ footer{
 }
 
 /* page d'acceuil*/
+#slogan_description{
+    color: #f16a99;
+}
 .recherche {
 	line-height: 0%;
 	height: 2em;
@@ -503,7 +520,7 @@ label {
     font-size : 20px;
     padding-left:20px;
     padding-right:20px;
-    width : 77px;
+    width : 80px;
 }
 
 /* page trouver evenement*/
@@ -538,6 +555,18 @@ label {
 	font-weight: bold;
 }
 
+/* Espace administrateur */
+#admin_admin_liste li {
+    margin-top : 10px;
+}
 
+#description_admin{
+	display : inline-block;
+	font-size : 2em;
+}
 
+#slogan_description_admin{
+    color: #f16a99;
+    font-size : 2em;
+}
 

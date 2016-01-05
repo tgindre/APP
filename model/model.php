@@ -1,4 +1,8 @@
-<?php session_start();
+<?php
+if(!isset($start) || !$start){
+    session_start();
+    $start=true;
+}
 
 try{
     //connexion à la bdd

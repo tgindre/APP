@@ -21,6 +21,10 @@
         case 2:
         echo "Probleme dans l'insertion du formulaire dans la base de donnée";
         break;
+        case 3:
+        echo "Ce mail est déjà pris";
+        break;
+
     }
 } 
         include("bandeau.php") ?>
