@@ -152,3 +152,15 @@ function select_even_utilisateur_($id){
     $even_cree->execute();
     return($even_cree);
 }
+
+/*Verif*/
+
+function verif_select($champ, $donnees){
+    global $bdd;
+    $verification=$bdd->prepare('SELECT '.$champ.' FROM utilisateur WHERE '.$champ.' = :champ');
+    $verification->execute(array(
+            'champ' => $donnees)
+            );
+    $resultat = $verification->fetch();
+    return($resultat);
+}

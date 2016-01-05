@@ -498,6 +498,9 @@ label {
     font-size : 22px;
     margin-left : 444px;
 }
+.supprimer{
+    margin-left : 10px;
+}
 .image_profil{
     float : left;
     width : 300px;
@@ -522,6 +525,7 @@ label {
     padding-right:20px;
     width : 80px;
 }
+
 
 /* page trouver evenement*/
 .touver_even {

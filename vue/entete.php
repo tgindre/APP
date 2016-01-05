@@ -15,7 +15,7 @@
             </div>
             <img id="nom" src ="image/nom.png" alt="sharetime">
          <?php  
-         if(isset($_SESSION['admin'])){ ?>
+         if(isset($_SESSION['admin']) && $_SESSION['admin'] ){ ?>
              <nav>
 		<ul class="menu">
 			<li><a href="page_accueil.php"><span class="tiret">|</span> Accueil <span class="tiret">|</span></a></li>

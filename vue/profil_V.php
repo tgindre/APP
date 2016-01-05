@@ -122,9 +122,9 @@
                  case 2:
                     echo "Extension incorrecte";
                     break;
-               /* case 3 :
-                    echo "Transfert réussi";
-                break;*/
+                case 3 :
+                    echo "Deja existant";
+                break;
                 }
             
         }

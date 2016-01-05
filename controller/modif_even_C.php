@@ -60,6 +60,11 @@ if (isset($_POST['image_even'])) {
         if (isset($_POST['modif_nb_place'])) {
         modif_evenement('nb_participants', $_POST['nb_place'], $_SESSION['id_even'.$i]);  
     }
+    if (isset($_POST['supprimer'])) {
+        supprime_even($_SESSION['id_even'.$i]);
+        $supr=42;
+        header('Location: ../vue/even_V.php?supr='. $supr);
+    }
 
     $id_even = $_SESSION['id_even'.$i];
     $donnees= select_evenement('ID_even',$id_even);

@@ -34,7 +34,13 @@ if (isset($_POST['image_profil'])) {
         modif_utilisateur('pseudo', $_POST['pseudo'], $_SESSION['id']);  
     }
     if (isset($_POST['modifier_mail'])) {
-        modif_utilisateur('mail', $_POST['mail'], $_SESSION['id']);
+        $result=verif_select('mail', $_POST['mail']);
+        if($result){
+            $erreur = 3;
+            header('Location: ../vue/profil_V.php?erreur='. $erreur);   
+        } else {
+            modif_utilisateur('mail', $_POST['mail'], $_SESSION['id']);       
+        }
     }
     if (isset($_POST['modifier_nom'])) {
         modif_utilisateur('nom', $_POST['pseudo'], $_SESSION['id']);  
@@ -54,7 +60,8 @@ if (isset($_POST['image_profil'])) {
         if (isset($_POST['modifier_ville'])) {
             modif_utilisateur('ville', $_POST['ville'], $_SESSION['id']);   
     }
-        if (isset($_POST['modifier_pays'])) {   
+        if (isset($_POST['modifier_pays'])) { 
+            modif_utilisateur('pays', $_POST['pays'], $_SESSION['id']);
     }
 
     $id=$_SESSION['id'];

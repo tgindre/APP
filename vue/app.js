@@ -11,3 +11,10 @@
 	}
 	return true;
 }
+﻿function verif_confirm()
+{
+    var r=confirm("êtes-vous sur de vouloir supprimer");
+    if (r==true) {
+        formulaire.suppr.submit();
+    } else {}
+}

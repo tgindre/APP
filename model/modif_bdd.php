@@ -20,3 +20,21 @@ function modif_evenement($champ, $donnees, $id) {
     );
     $req->closeCursor();
 }
+
+function supprime_even($id) {
+    global $bdd;
+    $req = $bdd->prepare('DELETE FROM evenement WHERE ID_even= :id');
+    $req->execute(array(
+        'id' => $id)
+    );
+    $req->closeCursor();
+}
+
+function supprime_utilisateur($id) {
+    global $bdd;
+    $req = $bdd->prepare('DELETE FROM utilisateur WHERE ID_utilisateur= :id');
+    $req->execute(array(
+        'id' => $id)
+    );
+    $req->closeCursor();
+}
