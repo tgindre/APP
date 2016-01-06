@@ -385,6 +385,7 @@ footer{
 
 }
 #app {
+        color:black;
 	background-color: #ed4580;
 	border : solid;
 	border-color: #ed4580;
@@ -574,3 +575,8 @@ label {
     font-size : 2em;
 }
 
+.modif_photo{
+    float : right;
+    font-size: 20px;
+    margin-right : 10px;
+}

@@ -9,11 +9,10 @@
 	<body>
     <?php $formulaire= '';
     include("entete_admin.php"); 
-    include("bandeau.php");
-    $nb_even=3;?>
-        <a  class="modif_photo" href="admin_V.php?modifier='0'">Modifier</a><br/>    
+    include("bandeau.php");?>
+        <a  class="modif_photo" href="admin_V.php?bandeau='1'">Modifier</a><br/>    
 	  <h1 id="slogan_description_admin">Espace administrateur</h1>
-         <?php if(!isset($_GET['modifier'])){ ?>
+         <?php if(!(isset($_GET['bandeau']) || isset($_GET['accueil']))){ ?>
 	<div id="description_admin">
 	<p> <img id ="jeunes" src="image/accueil.jpg" alt="photo accueil"> </p>
     <p><span class="gras"> Permet : </span> </p>
@@ -23,7 +22,7 @@
         <li>de modérer les commentaires et les messages du forum</li>
         <li>d’administrer la rubrique d’aide en ligne</li>
 		</ul>
-    <a  class="modif_photo" href="admin_V.php?modifier='1'">Modifier</a><br/>
+    <a  class="modif_photo" href="admin_V.php?accueil='1'">Modifier</a><br/>
 	</div>
 
 	<p id="slogan2"> Où que tu sois, il y a un évènement pour toi ! </p>
@@ -32,13 +31,12 @@
 
 
 			<div id = "recherche_avance"> <p> Recherche avancées <br/>
-					<mark id ="app">Appuyer ici</mark> </p>
+                            <a href="gerer_even.php" id ="app">Appuyer ici</a> </p>
 			</div>
 
-        <?php
-         } else {  
-             switch ($_GET['modifier']) {
-        case 0: ?>
+         <?php  } else {
+             if (isset($_GET['bandeau'])) {
+         ?>
         <div>
         <h1>Image bandeau</h1>
         <form method="post" action="../controller/modif_photo_C.php" enctype="multipart/form-data">
@@ -48,9 +46,8 @@
             <input type="submit" name="image_bandeau" value="modifier" />
         </form>
                 </div>
-            <?php
-              break;
-          case 1: ?>
+             <?php } else if (isset($_GET['accueil'])) {
+               ?>
                  <div>
        <h1>Image accueil</h1>
         <form method="post" action="../controller/modif_photo_C.php" enctype="multipart/form-data">
@@ -60,7 +57,7 @@
             <input type="submit" name="image_accueil" value="modifier" />
         </form>        </div>
              <?php
-            break;    
+               
          }
          }
          if(isset($_GET['erreur'])){

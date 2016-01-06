@@ -24,16 +24,14 @@
         case 3:
         echo "Ce mail est déjà pris";
         break;
+        case 4:
+        echo "Le mot de pass doit avoir au moins 8 caractères et au minimum une lettre et un chiffre";
+        break;
 
     }
 } 
-        include("bandeau.php") ?>
-
-        <div id = "recherche_avance"> <p> Recherche avancées <br/>
-                <mark id ="app">Appuyer ici</mark> </p>
-        </div>
-
-        <?php include("pied_de_page.php"); ?>
+        include("bandeau.php");
+        include("pied_de_page.php"); ?>
 
     </body>
 

@@ -44,7 +44,7 @@
        </div>
 
 			<div id = "recherche_avance"> <p> Recherche avancées <br/>
-					<mark id ="app">Appuyer ici</mark> </p>
+				<a href="trouver_even_V.php" id ="app">Appuyer ici</a> </p>
 			</div>
 
         <?php

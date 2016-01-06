@@ -8,11 +8,12 @@ if(isset($_POST['inscr']))
     {
         $error =3;
         header('Location: ../vue/inscription_V.php?erreur='.$error);
-    }
-    else
-    {
-        if($_POST['password'] == $_POST['password_verif'])
-        {
+    } else {
+        if($_POST['password'] == $_POST['password_verif']){ 
+            if (!(strlen($_POST['password'])>=8 || preg_match("#[a-z0-9]#", $_POST['password']))){
+                $error =4;
+                header('Location: ../vue/inscription_V.php?erreur='.$error);
+        } else {
             $pass_hache = sha1('gz' . htmlspecialchars($_POST['password']));// Hachage du mot de passe pour le crypter
         
             if ($_POST['genre']=='Femme')
@@ -50,7 +51,7 @@ if(isset($_POST['inscr']))
                 $error =2;
                 header('Location: ../vue/inscription_V.php?erreur='.$error);
             }
-       
+        }
         }
         else
         {
