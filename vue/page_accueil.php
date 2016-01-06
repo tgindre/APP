@@ -15,7 +15,7 @@
             
 	  <h1 id="slogan_description">Parce que ShareTime n'est pas qu'un site, c'est :</h1>
 	<div id="description">
-	<p> <img id ="jeunes" src="image/jeunes.jpg" alt="4 jeunes"> </p>
+	<p> <img id ="jeunes" src="image/accueil.jpg" alt="4 jeunes"> </p>
     <p>Une <span class="gras"> grande vision </span> des évènements des le premier coup</p>
     <p>Le <span class="gras"> partage d'évènements </span> sur les réseaux sociaux</p>
     <p>Des <span class="gras"> alertes personnalisées</span></p>
