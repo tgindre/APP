@@ -15,6 +15,7 @@
 {
     var r=confirm("êtes-vous sur de vouloir supprimer");
     if (r==true) {
-        formulaire.suppr.submit();
+        var formulaire = document.getElementById("confirm_suppr");
+        formulaire.submit();
     } else {}
 }
