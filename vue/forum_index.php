@@ -61,8 +61,7 @@ if(isset($_POST['name']) AND isset($_POST['sujet'])){
 					echo $utilisateur['pseudo'] . ' : ';
 
 					echo '<br>' . $reponse['contenu'] . '<br>';
-					setlocale (LC_TIME, 'fr_FR.utf8','fra'); 
-					echo (strftime("%c"));
+					echo ^$reponse['date'];
 					?>
 
 				</div>
