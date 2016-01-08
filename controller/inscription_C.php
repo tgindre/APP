@@ -1,16 +1,16 @@
 <?php
 // Femme == true ; Homme == false;
-
 if(isset($_POST['inscr']))
 {   include('../model/model.php');
     include('../model/inscription_M.php');
+    $_SESSION['erreur'] = $_POST;
     if($resultat)
     {
         $error =3;
         header('Location: ../vue/inscription_V.php?erreur='.$error);
     } else {
         if($_POST['password'] == $_POST['password_verif']){ 
-            if (!(strlen($_POST['password'])>=5) || !(preg_match("#[a-z0-9]#", $_POST['password']))){
+            if (!(strlen($_POST['password'])>=5)){
                 $error =4;
                 header('Location: ../vue/inscription_V.php?erreur='.$error);
         } else {
