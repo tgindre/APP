@@ -27,7 +27,7 @@ if(isset($_POST['name']) AND isset($_POST['sujet'])){
 	<link rel="stylesheet" type="text/css" href="forum_general.css" />
 	<link rel="stylesheet" href="style_APP.css"/>
 	<link href='http://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css' >
-<head>
+</head>
 <body>
 	<?php include("entete.php"); ?>
 	<h1>Bienvenue sur le forum de ShareTime !</h1>
@@ -61,7 +61,7 @@ if(isset($_POST['name']) AND isset($_POST['sujet'])){
 					echo $utilisateur['pseudo'] . ' : ';
 
 					echo '<br>' . $reponse['contenu'] . '<br>';
-					setlocale (LC_TIME, 'fr_FR.utf8','fra'); 
+					setlocale (LC_TIME, 'fr_FR.utf8','fra');
 					echo (strftime("%c"));
 					?>
 

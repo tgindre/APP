@@ -10,7 +10,7 @@ if(isset($_POST['inscr']))
         header('Location: ../vue/inscription_V.php?erreur='.$error);
     } else {
         if($_POST['password'] == $_POST['password_verif']){ 
-            if (!(strlen($_POST['password'])>=8 || preg_match("#[a-z0-9]#", $_POST['password']))){
+            if (!(strlen($_POST['password'])>=5) || !(preg_match("#[a-z0-9]#", $_POST['password']))){
                 $error =4;
                 header('Location: ../vue/inscription_V.php?erreur='.$error);
         } else {
