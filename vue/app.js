@@ -13,10 +13,15 @@
 }
 ﻿function verif_confirm()
 {
-    var r=confirm("êtes-vous sur de vouloir supprimer");
-    if (r) {
+    var r=confirm("êtes-vous sur de vouloir supprimer"), //marche sans la fonction mais à essayer
+            ans = return r;
+    if (ans) {
         //var formulaire = document.getElementById("confirm_suppr");
         //formulaire.submit();
         document.getElementById("confirm_suppr").submit();
-    } else {}
+        alert('Ok');
+    } else {
+        
+        alert('pas ok');
+    }
 }
