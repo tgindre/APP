@@ -14,8 +14,9 @@
 ﻿function verif_confirm()
 {
     var r=confirm("êtes-vous sur de vouloir supprimer");
-    if (r==true) {
-        var formulaire = document.getElementById("confirm_suppr");
-        formulaire.submit();
+    if (r) {
+        //var formulaire = document.getElementById("confirm_suppr");
+        //formulaire.submit();
+        document.getElementById("confirm_suppr").submit();
     } else {}
 }

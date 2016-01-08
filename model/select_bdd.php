@@ -1,4 +1,5 @@
 <?php
+include('../model/model.php');
 
 function select_utilisateur($champ,$donnees){
     global $bdd;
