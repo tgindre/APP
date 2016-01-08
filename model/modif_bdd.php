@@ -1,6 +1,5 @@
 <?php
 
-include('../model/model.php');
 
 function modif_utilisateur($champ, $donnees, $id) {
     global $bdd;

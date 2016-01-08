@@ -2,7 +2,7 @@
 // Femme == true ; Homme == false;
 
 if(isset($_POST['inscr']))
-{
+{   include('../model/model.php');
     include('../model/inscription_M.php');
     if($resultat)
     {
