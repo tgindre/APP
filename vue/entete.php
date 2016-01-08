@@ -34,7 +34,7 @@
 			<li><a href="trouver_even_V.php">Trouver un évènement <span class="tiret">|</span></a></li>
 			<li><a href="creation_even_V.php">Proposer un évènement <span class="tiret">|</span></a></li>
 			<li><a href="#">Aide <span class="tiret">|</span></a></li>
-			<li><a href="#">Forum  <span class="tiret">|</span></a></li>
+			<li><a href="forum_index.php">Forum  <span class="tiret">|</span></a></li>
 		</ul>
                 </nav>
          <?php } ?>
