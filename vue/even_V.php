@@ -10,7 +10,7 @@
         <?php $formulaire='';
               include("entete.php");
               include("nom.php");
-              if(!(isset($_GET['suppr']) && $_GET['suppr']==42)){
+              if(!(isset($_GET['suppr']))){
               if (isset($_GET['nb'])){$i=htmlentities($_GET['nb']);}
               if(!isset($_GET['modifier'])){             
               if($_SESSION['tarif_min'.$i]==$_SESSION['tarif_max'.$i]){
