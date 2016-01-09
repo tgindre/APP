@@ -10,7 +10,7 @@
         <?php $formulaire='';
               include("entete.php");
               include("nom.php");
-              if(!(isset($_GET['suppr']) && $_GET['suppr']==42)){
+              if(!(isset($_GET['suppr']))){
               if (isset($_GET['nb'])){$i=htmlentities($_GET['nb']);}
               if(!isset($_GET['modifier'])){             
               if($_SESSION['tarif_min'.$i]==$_SESSION['tarif_max'.$i]){
@@ -23,7 +23,7 @@
               } else {
                  $date='du '.$_SESSION['date_debut'.$i].'au '.$_SESSION['date_fin'.$i].''; 
               }
-        echo'<div> <span class="nom_even">'.htmlentities($_SESSION['ville_even'.$i]) .'</span></div>';
+        echo'<div> <span class="nom_even">'.htmlentities($_SESSION['ville_even'.$i]) .'</span><a href="even_V.php?modifier=4&nb='.$i.'">Modifier</a></div>';
         if(!isset($_SESSION['id'])){$_SESSION['id']=-1;}
         if($_SESSION['id_createur'.$i]==$_SESSION['id']){
         if(isset($_SESSION['photo_even'.$i]) && $_SESSION['photo_even'.$i]!=''){
@@ -39,9 +39,9 @@
         </div>
         <?php } ?>
             <div class="profil">   
-                <form method="post" action="../controller/modif_even_C.php">
+                <form method="post" action="../controller/modif_even_C.php" id="confirm_suppr" onclick="return(confirm('Etes-vous sûr de vouloir supprimer cette entrée?'));">
                 <input type="hidden" name="numero" value=<?php echo $i?> />
-                <input class="supprimer" type="button" name="supprimer" value="Supprimer"  onclick="verif_confirm()" id="confirm_suppr"/><br/>
+                <input class="supprimer" type="submit" name="supprimer" value="Supprimer" /><br/>
                 </form>
          <?php echo '<p>' . htmlentities($_SESSION['nom_even'.$i]) .' <span class=\'modifier\'><a href="even_V.php?modifier=1&nb='.$i.'">Modifier</a></span><br/> '.htmlentities($_SESSION['description'.$i]).'<br/>'.htmlentities($_SESSION['type_even'.$i]).' <span class=\'modifier\'><a href="even_V.php?modifier=2&nb='.$i.'">Modifier</a></span><br/> '.htmlentities($_SESSION['adresse_even'.$i]).' <span class=\'modifier\'><a href="even_V.php?modifier=3&nb='.$i.'">Modifier</a></span></p>'; 
               echo '<p> Type de public '.htmlentities($_SESSION['type_public'.$i]).' <span class=\'modifier\'><a href="even_V.php?modifier=5&nb='.$i.'">Modifier</a></span><br/> ' . htmlentities($date) .' <span class=\'modifier\'><a href="even_V.php?modifier=6&nb='.$i.'">Modifier</a></span><br/> Horaire '.htmlentities($_SESSION['horaire'.$i]). ' <span class=\'modifier\'><a href="even_V.php?modifier=7&nb='.$i.'">Modifier</a></span><br/> Tarif : '.htmlentities($tarif).' <span class=\'modifier\'><a href="even_V.php?modifier=8&nb='.$i.'">Modifier</a></span><br/> Nombre de place : '.htmlentities($_SESSION['nb_participants'.$i]).' <span class=\'modifier\'><a href="even_V.php?modifier=9&nb='.$i.'">Modifier</a></span><br/> </p>'; ?>

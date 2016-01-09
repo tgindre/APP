@@ -1,4 +1,5 @@
 <?php
+include('../model/model.php');
 
 function creation_even($id, $nom_even, $description, $type_even, $adresse_even, $ville_even, $type_public, $date_debut, $date_fin, $horaire, $tarif_min, $tarif_max,$nb_place){
     global $bdd;

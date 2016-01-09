@@ -63,7 +63,7 @@ if (isset($_POST['image_even'])) {
     if (isset($_POST['supprimer'])) {
         supprime_even($_SESSION['id_even'.$i]);
         $suppr=42;
-        header('Location: ../vue/even_V.php?suppr='. $suppr);
+        header('Location: ../vue/even_V.php?suppr='.$suppr);
     }
 
     $id_even = $_SESSION['id_even'.$i];

@@ -28,7 +28,7 @@
        <div class ="conteneur">
       <?php include('../controller/trouver_even_C.php');
            $i=1;
-           while($i<=$_SESSION['nb']){
+           while($i<=$nb_even){
         /*$_SESSION['n_even']=$i;  Pour reconnaitre l'evenement dans la page even_V */
                if(isset($_SESSION['photo_even'.$i])&& $_SESSION['photo_even'.$i]!=''){ ?>
            <div class="even"> <a href="even_V.php?nb=<?php echo $i?>" >
