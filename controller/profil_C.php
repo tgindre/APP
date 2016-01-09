@@ -1,4 +1,5 @@
 <?php
+include('../model/model.php');
 include('../model/modif_bdd.php');
 include('../model/select_bdd.php');
 $even_cree=select_even_utilisateur_($_SESSION['id']);

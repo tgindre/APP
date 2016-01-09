@@ -148,7 +148,7 @@
         
         $k=1;
         if (isset($even)){
-            echo '<h1 class="profil">Evènement créé</h1>' ;
+            echo '<h1 class="profil">Évènement créé</h1>' ;
             while($k<=$_SESSION['nb']){
             $_SESSION['n_even']=$k; ?>
             <div class ="trouver_even">

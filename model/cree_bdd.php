@@ -1,7 +1,5 @@
 <?php
 
-include('../model/model.php');
-
 function creation_even($id, $nom_even, $description, $type_even, $adresse_even, $ville_even, $type_public, $date_debut, $date_fin, $horaire, $tarif_min, $tarif_max,$nb_place){
     global $bdd;
     $insert = $bdd->prepare('INSERT INTO evenement (ID_createur, nom_even, description, type_even, adresse_even, ville_even, type_public , date_debut, date_fin, horaire, tarif_min, tarif_max, nb_participants) VALUES (:id_createur, :nom_even, :description , :type_even, :adresse_even, :ville_even, :type_public, :date_debut, :date_fin, :horaire, :tarif_min, :tarif_max, :nb_place)');
@@ -19,6 +17,15 @@ function creation_even($id, $nom_even, $description, $type_even, $adresse_even, 
         'tarif_min'=>$tarif_min,
         'tarif_max'=>$tarif_max, 
         'nb_place'=>$nb_place));
+   $rep=true;
+    return($rep);
+}
+
+function creation_categorie($name){
+    global $bdd;
+    $insert = $bdd->prepare('INSERT INTO categories (name) VALUES (:name)');
+    $insert->execute(array(
+        'name'=>$name));
    $rep=true;
     return($rep);
 }

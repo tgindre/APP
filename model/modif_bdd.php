@@ -1,6 +1,5 @@
 <?php
 
-include('../model/model.php');
 
 function modif_utilisateur($champ, $donnees, $id) {
     global $bdd;
@@ -33,6 +32,15 @@ function supprime_even($id) {
 function supprime_utilisateur($id) {
     global $bdd;
     $req = $bdd->prepare('DELETE FROM utilisateur WHERE ID_utilisateur= :id');
+    $req->execute(array(
+        'id' => $id)
+    );
+    $req->closeCursor();
+}
+
+function supprime_categorie($id){
+    global $bdd;
+    $req = $bdd->prepare('DELETE FROM categories WHERE id= :id');
     $req->execute(array(
         'id' => $id)
     );

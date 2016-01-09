@@ -28,7 +28,7 @@ if(isset($_POST['name']) AND isset($_POST['sujet'])){
 	<link rel="stylesheet" href="style_APP.css"/>
 </head>
 <body>
-	<?php include("entete.php"); ?>
+	<?php include("entete_admin.php"); ?>
 	<h1>Bienvenue sur le forum de ShareTime !</h1>
 	<div id="Cforum">
 		<?php
@@ -142,12 +142,23 @@ if(isset($_POST['name']) AND isset($_POST['sujet'])){
 			?>
 
 			<div class='categories'>
-				<a href="forum_index.php?categorie=<?php echo $reponse['name']; ?>"><?php echo $reponse['name']; ?></a>
+				
+				<form name="categorie" method="post" action="../controller/forum_admin_C.php">
+					<a href="forum_index.php?categorie=<?php echo $reponse['name']; ?>"><?php echo $reponse['name']; ?></a>
+					<input type="text" name="id_categorie" value="<?php echo $reponse['id']; ?>" hidden>
+					<input id="categorie" type="submit" name="addCategorie" value="Supprimer"/>
+				</form>
 			</div>
 
 			<?php
 			}
-
+			?>
+			<br>
+			<form name="categorie" method="post" action="../controller/forum_admin_C.php"><!-- Ajouter une catégorie -->
+				<label for="categorie">Ajouter une catégorie :</label><input type="text" name="nom_categorie" id="categorie">
+				<input type="submit" name="addCategorie" value="Ajouter"/>
+			</form>
+		<?php
 		}
 		?>
 

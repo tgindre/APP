@@ -28,7 +28,7 @@ if(isset($_POST['name']) AND isset($_POST['sujet'])){
 	<link rel="stylesheet" type="text/css" href="forum_general.css" />
 	<link rel="stylesheet" href="style_APP.css"/>
 	<link href='http://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css' >
-<head>
+</head>
 <body>
 	<?php include("entete.php"); ?>
 	<h1>Ajouter un sujet</h1>

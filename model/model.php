@@ -4,6 +4,7 @@ if(!isset($start) || !$start){
     $start=true;
 }
 
+if (!isset($bdd)){
 function bdd(){
 	try{
     	//connexion à la bdd
@@ -18,3 +19,4 @@ function bdd(){
 	return $bdd;
 }
 $bdd = bdd();
+}

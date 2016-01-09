@@ -1,4 +1,5 @@
 <?php 
+include('../model/model.php');
 include('../model/modif_bdd.php');
 include('../model/select_bdd.php');
 if(isset($_POST['recherche'])){

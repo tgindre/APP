@@ -11,10 +11,10 @@
              <nav>
 		<ul class="menu">
 			<li><a href="page_accueil.php"><span class="tiret">|</span> Accueil <span class="tiret">|</span></a></li>
-			<li><a href="gerer_even.php">gérer les évènements <span class="tiret">|</span></a></li>
-			<li><a href="gerer_utilisateur.php">gérer les utilisateurs <span class="tiret">|</span></a></li>
+			<li><a href="gerer_even.php">Gérer les évènements <span class="tiret">|</span></a></li>
+			<li><a href="gerer_utilisateur.php">Gérer les utilisateurs <span class="tiret">|</span></a></li>
 			<li><a href="#">Aide <span class="tiret">|</span></a></li>
-			<li><a href="#">Forum  <span class="tiret">|</span></a></li>
+			<li><a href="forum_admin_V.php">Gérer le Forum  <span class="tiret">|</span></a></li>
                         <li><a href="admin_V.php">Espace administrateur<span class="tiret">|</span></a></li>
 		</ul>
                 </nav>
