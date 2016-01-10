@@ -30,3 +30,14 @@ function creation_categorie($name){
    $rep=true;
     return($rep);
 }
+
+function creation_sujet($name,$name_categorie){
+    global $bdd;
+    $insert = $bdd->prepare('INSERT INTO sujet (name, categorie) VALUES (:name, :categorie)');
+    $insert->execute(array(
+        'name'=>$name,
+        'categorie'=>$name_categorie
+        ));
+   $rep=true;
+    return($rep);
+}

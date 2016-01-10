@@ -1,4 +1,12 @@
-<?php include('../model/model.php'); ?>
+<?php include('../model/model.php');
+
+if($_SESSION['admin'] == 1)
+{
+    header('Location: page_accueil.php');
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -81,4 +89,3 @@
 
 
 </html>
-

@@ -1,7 +1,6 @@
-<?php //session_start();
+<?php
 include_once "../model/model.php";
 include_once "../controller/forum_addSujet.class.php";
-//$bdd = bdd();
 
 if(isset($_POST['name']) AND isset($_POST['sujet'])){
 

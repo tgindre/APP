@@ -33,11 +33,11 @@ if(isset($_POST['name']) AND isset($_POST['sujet'])){
 	<div id="Cforum">
 		<?php
 
-		echo 'Bienvenue';
+		echo 'Bienvenue ';
 
 		if(isset($_SESSION['pseudo'])) //Prendre en compte le pseudo s'il existe
 		{
-			echo ' : ' . $_SESSION['pseudo'];
+			echo $_SESSION['pseudo'];
 		}
 
 		echo ' !';

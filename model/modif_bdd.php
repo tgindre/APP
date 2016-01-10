@@ -38,9 +38,57 @@ function supprime_utilisateur($id) {
     $req->closeCursor();
 }
 
+function modif_categorie($id,$name) {
+    global $bdd;
+    $req = $bdd->prepare('UPDATE categories SET name= :name WHERE id= :id');
+    $req->execute(array(
+        'id' => $id,
+        'name' => $name)
+    );
+    $req->closeCursor();
+}
+
 function supprime_categorie($id){
     global $bdd;
     $req = $bdd->prepare('DELETE FROM categories WHERE id= :id');
+    $req->execute(array(
+        'id' => $id)
+    );
+    $req->closeCursor();
+}
+
+function modif_sujet($id,$name) {
+    global $bdd;
+    $req = $bdd->prepare('UPDATE sujet SET name= :name WHERE id= :id');
+    $req->execute(array(
+        'id' => $id,
+        'name' => $name)
+    );
+    $req->closeCursor();
+}
+
+function supprime_sujet($id){
+    global $bdd;
+    $req = $bdd->prepare('DELETE FROM sujet WHERE id= :id');
+    $req->execute(array(
+        'id' => $id)
+    );
+    $req->closeCursor();
+}
+
+function modif_post($id,$contenu) {
+    global $bdd;
+    $req = $bdd->prepare('UPDATE postSujet SET contenu= :contenu WHERE id= :id');
+    $req->execute(array(
+        'id' => $id,
+        'contenu' => $contenu)
+    );
+    $req->closeCursor();
+}
+
+function supprime_post($id){
+    global $bdd;
+    $req = $bdd->prepare('DELETE FROM postSujet WHERE id= :id');
     $req->execute(array(
         'id' => $id)
     );
