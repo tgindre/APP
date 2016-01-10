@@ -1,6 +1,6 @@
 <?php include('../model/model.php');
 
-if($_SESSION['admin'] == 1)
+if(!isset($_SESSION['admin']) OR !$_SESSION['admin'])
 {
     header('Location: page_accueil.php');
 }

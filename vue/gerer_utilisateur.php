@@ -1,4 +1,10 @@
-<?php include('../model/model.php'); ?>
+<?php include('../model/model.php');
+
+if(!isset($_SESSION['admin']) OR !$_SESSION['admin'])
+{
+    header('Location: page_accueil.php');
+}
+?>
 
 <!DOCTYPE html>
 <html>

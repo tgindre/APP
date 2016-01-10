@@ -1,4 +1,11 @@
-<?php include('../model/model.php'); ?>
+<?php include('../model/model.php');
+
+if(!isset($_SESSION['admin']) OR !$_SESSION['admin'])
+{
+    header('Location: trouver_even_V.php');
+}
+
+?>
 
 <!DOCTYPE html>
 <html>

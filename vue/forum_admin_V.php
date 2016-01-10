@@ -2,9 +2,9 @@
 include_once "../model/model.php";
 include_once "../controller/forum_addPost.class.php";
 
-if($_SESSION['admin'] == 1)
+if(!isset($_SESSION['admin']) OR !$_SESSION['admin'])
 {
-	header('Location: forum_index.php');
+    header('Location: forum_index.php');
 }
 
 if(isset($_POST['name']) AND isset($_POST['sujet'])){
