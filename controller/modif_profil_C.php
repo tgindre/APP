@@ -64,6 +64,12 @@ if (isset($_POST['image_profil'])) {
         if (isset($_POST['modifier_pays'])) { 
             modif_utilisateur('pays', $_POST['pays'], $_SESSION['id']);
     }
+        if (isset($_POST['supprimer'])) {
+        supprime_utilisateur($_SESSION['id']);
+        $suppr=42;
+        header('Location: ../vue/profil_V.php?suppr='.$suppr);
+    }
+
 
     $id=$_SESSION['id'];
     $connect= select_utilisateur('ID_utilisateur',$id);

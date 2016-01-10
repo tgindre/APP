@@ -4,6 +4,7 @@
         <meta charset="utf-8"/>
         <title> Sharetime</title>
         <link rel="stylesheet" href="style_APP.css"/>
+        <script type="text/javascript" src="app.js"></script>
     </head>
     <body>
         <?php $formulaire='';
@@ -34,8 +35,14 @@
             <p><span><a href="even_V.php?modifier='0'&nb=<?php echo $i?>">Modifier</a></span><br/>
                 <img src ="image/point-d-interrogation2.jpg" alt="?"></p>
         </div>
-        <?php }
-              echo '<p class="profil">' . htmlentities($_SESSION['nom_even'.$i]) .' <span class=\'modifier\'><a href="even_V.php?modifier=1&nb='.$i.'">Modifier</a></span><br/> '.htmlentities($_SESSION['description'.$i]).'<br/>'.htmlentities($_SESSION['type_even'.$i]).' <span class=\'modifier\'><a href="even_V.php?modifier=2&nb='.$i.'">Modifier</a></span><br/> '.htmlentities($_SESSION['adresse_even'.$i]).' <span class=\'modifier\'><a href="even_V.php?modifier=3&nb='.$i.'">Modifier</a></span></p>'; 
+        <?php } ?>
+        <div class="profil">   
+                <form method="post" action="../controller/modif_even_C.php" id="confirm_suppr" onclick="return(confirm('Etes-vous sûr de vouloir supprimer cette entrée?'));">
+                <input type="hidden" name="numero" value=<?php echo $i?> />
+                <input class="supprimer" type="submit" name="supprimer" value="Supprimer" /><br/>
+                </form>
+            </div>
+      <?php   echo '<p class="profil">' . htmlentities($_SESSION['nom_even'.$i]) .' <span class=\'modifier\'><a href="even_V.php?modifier=1&nb='.$i.'">Modifier</a></span><br/> '.htmlentities($_SESSION['description'.$i]).'<br/>'.htmlentities($_SESSION['type_even'.$i]).' <span class=\'modifier\'><a href="even_V.php?modifier=2&nb='.$i.'">Modifier</a></span><br/> '.htmlentities($_SESSION['adresse_even'.$i]).' <span class=\'modifier\'><a href="even_V.php?modifier=3&nb='.$i.'">Modifier</a></span></p>'; 
               echo '<p class="profil"> Type de public '.htmlentities($_SESSION['type_public'.$i]).' <span class=\'modifier\'><a href="even_V.php?modifier=5&nb='.$i.'">Modifier</a></span><br/> ' . htmlentities($date) .' <span class=\'modifier\'><a href="even_V.php?modifier=6&nb='.$i.'">Modifier</a></span><br/> Horaire '.htmlentities($_SESSION['horaire'.$i]). ' <span class=\'modifier\'><a href="even_V.php?modifier=7&nb='.$i.'">Modifier</a></span><br/> Tarif : '.htmlentities($tarif).' <span class=\'modifier\'><a href="even_V.php?modifier=8&nb='.$i.'">Modifier</a></span><br/> Nombre de place : '.htmlentities($_SESSION['nb_participants'.$i]).' <span class=\'modifier\'><a href="even_V.php?modifier=9&nb='.$i.'">Modifier</a></span><br/> </p>';
         
         } else {
@@ -52,7 +59,7 @@
               break;
           case 1: ?>
                 <div id="creation_even">
-                <form method="post" action="../controller/modif_even_C.php">
+                <form method="post" action="../controller/modif_even_admin_C.php">
                     <label class="creation">Nom de l'évènement :</label><input class="creation" type="text" name="nom_even"/><br/>
                     <input type="hidden" name="numero" value=<?php echo $i?> />
                     <input class="valider" type="submit" name="modif_nom_even" value="modifier"/><br/>
@@ -61,7 +68,7 @@
         break;
             case 2: ?>
                 <div id="creation_even">
-                <form method="post" action="../controller/modif_even_C.php">
+                <form method="post" action="../controller/modif_even_admin_C.php">
                     <label class="creation">Type d'évènement :</label><input class="creation" type="text" name="type_even"/><br/>
                     <input type="hidden" name="numero" value=<?php echo $i?> />
                     <input class="valider" type="submit" name="modif_type_even" value="modifier"/><br/>
@@ -70,7 +77,7 @@
         break;
                 case 3: ?>
                 <div id="creation_even">
-                <form method="post" action="../controller/modif_even_C.php">
+                <form method="post" action="../controller/modif_even_admin_C.php">
                     <label class="creation">Adresse de l'évènement :</label><input class="creation" type="text" name="adresse_even"/><br/>
                     <input type="hidden" name="numero" value=<?php echo $i?> />
                     <input class="valider" type="submit" name="modif_adresse_even" value="modifier"/><br/>
@@ -79,7 +86,7 @@
         break;
                 case 4: ?>
                 <div id="creation_even">
-                <form method="post" action="../controller/modif_even_C.php">
+                <form method="post" action="../controller/modif_even_admin_C.php">
                     <label class="creation">Ville :</label><input class="creation" type="text" name="ville_even"/><br/>
                     <input type="hidden" name="numero" value=<?php echo $i?> />
                     <input class="valider" type="submit" name="modif_ville_even" value="modifier"/><br/>
@@ -88,7 +95,7 @@
         break;
                 case 5: ?>
                 <div id="creation_even">
-                <form method="post" action="../controller/modif_even_C.php">
+                <form method="post" action="../controller/modif_even_admin_C.php">
                     <label class="creation">Type de public :</label><input class="creation" type="text" name="type_public"/><br/>
                     <input type="hidden" name="numero" value=<?php echo $i?> />
                     <input class="valider" type="submit" name="modif_type_public" value="modifier"/><br/>
@@ -97,7 +104,7 @@
         break;
                 case 6: ?>
                 <div id="creation_even">
-                <form method="post" action="../controller/modif_even_C.php">
+                <form method="post" action="../controller/modif_even_admin_C.php">
                     <label class="creation">Date de début :</label><input class="creation" type="text" name="date_debut"/><br/>
                     <label class="creation">Date de fin :</label><input class="creation" type="text" name="date_fin"/><br/>
                     <input type="hidden" name="numero" value=<?php echo $i?> />
@@ -108,7 +115,7 @@
   
                 case 7: ?>
                 <div id="creation_even">
-                <form method="post" action="../controller/modif_even_C.php">
+                <form method="post" action="../controller/modif_even_admin_C.php">
                     <label class="creation">Horaire de l'évènement :</label><input class="creation" type="text" name="horaire"/><br/>
                     <input type="hidden" name="numero" value=<?php echo $i?> />
                     <input class="valider" type="submit" name="modif_horaire" value="modifier"/><br/>
@@ -117,7 +124,7 @@
         break;
                     case 8: ?>
                 <div id="creation_even">
-                <form method="post" action="../controller/modif_even_C.php">
+                <form method="post" action="../controller/modif_even_admin_C.php">
                     <label class="creation">Tarif min :</label><input class="creation" type="number" name="tarif_min"/><br/>
                     <label class="creation">Tarif max :</label><input class="creation" type="number" name="tarif_max"/><br/>
                     <input type="hidden" name="numero" value=<?php echo $i?> />
@@ -127,7 +134,7 @@
         break;
                     case 9: ?>
                 <div id="creation_even">
-                <form method="post" action="../controller/modif_even_C.php">
+                <form method="post" action="../controller/modif_even_admin_C.php">
                     <label class="creation">Nombre de place de l'évènement :</label><input class="creation" type="number" name="nb_place"/><br/>
                     <input type="hidden" name="numero" value=<?php echo $i?> />
                     <input class="valider" type="submit" name="modif_nb_place" value="modifier"/><br/>
@@ -155,3 +162,8 @@
             }
          
             include("pied_de_page.php"); ?>
+       </body>
+
+
+</html>
+

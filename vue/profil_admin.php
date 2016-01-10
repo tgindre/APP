@@ -13,6 +13,7 @@
         
               include('entete_admin.php');
               include('nom.php');
+        if(!(isset($_GET['suppr']))){
         if(!isset($_GET['modifier'])){
         if(isset($_SESSION['photo'.$i]) && $_SESSION['photo'.$i]!=''){ ?>
         
@@ -23,7 +24,14 @@
         <div class="image_profil">
             <p><img src ="image/point-d-interrogation2.jpg" alt="?"> <span class='modifier'><a href="profil_admin.php?modifier='0'&nb=<?php echo $i?>">Modifier</a></span></p>
         </div>
-        <?php }
+        <?php } ?>
+        <div class="profil">   
+                <form method="post" action="../controller/modif_profil_C.php" id="confirm_suppr" onclick="return(confirm('Etes-vous sûr de vouloir supprimer cette entrée?'));">
+                <input type="hidden" name="numero" value=<?php echo $i?> />
+                <input class="supprimer" type="submit" name="supprimer" value="Supprimer" /><br/>
+                </form>
+        </div>
+    <?php
               echo '<p class="profil"> Pseudo : ' . htmlentities($_SESSION['pseudo'.$i]) .' <span class=\'modifier\'><a href="profil_admin.php?modifier=1&nb='.$i.'">Modifier</a></span><br/> Email : '.htmlentities($_SESSION['mail'.$i]).' <span class=\'modifier\'><a href="profil_admin.php?modifier=2&nb='.$i.'">Modifier</a></span><br/> Nom : '. htmlentities($_SESSION['nom'.$i]) . ' <span class=\'modifier\'><a href="profil_admin.php?modifier=3&nb='.$i.'">Modifier</a></span><br/> Prénom : '.htmlentities($_SESSION['prenom'.$i]).'<span class=\'modifier\'><a href="profil_admin?modifier=4&nb='.$i.'">Modifier</a></span><br/> Date de naissance : ' . htmlentities($_SESSION['date_n'.$i]) .' <span class=\'modifier\'><a href="profil_admin.php?modifier=5&nb='.$i.'">Modifier</a></span></p>'; 
               echo '<p class="profil"> Adresse : '.htmlentities($_SESSION['adresse'.$i]).' <span class=\'modifier\'><a href="profil_admin?modifier=6&nb='.$i.'">Modifier</a></span><br/> Code postal : '. htmlentities($_SESSION['code_postal'.$i]) . ' <span class=\'modifier\'><a href="profil_admin.php?modifier=7&nb='.$i.'">Modifier</a></span><br/> Ville : '.htmlentities($_SESSION['ville'.$i]).' <span class=\'modifier\'><a href="profil_admin.php?modifier=8&nb='.$i.'">Modifier</a></span><br/> Pays : '.htmlentities($_SESSION['pays'.$i]).' <span class=\'modifier\'><a href="profil_admin.php?modifier=9&nb='.$i.'">Modifier</a></span></p>';
         } else {
@@ -141,6 +149,9 @@
                 break;*/
                 }
             
+        }
+    } else {
+            echo "Evenement supprimer";  
         }
 ?>
            

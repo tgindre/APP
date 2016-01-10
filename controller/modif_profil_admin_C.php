@@ -58,7 +58,11 @@ if (isset($_POST['image_profil'])) {
     }
         if (isset($_POST['modifier_pays'])) {   
     }
-
+        if (isset($_POST['supprimer'])) {
+        supprime_utilisateur($_SESSION['id_createur'.$i]);
+        $suppr=42;
+        header('Location: ../vue/profil_admin.php?suppr='.$suppr);
+    }
     $id=$_SESSION['id'.$i];
     $connect= select_utilisateur('ID_utilisateur',$id);
     $_SESSION['pseudo'.$i] = $connect['pseudo'];

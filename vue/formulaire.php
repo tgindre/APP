@@ -81,13 +81,21 @@
                     <div id="creation_evenement2">
                     <label class="creation">Adresse de l'évènement : </label><input class="creation" type="text" name="adresse_even"/><br/>
                     <label class="creation">Ville</label><input class="creation" type="text" name="ville_even"/><br/>
-                    <label class="creation">type de public </label><input class="creation" type="text" name="type_public"/><br/>
                     <label class="creation">Date de début : </label><input class="creation" type="text" name="date_debut" placeholder="jj/mm/aaaa"/><br/>
                     <label class="creation">Date de fin : </label><input class="creation" type="text" name="date_fin" placeholder="jj/mm/aaaa"/><br/>
                     <label class="creation">Horaire de l'évènement : </label><input class="creation" type="text" name="horaire" placeholder="ex : 4h42 - 17h30"/><br/>               
                     <label class="creation">Tarif min : </label><input class="creation" type="number" name="tarif_min"/><br/>
                     <label class="creation">Tarif max : </label><input class="creation" type="number" name="tarif_max"/><br/>
                     <label class="creation">Nombre de place de l'évènement : </label><input class="creation" type="number" name="nb_place"/><br/>
+                    <!--<input class="creation" type="text" name="type_public"/><br/> -->
+                     <label class="creation">type de public </label>
+                     <select name="type_public" class="creation">
+                            <option value="3-8 ans">3-8 ans</option>
+                            <option value="8-18 ans">8-18 ans</option>
+                            <option value="18-30 ans">18-30 ans</option>
+                            <option value="royaume-uni">30-60 ans</option>
+                            <option value="60 ans et +">60 ans et +</option>
+                     </select><br/>
                     </div>
                     <input id="creation_valider" type="submit" name="creation_even" value="création"/>
                 </form>
@@ -98,10 +106,18 @@
                 <h1>Recherche d'évènement</h1>
                 <form name="creation_evenement" method="post" action="../controller/trouver_even_C.php">
                     <label class="creation">Nom de l'évènement :</label><input class="creation" type="text" name="nom_even"/><br/>
-                    <label class="creation">Type d'évènement </label><input class="creation" type="text" name="type_even"/><br/>
-                    <label class="creation">type de public </label><input class="creation" type="text" name="type_public"/><br/>
-                    <label class="creation">Lieu</label><input class="creation" type="text" name="lieu"/><br/>                    
+                    <label class="creation">Type d'évènement :</label><input class="creation" type="text" name="type_even"/><br/>
+                    <label class="creation">Lieu :</label><input class="creation" type="text" name="lieu"/><br/>                    
                     <label class="creation">Date l'évènement : </label><input class="creation" type="text" name="date_even"/><br/>
+                  <!--  <label class="creation">type de public </label><input class="creation" type="text" name="type_public"/><br/> -->
+                    <label class="creation">Type de public :</label>
+                    <select name="type_public" class="creation">
+                            <option class="creation" value="3-8 ans">3-8 ans</option>
+                            <option class="creation" value="8-18 ans">8-18 ans</option>
+                            <option class="creation" value="18-30 ans">18-30 ans</option>
+                            <option class="creation" value="royaume-uni">30-60 ans</option>
+                            <option class="creation" value="60 ans et +">60 ans et +</option>
+                     </select><br/>
                     <input type="hidden" name="page" value=<?php echo htmlentities($_GET['page'])?> />
                     <input id="creation_valider" type="submit" name="recherche_av" value="recherche avancée"/>
                 </form>
@@ -112,10 +128,17 @@
                 <h1>Recherche d'évènement</h1>
                 <form name="creation_evenement" method="post" action="../controller/trouver_even_C_admin.php">
                     <label class="creation">Nom de l'évènement :</label><input class="creation" type="text" name="nom_even"/><br/>
-                    <label class="creation">Type d'évènement </label><input class="creation" type="text" name="type_even"/><br/>
-                    <label class="creation">type de public </label><input class="creation" type="text" name="type_public"/><br/>
-                    <label class="creation">Lieu</label><input class="creation" type="text" name="lieu"/><br/>                    
+                    <label class="creation">Type d'évènement :</label><input class="creation" type="text" name="type_even"/><br/>
+                    <label class="creation">Lieu :</label><input class="creation" type="text" name="lieu"/><br/>                    
                     <label class="creation">Date l'évènement : </label><input class="creation" type="text" name="date_even"/><br/>
+                  <!--  <label class="creation">type de public </label><input class="creation" type="text" name="type_public"/><br/> -->
+                     <select name="type_public" class="creation">
+                            <option value="3-8 ans">3-8 ans</option>
+                            <option value="8-18 ans">8-18 ans</option>
+                            <option value="18-30 ans">18-30 ans</option>
+                            <option value="royaume-uni">30-60 ans</option>
+                            <option value="60 ans et +">60 ans et +</option>
+                     </select><br/>
                     <input type="hidden" name="page" value=<?php echo htmlentities($_GET['page'])?> />
                     <input id="creation_valider" type="submit" name="recherche_av" value="recherche avancée"/>
                 </form>

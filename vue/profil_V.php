@@ -9,6 +9,7 @@
         <?php $formulaire='';
               include("entete.php");
               include('nom.php');
+        if(!(isset($_GET['suppr']))){
         if(!isset($_GET['modifier'])){
         if(isset($_SESSION['photo']) && $_SESSION['photo']!=''){ ?>
         
@@ -19,8 +20,14 @@
         <div class="image_profil">
             <p><img src ="image/point-d-interrogation2.jpg" alt="?"> <span class='modifier'><a href="profil_V.php?modifier='0'">Modifier</a></span></p>
         </div>
-        <?php }
-              echo '<p class="profil"> Pseudo : ' . htmlentities($_SESSION['pseudo']) .' <span class=\'modifier\'><a href="profil_V.php?modifier=1">Modifier</a></span><br/> Email : '.htmlentities($_SESSION['mail']).' <span class=\'modifier\'><a href="profil_V.php?modifier=2">Modifier</a></span><br/> Nom : '. htmlentities($_SESSION['nom']) . ' <span class=\'modifier\'><a href="profil_V.php?modifier=3">Modifier</a></span><br/> Prénom : '.htmlentities($_SESSION['prenom']).'<span class=\'modifier\'><a href="profil_V.php?modifier=4">Modifier</a></span><br/> Date de naissance : ' . htmlentities($_SESSION['date_n']) .' <span class=\'modifier\'><a href="profil_V.php?modifier=5">Modifier</a></span></p>'; 
+        <?php } ?>
+        <div class="profil">   
+                <form method="post" action="../controller/modif_profil_C.php" id="confirm_suppr" onclick="return(confirm('Etes-vous sûr de vouloir supprimer cette entrée?'));">
+                <input type="hidden" name="numero" value=<?php echo $i?> />
+                <input class="supprimer" type="submit" name="supprimer" value="Supprimer" /><br/>
+                </form>
+        </div>
+    <?php     echo '<p class="profil"> Pseudo : ' . htmlentities($_SESSION['pseudo']) .' <span class=\'modifier\'><a href="profil_V.php?modifier=1">Modifier</a></span><br/> Email : '.htmlentities($_SESSION['mail']).' <span class=\'modifier\'><a href="profil_V.php?modifier=2">Modifier</a></span><br/> Nom : '. htmlentities($_SESSION['nom']) . ' <span class=\'modifier\'><a href="profil_V.php?modifier=3">Modifier</a></span><br/> Prénom : '.htmlentities($_SESSION['prenom']).'<span class=\'modifier\'><a href="profil_V.php?modifier=4">Modifier</a></span><br/> Date de naissance : ' . htmlentities($_SESSION['date_n']) .' <span class=\'modifier\'><a href="profil_V.php?modifier=5">Modifier</a></span></p>'; 
               echo '<p class="profil"> Adresse : '.htmlentities($_SESSION['adresse']).' <span class=\'modifier\'><a href="profil_V.php?modifier=6">Modifier</a></span><br/> Code postal : '. htmlentities($_SESSION['code_postal']) . ' <span class=\'modifier\'><a href="profil_V.php?modifier=7">Modifier</a></span><br/> Ville : '.htmlentities($_SESSION['ville']).' <span class=\'modifier\'><a href="profil_V.php?modifier=8">Modifier</a></span><br/> Pays : '.htmlentities($_SESSION['pays']).' <span class=\'modifier\'><a href="profil_V.php?modifier=9">Modifier</a></span></p>';
         } else {
             
@@ -128,6 +135,9 @@
                 }
             
         }
+        } else {
+            echo "Evenement supprimer";  
+        }
 ?>
            
 <?php        include('../controller/profil_C.php');
@@ -156,7 +166,8 @@
                 $i++; ?>
             </a></div>
         <?php
-        }}
+        }
+            }
         else {
             echo '<h1 class="profil">Aucun évènement créé</h1>' ;
         }
