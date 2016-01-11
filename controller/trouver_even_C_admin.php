@@ -7,6 +7,14 @@ $i = 1;
 if (isset($_POST['recherche_av']) || (isset($_GET['recherche']) && $_GET['recherche'])) {
     $recherche =true;
     
+    if (isset($_POST['page'])) {
+        $page = $_POST['page'];
+    } else if(isset($_GET['page'])){ 
+        $page = $_GET['page'];
+    } else{
+        $page = 1; 
+    }
+    
     foreach ($_POST as $cle => $element) {
         $_POST[$cle] = '%' . $element . '%';
     }
@@ -35,7 +43,7 @@ if (isset($_POST['recherche_av']) || (isset($_GET['recherche']) && $_GET['recher
         $i++;
     }
 
-    header('Location: ../vue/trouver_even_V.php?nbp='.$nombreDePages.'&recherche='.$recherche);
+    header('Location: ../vue/gerer_even.php?nbp='.$nombreDePages.'&recherche='.$recherche.'&page='.$page);
 }  else {
    $nb = select_nb_evenement_def();
     $totalDesMessages = $nb['nb_messages'];
@@ -43,7 +51,7 @@ if (isset($_POST['recherche_av']) || (isset($_GET['recherche']) && $_GET['recher
 
     if (isset($_GET['page'])) {
         $page = $_GET['page']; 
-    }  else { 
+    } else { 
         $page = 1; 
     }
     // On calcule le numéro du premier message qu'on prend pour le LIMIT de MySQL

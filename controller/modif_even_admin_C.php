@@ -7,11 +7,11 @@ $i=$_POST['numero'];
 if (isset($_POST['image_even'])) {
     if ($_FILES['image']['error'] > 0) {
         $erreur = 0;
-        header('Location: ../vue/even_V.php?erreur=' . $erreur.'&nb='.$i);
+        header('Location: ../vue/even_admin.php?erreur=' . $erreur.'&nb='.$i);
     } else {$erreur=42;}
     if ($_FILES['image']['size'] > $maxsize) {
         $erreur = 1;
-        header('Location: ../vue/even_V.php?erreur=' . $erreur.'&nb='.$i);
+        header('Location: ../vue/even_admin.php?erreur=' . $erreur.'&nb='.$i);
     }
     $extensions_valides = array('jpg', 'jpeg', 'gif', 'png');
     //1. strrchr renvoie l'extension avec le point (« . »).
@@ -20,7 +20,7 @@ if (isset($_POST['image_even'])) {
     $extension_upload = strtolower(substr(strrchr($_FILES['image']['name'], '.'), 1));
     if (!in_array($extension_upload, $extensions_valides)) {
         $erreur = 2;
-        header('Location: ../vue/even_V.php?erreur=' . $erreur.'&nb='.$i);
+        header('Location: ../vue/even_admin.php?erreur=' . $erreur.'&nb='.$i);
     } else {
         $nom = "../vue/image/even/{$_SESSION['id_even'.$i]}.{$extension_upload}";
         $resultat = move_uploaded_file($_FILES['image']['tmp_name'], $nom);
@@ -28,7 +28,7 @@ if (isset($_POST['image_even'])) {
     }
     modif_evenement('image', $nom, $_SESSION['id_even'.$i]);
     $_SESSION['photo_even'.$i] = $nom;
-    header('Location: ../vue/even_V.php?erreur=' . $erreur.'&nb='.$i);
+    header('Location: ../vue/even_admin.php?erreur=' . $erreur.'&nb='.$i);
 }
 
     if (isset($_POST['modif_nom_even'])) {
@@ -63,7 +63,7 @@ if (isset($_POST['image_even'])) {
     if (isset($_POST['supprimer'])) {
         supprime_even($_SESSION['id_even'.$i]);
         $suppr=42;
-        header('Location: ../vue/even_V.php?suppr='.$suppr);
+        header('Location: ../vue/even_admin.php?suppr='.$suppr);
         exit();
     }
 
@@ -84,5 +84,4 @@ if (isset($_POST['image_even'])) {
         $_SESSION['tarif_max'.$i] = $donnees['tarif_max'];
         $_SESSION['nb_participants'.$i] = $donnees['nb_participants'];
         $_SESSION['photo_even'.$i] = $donnees['image'];
-    header('Location: ../vue/even_V.php?nb='.$i);
-
+    header('Location: ../vue/even_admin.php?nb='.$i);

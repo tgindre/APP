@@ -8,13 +8,14 @@
 	</head>
 	<body>
     <?php $formulaire= 'recherche'; 
+    $page_accueil=true;
     include("entete.php"); 
     include("bandeau.php");
     $nb_even=3;?>
             
 	  <h1 id="slogan_description">Parce que ShareTime n'est pas qu'un site, c'est :</h1>
 	<div id="description">
-	<p> <img id ="jeunes" src="image/jeunes.jpg" alt="4 jeunes"> </p>
+	<p> <img id ="jeunes" src="image/accueil.jpg" alt="4 jeunes"> </p>
     <p>Une <span class="gras"> grande vision </span> des évènements des le premier coup</p>
     <p>Le <span class="gras"> partage d'évènements </span> sur les réseaux sociaux</p>
     <p>Des <span class="gras"> alertes personnalisées</span></p>
@@ -25,9 +26,9 @@
 	<p id = "slogan3" > Trouvez votre bonheur en recherchant dans le fil d'actualité l'évènement, près de chez vous, qui vous correspond </p>
 
        <div class ="conteneur">
-      <?php include('../model/trouver_even_M.php');  
+      <?php include('../controller/trouver_even_C.php');
            $i=1;
-           while($i<=$_SESSION['nb']){
+           while($i<=$nb_even){
         /*$_SESSION['n_even']=$i;  Pour reconnaitre l'evenement dans la page even_V */
                if(isset($_SESSION['photo_even'.$i])&& $_SESSION['photo_even'.$i]!=''){ ?>
            <div class="even"> <a href="even_V.php?nb=<?php echo $i?>" >
@@ -43,7 +44,7 @@
        </div>
 
 			<div id = "recherche_avance"> <p> Recherche avancées <br/>
-					<mark id ="app">Appuyer ici</mark> </p>
+				<a href="trouver_even_V.php" id ="app">Appuyer ici</a> </p>
 			</div>
 
         <?php

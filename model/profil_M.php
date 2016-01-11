@@ -1,4 +1,4 @@
-<?php
+<?php/*
 $even_cree=$bdd->prepare('SELECT * FROM evenement WHERE ID_createur= :id ORDER BY ID_even DESC LIMIT 0, 3');
 $even_cree->bindParam('id', $_SESSION['id'], PDO::PARAM_INT);
 $even_cree->execute();
@@ -23,5 +23,5 @@ while ($donnees = $even_cree->fetch(PDO::FETCH_ASSOC)){
         $i++;
         $even=true;
 }
-$even_cree->closeCursor();
+$even_cree->closeCursor();*/
 

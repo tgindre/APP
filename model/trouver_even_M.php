@@ -1,4 +1,4 @@
-<?php
+<?php /*
 $i=1;
 if(isset($_POST['recherche_av'])){
     $_SESSION['type']='recherche';
@@ -36,7 +36,7 @@ if(isset($_POST['recherche_av'])){
   header('Location: ../vue/trouver_even_V.php');
 
 } else{
-/*echo 'pas de post du formulaire recherche av';*/
+echo 'pas de post du formulaire recherche av';
 $even = $bdd->query('SELECT *  FROM evenement ORDER BY ID_even DESC LIMIT 0,'.$nb_even);
 while ($donnees = $even->fetch()){
         $_SESSION['id_createur'.$i] = $donnees['ID_createur'];
@@ -58,5 +58,5 @@ while ($donnees = $even->fetch()){
         $i++;
 }
 $even->closeCursor();
-}
+} */
 ?>

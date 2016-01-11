@@ -22,10 +22,10 @@ if(isset($_POST['connexion'])){
             $_SESSION['admin'] = $connect['administrateur'];
             
         }else{
-            $erreur = 'Votre mot de passe ne correspond pas';
+            $erreur = 0;
         }
     }else{
-        $erreur = 'Votre adresse mail n existe pas';
+        $erreur = 1;
     }
 
     if(isset($erreur)){

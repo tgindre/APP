@@ -1,13 +1,21 @@
 <?php 
+include('../model/model.php');
 include('../model/modif_bdd.php');
 include('../model/select_bdd.php');
 if(isset($_POST['recherche'])){
+    
     $i=1;
-    $_SESSION['type']='recherche';
+    $recherche =true;
+    $nombreParPage = 20;
         foreach($_POST as $cle => $element){
             $_POST[$cle]='%'.$element.'%';
         }
-        $req =recherche($_POST['lieu'],$_POST['date'],$_POST['type_even']);
+    
+    $nb = nb_recherche($_POST['lieu'], $_POST['date'], $_POST['type_even']);
+    $totalDesMessages = $nb['nb_messages'];
+    $nombreDePages = ceil($totalDesMessages / $nombreParPage); // ciel renvoie le nombre entier supérieur
+    
+       $req =recherche($_POST['lieu'],$_POST['date'],$_POST['type_even']);
        while ($donnees = $req->fetch()){
         $_SESSION['id_createur'.$i] = $donnees['ID_createur'];
         $_SESSION['id_even'.$i] = $donnees['ID_even'];
@@ -29,5 +37,5 @@ if(isset($_POST['recherche'])){
 }
   $req->closeCursor();      
 }
-    header('Location: ../vue/trouver_even_V.php');
+    header('Location: ../vue/trouver_even_V.php?nbp='.$nombreDePages.'&recherche='.$recherche);
 

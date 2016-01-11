@@ -32,13 +32,7 @@
             include("bandeau.php"); ?>
         <h1 class="erreur"> Vous devez être connecté pour pouvoir créer un évenement </h1>
         <?php }
-        ?>
-
-        <div id = "recherche_avance"> <p> Recherche avancées <br/>
-                <mark id ="app">Appuyer ici</mark> </p>
-        </div>
-
-        <?php include("pied_de_page.php"); ?>
+        include("pied_de_page.php"); ?>
 
     </body>
 

@@ -1,18 +1,19 @@
 <?php
 // Femme == true ; Homme == false;
-
 if(isset($_POST['inscr']))
-{
+{   include('../model/model.php');
     include('../model/inscription_M.php');
+    $_SESSION['erreur'] = $_POST;
     if($resultat)
     {
         $error =3;
         header('Location: ../vue/inscription_V.php?erreur='.$error);
-    }
-    else
-    {
-        if($_POST['password'] == $_POST['password_verif'])
-        {
+    } else {
+        if($_POST['password'] == $_POST['password_verif']){ 
+            if (!(strlen($_POST['password'])>=5)){
+                $error =4;
+                header('Location: ../vue/inscription_V.php?erreur='.$error);
+        } else {
             $pass_hache = sha1('gz' . htmlspecialchars($_POST['password']));// Hachage du mot de passe pour le crypter
         
             if ($_POST['genre']=='Femme')
@@ -50,7 +51,7 @@ if(isset($_POST['inscr']))
                 $error =2;
                 header('Location: ../vue/inscription_V.php?erreur='.$error);
             }
-       
+        }
         }
         else
         {

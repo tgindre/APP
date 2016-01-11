@@ -8,16 +8,9 @@
     <body>
         <?php include("entete.php")  ?>
         <?php if(isset($_GET['erreur'])){
-                        switch ($_GET['erreur']) {
-                case 0 : 
-                    $erreur= 'Votre mot de passe ne correspond pas';
-                 break;
-                case 1:
-                    $erreur= 'Votre adresse mail n existe pas';
-                    break;
-              }
+            echo  htmlentities($_GET['erreur']);
         } ?>
-        <?php $formulaire='connexion' ?>
+        <?php $formulaire='reconnexion' ?>
         <?php include("bandeau.php") ?>
         <?php include("pied_de_page.php") ?>
     
