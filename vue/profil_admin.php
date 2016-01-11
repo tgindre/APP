@@ -150,9 +150,9 @@
                 }
             
         }
-    } else {
-            echo "Evenement supprimer";  
-        }
+    } else {?>
+        <h1 id='even_suppr'>Evènement supprimer</h1>
+      <?php     }
 ?>
            
 <?php        include('../controller/profil_admin_C.php');

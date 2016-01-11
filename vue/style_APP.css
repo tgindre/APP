@@ -416,10 +416,6 @@ footer{
     border : solid;
 }
 #erreur{
-    margin-bot:0px;
-    margin-top:0px;
-    padding-bot:0px;
-    padding-top:0px;
     color : red;
     font-size : 14px;
 }
@@ -538,6 +534,13 @@ label {
     padding-left:20px;
     padding-right:20px;
     width : 80px;
+}
+
+/**/
+#even_suppr{
+    text-align : center;
+    font-size: 44px;
+    color : red;
 }
 
 

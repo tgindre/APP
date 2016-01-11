@@ -168,9 +168,9 @@
         <?php
         }
             }
-        else {
-            echo '<h1 class="profil">Aucun évènement créé</h1>' ;
-        }
+        else {?>
+        <h1 id='even_suppr'>Evènement supprimer</h1>
+      <?php   }
              include("pied_de_page.php"); ?>
        </body>
 

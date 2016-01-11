@@ -41,6 +41,9 @@
         <input class="Identification" type="email" name="mail" placeholder="Email"> </br>
         <input class="Identification" type="password" name="password" placeholder="Mot de passe"></br>
         <input class="connexion" type="submit" name="connexion" value="Connexion"/>
+        <?php if(isset($erreur)){?> 
+            <p id='erreur'> <?php echo $erreur; ?> </p>
+        <?php   } ?>
     <p class="ID" ><a href="page_apresmdpoublier.php"> Mot de passe oublié ? </a></br>
     <a href="inscription_V.php"> Pas encore inscrit ? Viens t'inscrire gratuitement !</a></p>
     </form>

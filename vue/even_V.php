@@ -175,9 +175,9 @@
                 break;
               }
             }
-           } else {
-            echo "Evenement supprimer";   
-           }
+           } else { ?>
+        <h1 id='even_suppr'>Evènement supprimer</h1>
+      <?php     }
          
             include("pied_de_page.php"); ?>
        </body>

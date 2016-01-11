@@ -10,6 +10,7 @@
         <?php $formulaire='';
               include("entete_admin.php");
               include("nom.php");
+              if(!(isset($_GET['suppr']))){
               if (isset($_GET['nb'])){$i=htmlentities($_GET['nb']);}
               if(!isset($_GET['modifier'])){             
               if($_SESSION['tarif_min'.$i]==$_SESSION['tarif_max'.$i]){
@@ -160,6 +161,9 @@
                 break;*/
               }
             }
+            } else { ?>
+        <h1 id='even_suppr'>Evènement supprimer</h1>
+      <?php     }
          
             include("pied_de_page.php"); ?>
        </body>

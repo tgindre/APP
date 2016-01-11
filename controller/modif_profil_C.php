@@ -68,6 +68,7 @@ if (isset($_POST['image_profil'])) {
         supprime_utilisateur($_SESSION['id']);
         $suppr=42;
         header('Location: ../vue/profil_V.php?suppr='.$suppr);
+        exit();
     }
 
 
