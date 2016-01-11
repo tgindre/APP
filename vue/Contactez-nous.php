@@ -7,14 +7,14 @@
 
 	</head>
 	<body>
-<<<<<<< HEAD
+
 	<?php include("entete.php"); ?>
 	
-=======
+
 
 <?php include("entete.php"); ?>
             
->>>>>>> origin/master
+
 <div id="fond"> 
 	<p class="contact"> Dites-nous si vous avez une question ou besoin d'un conseil ! </p> 	
         <form method="POST" action="traitement php">
@@ -49,26 +49,13 @@
 	<input class="envoyer" type="submit" name="envoyer" value="envoyer"/></br>
         </form>
 </div>
-		
+			
+
 	
-<<<<<<< HEAD
+			<div id = "recherche_avance"> <p> Recherche avancées <br/>
+				<a href="trouver_even_V.php" id ="app">Appuyer ici</a> </p>
+			</div>
 
-	<footer>
-					<img id="logoID" src ="image/logo.jpg" alt="Logo sharetime">
-	<ul class="menu">
-			<li><a href="#"><span class="tiret">|</span> Qui sommes-nous? <span class="tiret">|</span></a></li>
-			<li><a href="#">Fonctionnalités <span class="tiret">|</span></a></li>
-			<li><a href="#">Forum <span class="tiret">|</span></a></li>
-			<li><a href="#">Conditions générales et confidentialité <span class="tiret">|</span></a></li>
-	</ul>
-<p id="réseaux_sociaux"> Rejoignez-nous sur : </p>
-
-	</footer>
-		</body>
-=======
-<div id = "recherche_avancé"> <p> Recherche avancée <br/>
-<mark id ="app"> Appuyer ici </mark> </p>
-</div>
    <?php include("pied_de_page.php")?>
 	</body>
->>>>>>> origin/master
+</html>
