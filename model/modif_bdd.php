@@ -94,3 +94,23 @@ function supprime_post($id){
     );
     $req->closeCursor();
 }
+
+function modif_aide($id,$question,$reponse) {
+    global $bdd;
+    $req = $bdd->prepare('UPDATE aide SET question= :question, reponse= :reponse WHERE id= :id');
+    $req->execute(array(
+        'id' => $id,
+        'question' => $question,
+        'reponse' => $reponse)
+    );
+    $req->closeCursor();
+}
+
+function supprime_aide($id){
+    global $bdd;
+    $req = $bdd->prepare('DELETE FROM aide WHERE id= :id');
+    $req->execute(array(
+        'id' => $id)
+    );
+    $req->closeCursor();
+}

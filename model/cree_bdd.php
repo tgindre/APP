@@ -41,3 +41,14 @@ function creation_sujet($name,$name_categorie){
    $rep=true;
     return($rep);
 }
+
+function creation_aide($question,$reponse){
+    global $bdd;
+    $insert = $bdd->prepare('INSERT INTO aide (question, reponse) VALUES (:question, :reponse)');
+    $insert->execute(array(
+        'question'=>$question,
+        'reponse'=>$reponse
+        ));
+   $rep=true;
+    return($rep);
+}
