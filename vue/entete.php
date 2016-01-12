@@ -13,7 +13,7 @@
 		</ul>
                 <?php } ?>
             </div>
-            <img id="nom" src ="image/nom.png" alt="sharetime">
+            <img id="nom" src ="image/nom.png" alt="sharetime"/>
          <?php  
          if(isset($_SESSION['admin']) && $_SESSION['admin'] ){ ?>
              <nav>
