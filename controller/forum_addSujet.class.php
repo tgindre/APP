@@ -38,12 +38,8 @@ class addSujet{
 
 	public function insert(){
 
-
-		$requete = $this->bdd->prepare('INSERT INTO sujet(name,categorie) VALUES(:name,:categorie)');
-		$requete->execute(array('name' => $this->name,'categorie'=> $this->categorie));
-
-		$requete2 = $this->bdd->prepare('INSERT INTO postSujet(propri,contenu,date,sujet) VALUES(:propri,:contenu,NOW(),:sujet)');
-		$requete2->execute(array('propri'=>$_SESSION['id'],'contenu' => $this->sujet,'sujet'=> $this->name));
+		$insert = "sujet";
+		include "../model/forum_index_M.php";
 
 		return 1;
 

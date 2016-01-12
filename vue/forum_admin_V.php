@@ -28,7 +28,6 @@ if(isset($_POST['name']) AND isset($_POST['sujet'])){
 	<meta charset='utf-8' />
 	<title>Administration du forum</title>
 	<meta name="author" content="Timothee Gindre">
-	<link rel="stylesheet" type="text/css" href="forum_general.css" />
 	<link rel="stylesheet" href="style_APP.css"/>
 </head>
 <body>
@@ -50,8 +49,9 @@ if(isset($_POST['name']) AND isset($_POST['sujet'])){
 
 			<?php 
 
-			$requete = $bdd->prepare('SELECT * FROM postSujet WHERE sujet= :sujet ');
-			$requete->execute(array('sujet'=>$_GET['sujet']));
+			$select = "post";
+			include "../model/forum_index_M.php";
+
 			?>
 			<br><a href="forum_admin_V.php?categorie=<?php echo $_GET['categorie']; ?>" >Autres sujets</a>
 			<?php
@@ -60,9 +60,10 @@ if(isset($_POST['name']) AND isset($_POST['sujet'])){
 				?>
 				<div class='post'>
 					<?php
-					$requete2 = $bdd->prepare('SELECT * FROM utilisateur WHERE ID_utilisateur = :ID_utilisateur');
-					$requete2->execute(array('ID_utilisateur'=>$reponse['propri']));
-					$utilisateur = $requete2->fetch();
+
+					$select ="utilisateur";
+					include "../model/forum_index_M.php";
+
 					echo $utilisateur['pseudo'] . ' : ';
 					echo '<br>' . $reponse['contenu'];
 					?>
@@ -128,8 +129,10 @@ if(isset($_POST['name']) AND isset($_POST['sujet'])){
 			{
 				echo 'Vous devez être connecté pour ajouter un sujet';
 			}
-			$requete = $bdd->prepare('SELECT * FROM sujet WHERE categorie = :categorie ');
-			$requete->execute(array('categorie'=>$_GET['categorie']));
+
+			$select ="sujet";
+			include "../model/forum_index_M.php";
+
 			while($reponse = $requete->fetch()){
 				?>
 				<div class="categories">
@@ -158,7 +161,9 @@ if(isset($_POST['name']) AND isset($_POST['sujet'])){
 
 		else { //Si on est sur une page normale
 
-			$requete = $bdd->query('SELECT * FROM categories');
+			$select ="categorie";
+			include "../model/forum_index_M.php";
+			
 			while($reponse = $requete->fetch()){
 			?>
 

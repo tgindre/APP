@@ -29,8 +29,8 @@ class addPost{
 
 	public function insert(){
 
-		$requete2 = $this->bdd->prepare('INSERT INTO postSujet(propri,contenu,date,sujet) VALUES(:propri,:contenu,NOW(),:sujet)');
-		$requete2->execute(array('propri'=>$_SESSION['id'],'contenu' => $this->sujet,'sujet'=> $this->name));
+		$insert = "post";
+		include "../model/forum_index_M.php";
 
 		return 1;
 
