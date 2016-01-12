@@ -1,0 +1,126 @@
+.faq{
+	font-size: 42px;
+	text-align: center;
+	text-shadow: 5px 10px 10px black;
+	font-weight: bold;
+	font-family: time new roman;
+	color : rgb(111,0,55);
+}
+
+body{
+	font-family: Time New Roman;
+}
+
+.q0{
+	text-align: center;
+	border: 0.001px silver solid;
+	
+}
+
+.titre{
+	text-align: center;
+	font-size:39px;
+	font-style: italic;
+	color: rgb(111,0,55);
+	
+}
+
+.categories{
+	text-align: center;
+	border: 0.001px silver solid;
+	margin-left:40px;	
+}
+
+.categorie1 , .categorie2, .categorie3 {
+	display :inline-block;
+	padding:100px;
+	max-width: 30%;
+}
+
+.categorie1{
+	border-right: 2px rgb(111,0,55)  dotted;
+}
+
+.categorie3{
+	border-left: 2px rgb(111,0,55) dotted;
+}
+
+
+.q1 , .q2, .q3, .q4{
+	border: 3px rgb(255,130,128) solid;
+	border-radius: 8px;
+	max-width: 90%;
+	margin: auto-left;
+	padding:30px;
+	word-wrap: break-word;
+	margin-bottom:35px;
+	margin-left:40px;
+}
+
+.q3{
+	margin-bottom: 125px;
+}
+
+
+.trouver , .perdu, .creation, .contact{
+	font-size: 20px;
+	color:rgb(111,0,55);
+	font-weight:bold;
+	text-decoration: underline;
+}
+em{
+	 font-style: italic;
+	 font-weight:bold;
+	 font-size:17px
+ }
+ 
+ .q4{
+	 margin-bottom:300px;
+ }
+ 
+ .q1{
+	 margin-top:120px;
+ }
+ .one, .two, .three {
+	font-size: 35px;
+	text-align: center;
+	text-shadow: 2px 5px 5px rgb(111,0,55);
+	font-weight: bold;
+	font-family: time new roman;
+	color : rgb(111,0,55);
+ }
+ 
+ .rechercher , .selectionner, .val{
+	font-size:28px;
+	text-align:center;
+	font-weight: bold;
+ }
+ 
+ .v , .sel, .rec{
+	 font-style: italic;
+	 font-size:18px;
+	 color:rgb(111,0,55);
+ }
+
+ .call, .create, .find{
+	 text-decoration: underline;
+	 font-size:19px;
+ }
+.create:hover{
+	color : #ff8410;
+	text-decoration:underline;
+}
+.call:hover{
+	color : #ff8410;
+	text-decoration:underline;
+}
+.find:hover{
+	color : #ff8410;
+	text-decoration:underline;
+}
+.R:hover{
+	color : #ff8410;
+}
+.R{
+	color:black;
+}
