@@ -51,10 +51,11 @@ if(isset($_POST['name']) AND isset($_POST['sujet'])){
 				<h1><?php echo $_GET['sujet']; ?></h1>
 			</div>
 
-			<?php 
+			<?php
 
-			$requete = $bdd->prepare('SELECT * FROM postSujet WHERE sujet= :sujet ');
-			$requete->execute(array('sujet'=>$_GET['sujet']));
+			$select = "post";
+			include "../model/forum_index_M.php" ;
+
 			?>
 			<br><a href="forum_index.php?categorie=<?php echo $_GET['categorie']; ?>" >Autres sujets</a>
 			<?php
