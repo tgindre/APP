@@ -63,7 +63,7 @@
     } if ($formulaire =='reconnexion'){
         ?>
             <div id = "formulaire2"> 
-    <p> Identification </p> <br/>
+    <p> Identification </p>
     <form name="Identification" method="post" action="../controller/connexion_C.php">
 	    <?php echo "Vos identifiants vous ont été envoyés à l'adresse email saisie.</br>"; ?>
         <input class="Identification" type="email" name="mail" placeholder="Email"> </br>
