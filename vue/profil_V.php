@@ -22,12 +22,11 @@
         </div>
         <?php } ?>
         <div class="profil">   
-                <form method="post" action="../controller/modif_profil_C.php" id="confirm_suppr" onclick="return(confirm('Etes-vous sûr de vouloir supprimer cette entrée?'));">
-                <input type="hidden" name="numero" value=<?php echo $i?> />
+                <form method="post" action="../controller/modif_profil_C.php" id="confirm_suppr" onclick="return(confirm('Etes-vous sûr de vouloir supprimer cette entrée?'));">             
                 <input class="supprimer" type="submit" name="supprimer" value="Supprimer" /><br/>
                 </form>
         </div>
-    <?php     echo '<p class="profil"> Pseudo : ' . htmlentities($_SESSION['pseudo']) .' <span class=\'modifier\'><a href="profil_V.php?modifier=1">Modifier</a></span><br/> Email : '.htmlentities($_SESSION['mail']).' <span class=\'modifier\'><a href="profil_V.php?modifier=2">Modifier</a></span><br/> Nom : '. htmlentities($_SESSION['nom']) . ' <span class=\'modifier\'><a href="profil_V.php?modifier=3">Modifier</a></span><br/> Prénom : '.htmlentities($_SESSION['prenom']).'<span class=\'modifier\'><a href="profil_V.php?modifier=4">Modifier</a></span><br/> Date de naissance : ' . htmlentities($_SESSION['date_n']) .' <span class=\'modifier\'><a href="profil_V.php?modifier=5">Modifier</a></span></p>'; 
+    <?php     echo '<p class="profil"> Pseudo : ' . htmlentities($_SESSION['pseudo']) .' <span class=\'modifier\'><a href="profil_V.php?modifier=1">Modifier</a></span><br/> Email : '.htmlentities($_SESSION['mail']).' <span class=\'modifier\'><a href="profil_V.php?modifier=2">Modifier</a></span><br/> Mot de passe : ' . htmlentities($_SESSION['pseudo']) .' <span class=\'modifier\'><a href="profil_V.php?modifier=10">Modifier</a></span><br/> Nom : '. htmlentities($_SESSION['nom']) . ' <span class=\'modifier\'><a href="profil_V.php?modifier=3">Modifier</a></span><br/> Prénom : '.htmlentities($_SESSION['prenom']).'<span class=\'modifier\'><a href="profil_V.php?modifier=4">Modifier</a></span><br/> Date de naissance : ' . htmlentities($_SESSION['date_n']) .' <span class=\'modifier\'><a href="profil_V.php?modifier=5">Modifier</a></span></p>'; 
               echo '<p class="profil"> Adresse : '.htmlentities($_SESSION['adresse']).' <span class=\'modifier\'><a href="profil_V.php?modifier=6">Modifier</a></span><br/> Code postal : '. htmlentities($_SESSION['code_postal']) . ' <span class=\'modifier\'><a href="profil_V.php?modifier=7">Modifier</a></span><br/> Ville : '.htmlentities($_SESSION['ville']).' <span class=\'modifier\'><a href="profil_V.php?modifier=8">Modifier</a></span><br/> Pays : '.htmlentities($_SESSION['pays']).' <span class=\'modifier\'><a href="profil_V.php?modifier=9">Modifier</a></span></p>';
         } else {
             
@@ -112,7 +111,19 @@
                     <label class="creation">Pays :</label><input class="creation" type="text" name="pays" placeholder="Pays"/><br/>
                     <input class="valider" type="submit" name="modifier_pays" value="modifier"/><br/>
                 </form>
-            </div> <?php    
+            </div>
+        <?php    
+        break;
+                case 10: ?>
+                <div id="creation_even">
+                <form name="inscription" method="post" action="../controller/modif_profil_C.php">
+                    <label class="creation">Ancien mot de passe :</label><input id="mdp" class="creation" type="password" name="ancien_password" />
+                    <label class="creation">Nouveau mot de passe :</label><input id="mdp" class="creation" type="password" name="password"/>
+                    <label class="creation">Vérification nouveau mot de passe :</label><input class="creation" type='password' name='password_verif'/><br/>
+                    <input class="valider" type="submit" name="modifier_mdp" value="modifier"/><br/>
+                </form>
+            </div>
+ <?php    
         break;
             }
             }
@@ -132,15 +143,17 @@
                 case 3 :
                     echo "Deja existant";
                 break;
+            case 4 :
+                    echo "Vos deux mots de passe ne sont pas les mêmes";
+                break;
+            case 5:
+        $erreur= "Le mot de pass doit avoir au moins 6 caractères";
+        break;
                 }
             
         }
-        } else {
-            echo "Evenement supprimer";  
-        }
-?>
-           
-<?php        include('../controller/profil_C.php');
+        
+        include('../controller/profil_C.php');
         
         $i=1;
         if (isset($even)){
@@ -168,9 +181,10 @@
         <?php
         }
             }
-        else {?>
-        <h1 id='even_suppr'>Evènement supprimer</h1>
+            }         else {?>
+        <h1 id='even_suppr'>Utilisateur supprimer</h1>
       <?php   }
+      
              include("pied_de_page.php"); ?>
        </body>
 

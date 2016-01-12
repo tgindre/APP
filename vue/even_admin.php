@@ -38,7 +38,7 @@
         </div>
         <?php } ?>
         <div class="profil">   
-                <form method="post" action="../controller/modif_even_C.php" id="confirm_suppr" onclick="return(confirm('Etes-vous sûr de vouloir supprimer cette entrée?'));">
+                <form method="post" action="../controller/modif_even_admin_C.php" id="confirm_suppr" onclick="return(confirm('Etes-vous sûr de vouloir supprimer cette entrée?'));">
                 <input type="hidden" name="numero" value=<?php echo $i?> />
                 <input class="supprimer" type="submit" name="supprimer" value="Supprimer" /><br/>
                 </form>
@@ -49,7 +49,7 @@
         } else {
               switch ($_GET['modifier']) {
         case 0: ?>
-        <form method="post" action="../controller/modif_even_C.php" enctype="multipart/form-data">
+        <form method="post" action="../controller/modif_even_admin_C.php" enctype="multipart/form-data">
             <label for="mon_fichier">Fichier (tous formats | max. 1 Mo) :</label><br />
             <input type="hidden" name="MAX_FILE_SIZE" value="4194304" />
             <input type="file" name="image" id="mon_fichier" /><br />

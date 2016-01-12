@@ -1,7 +1,7 @@
 <?php
 include('../model/model.php');
 include('../model/select_bdd.php');
-$nombreParPage = 20;
+$nombreParPage = 5;
 $i = 1;
 
 if (isset($_POST['recherche_av']) || (isset($_GET['recherche']) && $_GET['recherche'])) {

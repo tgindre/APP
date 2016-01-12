@@ -25,7 +25,7 @@
         $erreur= "Ce mail est déjà pris";
         break;
         case 4:
-        $erreur= "Le mot de pass doit avoir au moins 8 caractères et au minimum une lettre et un chiffre";
+        $erreur= "Le mot de pass doit avoir au moins 6 caractères";
         break;
 
     }

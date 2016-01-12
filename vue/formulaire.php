@@ -93,6 +93,7 @@
                     <!--<input class="creation" type="text" name="type_public"/><br/> -->
                      <label class="creation">type de public </label>
                      <select name="type_public" class="creation">
+                            <option value=""></option>
                             <option value="3-8 ans">3-8 ans</option>
                             <option value="8-18 ans">8-18 ans</option>
                             <option value="18-30 ans">18-30 ans</option>
@@ -112,9 +113,9 @@
                     <label class="creation">Type d'évènement :</label><input class="creation" type="text" name="type_even"/><br/>
                     <label class="creation">Lieu :</label><input class="creation" type="text" name="lieu"/><br/>                    
                     <label class="creation">Date l'évènement : </label><input class="creation" type="text" name="date_even"/><br/>
-                  <!--  <label class="creation">type de public </label><input class="creation" type="text" name="type_public"/><br/> -->
                     <label class="creation">Type de public :</label>
                     <select name="type_public" class="creation">
+                            <option value=""></option>
                             <option class="creation" value="3-8 ans">3-8 ans</option>
                             <option class="creation" value="8-18 ans">8-18 ans</option>
                             <option class="creation" value="18-30 ans">18-30 ans</option>
@@ -134,8 +135,9 @@
                     <label class="creation">Type d'évènement :</label><input class="creation" type="text" name="type_even"/><br/>
                     <label class="creation">Lieu :</label><input class="creation" type="text" name="lieu"/><br/>                    
                     <label class="creation">Date l'évènement : </label><input class="creation" type="text" name="date_even"/><br/>
-                  <!--  <label class="creation">type de public </label><input class="creation" type="text" name="type_public"/><br/> -->
-                     <select name="type_public" class="creation">
+                    <label class="creation">type de public </label>
+                    <select name="type_public" class="creation">
+                            <option value=""></option>
                             <option value="3-8 ans">3-8 ans</option>
                             <option value="8-18 ans">8-18 ans</option>
                             <option value="18-30 ans">18-30 ans</option>
