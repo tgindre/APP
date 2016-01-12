@@ -42,6 +42,11 @@ for ($i=0;$i<$no;$i++)
   $mot_de_passe = $result[$i]; 
 }
 
+
+modif_utilisateur($pass, $mot_de_passe, $id);
+
+
+
 //=====Ajout du message au format HTML
 $message.= "Content-Type: text/html; charset=\"ISO-8859-1\"".$passage_ligne;
 $message.= "Content-Transfer-Encoding: 8bit".$passage_ligne;
