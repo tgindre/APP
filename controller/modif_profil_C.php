@@ -70,6 +70,25 @@ if (isset($_POST['image_profil'])) {
         header('Location: ../vue/profil_V.php?suppr='.$suppr);
         exit();
     }
+    if (isset($_POST['modifier_mdp'])) {
+       $req= select_utilisateur('mail',$_SESSION['mail']);
+       if($_POST['ancien_password']==$req['pass']){
+           if($_POST['password'] == $_POST['password_verif']){ 
+            if (!(strlen($_POST['password'])>=6)){
+                $error =5;
+                header('Location: ../vue/profil_V.php?erreur='.$error);
+        } else {
+            $pass_hache = sha1('gz' . htmlspecialchars($_POST['password']));// Hachage du mot de passe pour le crypter
+            $insert=modif_utilisateur('pass', $_POST['password'], $_SESSION['id']);
+            header('Location: ../vue/profil_V.php');
+          }           
+        } else {
+            $error = 4;
+            header('Location: ../vue/profil_V.php?erreur='.$error);
+        }
+       } 
+    }
+    
 
 
     $id=$_SESSION['id'];

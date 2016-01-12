@@ -12,7 +12,7 @@
         include('entete.php');
         include('nom.php');
         $nb_even = 10;
-        $nombreParPage = 20;
+        $nombreParPage = 5;
         $formulaire = 'recherche_avancée';
         if (!isset($_GET['page'])) {
             $_GET['page'] = 1;
@@ -28,7 +28,6 @@
         include('formulaire.php');
 
         if (!(isset($_GET['recherche']) && $_GET['recherche'])) {
-            echo 'pas de recheche';
             include('../controller/trouver_even_C.php');
         }
         if (!isset($nombreDePages)) {

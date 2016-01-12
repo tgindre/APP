@@ -23,7 +23,7 @@ if(!isset($_SESSION['admin']) OR !$_SESSION['admin'])
             $nombreDePages=1;
         }
     }
-           $nombreParPage = 20;
+           $nombreParPage = 5;
            $formulaire='utilisateur_admin';
            if(!isset($_GET['page'])){
               $_GET['page']=1;
@@ -37,7 +37,6 @@ if(!isset($_SESSION['admin']) OR !$_SESSION['admin'])
            include('formulaire.php');
            
            if(!(isset($_GET['recherche']) && $_GET['recherche'])){
-               echo 'pas de recheche';
            include('../controller/trouver_utilisateur_C_admin.php');
            }
            $i=$premiereven;
@@ -70,7 +69,7 @@ if(!isset($_SESSION['admin']) OR !$_SESSION['admin'])
 echo 'Page : ';
 
 for ($p = 1 ; $p <= $nombreDePages ; $p++){ ?>
-    <a href='trouver_even_V.php?page= <?php echo $p?>&nbp=<?php echo $nombreDePages?>&recherche=<?php echo $_GET['recherche']?>' > <?php echo $p ?>  </a> 
+    <a href='gerer_utilisateur.php?page= <?php echo $p?>&nbp=<?php echo $nombreDePages?>&recherche=<?php echo $_GET['recherche']?>' > <?php echo $p ?>  </a> 
  
 <?php  }
 

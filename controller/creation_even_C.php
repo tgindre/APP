@@ -9,7 +9,7 @@ if (isset($_POST['creation_even'])) {
         if($rep){
         $i=0;
         $nom_even=$_POST['nom_even'];
-        $donnees= select_evenement_cree('nom_even',$nom_even);
+        $donnees= select_evenement_cree($nom_even, $_SESSION['id']);
         $_SESSION['id_createur'.$i] = $donnees['ID_createur'];
         $_SESSION['id_even'.$i] = $donnees['ID_even'];
         $_SESSION['nom_even'.$i] = $donnees['nom_even'];
