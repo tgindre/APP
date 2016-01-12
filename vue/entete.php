@@ -33,7 +33,7 @@
 			<li><a href="page_accueil.php"><span class="tiret">|</span> Accueil <span class="tiret">|</span></a></li>
 			<li><a href="trouver_even_V.php">Trouver un évènement <span class="tiret">|</span></a></li>
 			<li><a href="creation_even_V.php">Proposer un évènement <span class="tiret">|</span></a></li>
-			<li><a href="aide_V.php">Aide <span class="tiret">|</span></a></li>
+			<li><a href="Aide1.php">Aide <span class="tiret">|</span></a></li>
 			<li><a href="forum_index.php">Forum  <span class="tiret">|</span></a></li>
 		</ul>
                 </nav>
