@@ -28,22 +28,16 @@ $header.= "MIME-Version: 1.0".$passage_ligne;
 $header.= "Content-Type: multipart/alternative;".$passage_ligne." boundary=\"$boundary\"".$passage_ligne;
 //==========
  
-//=====Création du message
-
+ 
 $mail = htmlentities(addslashes( $_POST['mail']));
-//fonction pour avoir un mdp quelconque
-$numbers = range (1,10000);
-shuffle ($numbers); 
-$no=1; 
-$result = array_slice($numbers,0,$no); 
-
-for ($i=0;$i<$no;$i++)
-{ 
-  $mot_de_passe = $result[$i]; 
-}
 
 
-modif_utilisateur($pass, $mot_de_passe, $id);
+$test = md5(rand());
+$mot_de_passe = substr ($test,0,8);
+$req=select_utilisateur('mail',$mail);
+$donnees=$req->fetch();
+$id=$donnees['ID_utilisateur'];
+modif_utilisateur('pass', $mot_de_passe, $id);
 
 
 

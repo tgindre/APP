@@ -19,7 +19,7 @@ L'inscription à un ou plusieurs services de ShareTime ainsi que l'utilisation d
 </p>
 		
 		<p class="tiret">Devant le développement des nouveaux outils de communication, il est nécessaire de porter une attention particulière à la protection de la vie privée. C'est pourquoi, nous nous engageons à respecter la confidentialité des renseignements personnels que nous collectons.</br>
-Collecte des renseignements personnels
+<strong>Collecte des renseignements personnels</strong></br>
 Nous collectons les renseignements suivants :</br>
 •	Nom</br>
 •	Prénom</br>
@@ -41,7 +41,7 @@ Nous utilisons les renseignements ainsi collectés pour les finalités suivantes
 •	notifications</br>
 •	emailing</br>
 
-Droit d'opposition et de retrait</br>
+<strong>Droit d'opposition et de retrait</strong></br>
 Nous nous engageons à vous offrir un droit d'opposition et de retrait quant à vos renseignements personnels. Le droit d'opposition s'entend comme étant la possibilité offerte aux internautes de refuser que leurs renseignements personnels soient utilisées à certaines fins mentionnées lors de la collecte.</br>
 Le droit de retrait s'entend comme étant la possibilité offerte aux internautes de demander à ce que leurs renseignements personnels ne figurent plus, par exemple, dans une liste de diffusion.
 Pour pouvoir exercer ces droits, vous pouvez nous écrire à :</br>
@@ -53,20 +53,20 @@ France</br>
 
 ou en ligne : http://www.ShareTime.com/settings/</br>
 
-Droit d'accès
+<strong>Droit d'accès</strong>
 Nous nous engageons à reconnaître un droit d'accès et de rectification aux personnes concernées désireuses de consulter, modifier, voire radier les informations les concernant.
-L'exercice de ce droit se fera par écrit :
+L'exercice de ce droit se fera par écrit :</br>
 
-Sécurité
-Les renseignements personnels que nous collectons sont conservés dans un environnement sécurisé. Les personnes travaillant pour nous sont tenues de respecter la confidentialité de vos informations.
-Pour assurer la sécurité de vos renseignements personnels, nous avons recours aux mesures suivantes :
-•	Gestion des accès - personne autorisée
-•	Gestion des accès - personne concernée
-•	Sauvegarde informatique
-•	Identifiant / mot de passe
-Nous nous engageons à maintenir un haut degré de confidentialité en intégrant les dernières innovations technologiques permettant d'assurer la confidentialité de vos transactions. Toutefois, comme aucun mécanisme n'offre une sécurité maximale, une part de risque est toujours présente lorsque l'on utilise Internet pour transmettre des renseignements personnels.
-Législation
-Nous nous engageons à respecter les dispositions législatives énoncées par la CNIL :http://www.cnil.fr/
+<strong>Sécurité</strong></br>
+Les renseignements personnels que nous collectons sont conservés dans un environnement sécurisé. Les personnes travaillant pour nous sont tenues de respecter la confidentialité de vos informations.</br>
+Pour assurer la sécurité de vos renseignements personnels, nous avons recours aux mesures suivantes :</br>
+•	Gestion des accès - personne autorisée</br>
+•	Gestion des accès - personne concernée</br>
+•	Sauvegarde informatique</br>
+•	Identifiant / mot de passe</br>
+Nous nous engageons à maintenir un haut degré de confidentialité en intégrant les dernières innovations technologiques permettant d'assurer la confidentialité de vos transactions. Toutefois, comme aucun mécanisme n'offre une sécurité maximale, une part de risque est toujours présente lorsque l'on utilise Internet pour transmettre des renseignements personnels.</br>
+<strong>Législation</strong></br>
+Nous nous engageons à respecter les dispositions législatives énoncées par la CNIL :http://www.cnil.fr/</br>
 
 </p>
 		
