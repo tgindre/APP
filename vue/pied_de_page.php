@@ -1,5 +1,5 @@
 <footer>
-          <img id="logo2" src ="image/logo.png" alt="Logo sharetime">
+        <a href="page_accueil.php">  <img id="logo2" src ="image/logo.png" alt="Logo sharetime"/></a>
 	<ul class="menu">
 			<li><a href="#"><span class="tiret">|</span>Qui somme nous? <span class="tiret">|</span></a></li>
 			<li><a href="#">Fonctionnalités <span class="tiret">|</span></a></li>
