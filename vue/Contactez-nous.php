@@ -7,11 +7,7 @@
 
 	</head>
 	<body>
-
-	<?php include("entete.php"); ?>
 	
-
-
 <?php include("entete.php"); ?>
             
 
