@@ -13,8 +13,11 @@
               if(!(isset($_GET['suppr']))){
               if (isset($_GET['nb'])){$i=htmlentities($_GET['nb']);}
               if(!isset($_GET['modifier'])){             
-              if($_SESSION['tarif_min'.$i]==$_SESSION['tarif_max'.$i]){
-                  $tarif=$_SESSION['tarif_min'.$i];
+              if($_SESSION['tarif_min'.$i]==$_SESSION['tarif_max'.$i]){ 
+                  if($_SESSION['tarif_min'.$i]==0){
+                   $tarif='gratuit'; 
+                  } else {
+                  $tarif=$_SESSION['tarif_min'.$i].'€';}
               } else {
                  $tarif=$_SESSION['tarif_min'.$i].'€-'.$_SESSION['tarif_max'.$i].'€'; 
               }
@@ -23,9 +26,9 @@
               } else {
                  $date='du '.$_SESSION['date_debut'.$i].'au '.$_SESSION['date_fin'.$i].''; 
               }
-        echo'<div> <span class="nom_even">'.htmlentities($_SESSION['ville_even'.$i]) .'</span><a href="even_V.php?modifier=4&nb='.$i.'">Modifier</a></div>';
         if(!isset($_SESSION['id'])){$_SESSION['id']=-1;}
         if($_SESSION['id_createur'.$i]==$_SESSION['id']){
+        echo'<div> <span class="nom_even">'.htmlentities($_SESSION['ville_even'.$i]) .'</span><a href="even_V.php?modifier=4&nb='.$i.'">Modifier</a></div>';
         if(isset($_SESSION['photo_even'.$i]) && $_SESSION['photo_even'.$i]!=''){
         ?>
         <div class="image_profil">
@@ -44,9 +47,10 @@
                 <input class="supprimer" type="submit" name="supprimer" value="Supprimer" /><br/>
                 </form>
          <?php echo '<p>' . htmlentities($_SESSION['nom_even'.$i]) .' <span class=\'modifier\'><a href="even_V.php?modifier=1&nb='.$i.'">Modifier</a></span><br/> '.htmlentities($_SESSION['description'.$i]).'<br/>'.htmlentities($_SESSION['type_even'.$i]).' <span class=\'modifier\'><a href="even_V.php?modifier=2&nb='.$i.'">Modifier</a></span><br/> '.htmlentities($_SESSION['adresse_even'.$i]).' <span class=\'modifier\'><a href="even_V.php?modifier=3&nb='.$i.'">Modifier</a></span></p>'; 
-              echo '<p> Type de public '.htmlentities($_SESSION['type_public'.$i]).' <span class=\'modifier\'><a href="even_V.php?modifier=5&nb='.$i.'">Modifier</a></span><br/> ' . htmlentities($date) .' <span class=\'modifier\'><a href="even_V.php?modifier=6&nb='.$i.'">Modifier</a></span><br/> Horaire '.htmlentities($_SESSION['horaire'.$i]). ' <span class=\'modifier\'><a href="even_V.php?modifier=7&nb='.$i.'">Modifier</a></span><br/> Tarif : '.htmlentities($tarif).' <span class=\'modifier\'><a href="even_V.php?modifier=8&nb='.$i.'">Modifier</a></span><br/> Nombre de place : '.htmlentities($_SESSION['nb_participants'.$i]).' <span class=\'modifier\'><a href="even_V.php?modifier=9&nb='.$i.'">Modifier</a></span><br/> </p>'; ?>
+              echo '<p> Type de public : '.htmlentities($_SESSION['type_public'.$i]).' <span class=\'modifier\'><a href="even_V.php?modifier=5&nb='.$i.'">Modifier</a></span><br/> ' . htmlentities($date) .' <span class=\'modifier\'><a href="even_V.php?modifier=6&nb='.$i.'">Modifier</a></span><br/> Horaire '.htmlentities($_SESSION['horaire'.$i]). ' <span class=\'modifier\'><a href="even_V.php?modifier=7&nb='.$i.'">Modifier</a></span><br/> Tarif : '.htmlentities($tarif).' <span class=\'modifier\'><a href="even_V.php?modifier=8&nb='.$i.'">Modifier</a></span><br/> Nombre de place : '.htmlentities($_SESSION['nb_participants'.$i]).' <span class=\'modifier\'><a href="even_V.php?modifier=9&nb='.$i.'">Modifier</a></span><br/> </p>'; ?>
             </div>
         <?php    } else{
+            echo'<div> <span class="nom_even">'.htmlentities($_SESSION['ville_even'.$i]) .'</span></div>';
            if(isset($_SESSION['photo_even'.$i]) && $_SESSION['photo_even'.$i]!=''){
         ?>
         <div class="image_profil">
@@ -58,7 +62,7 @@
         </div>
          <?php }
               echo '<p class="profil">' . htmlentities($_SESSION['nom_even'.$i]) .'<br/> '.htmlentities($_SESSION['description'.$i]).'<br/>'.htmlentities($_SESSION['type_even'.$i]).'<br/> '.htmlentities($_SESSION['adresse_even'.$i]).'</p>'; 
-              echo '<p class="profil"> Type de public '.htmlentities($_SESSION['type_public'.$i]).'<br/> ' . htmlentities($date) .'<br/> Horaire '.htmlentities($_SESSION['horaire'.$i]). '<br/> Tarif : '.htmlentities($tarif).'<br/> Nombre de place : '.htmlentities($_SESSION['nb_participants'.$i]).'<br/> </p>';
+              echo '<p class="profil"> Type de public : '.htmlentities($_SESSION['type_public'.$i]).'<br/> ' . htmlentities($date) .'<br/> Horaire '.htmlentities($_SESSION['horaire'.$i]). '<br/> Tarif : '.htmlentities($tarif).'<br/> Nombre de place : '.htmlentities($_SESSION['nb_participants'.$i]).'<br/> </p>';
         }
         } else {
               switch ($_GET['modifier']) {

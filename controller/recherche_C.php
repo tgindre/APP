@@ -6,7 +6,7 @@ if(isset($_POST['recherche'])){
     
     $i=1;
     $recherche =true;
-    $nombreParPage = 20;
+    $nombreParPage = 5;
         foreach($_POST as $cle => $element){
             $_POST[$cle]='%'.$element.'%';
         }

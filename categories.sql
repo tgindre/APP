@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`) VALUES
-(1, 'Ã‰vÃ¨nement'),
+(1, 'évènement'),
 (2, 'Concerts');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

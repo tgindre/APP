@@ -40,9 +40,9 @@ CREATE TABLE IF NOT EXISTS `sujet` (
 INSERT INTO `sujet` (`id`, `name`, `categorie`) VALUES
 (14, 'Mon premier sujet', 'Concerts'),
 (15, 'Voici un autre sujet', 'Concerts'),
-(16, 'Ceci est encore un sujet', 'ï¿½vï¿½nement'),
-(17, 'Ceci est encore un sujet', 'ï¿½vï¿½nement'),
-(20, 'Blablacadabra', 'Ã‰vÃ¨nement');
+(16, 'Ceci est encore un sujet', 'évènement'),
+(17, 'Ceci est encore un sujet', 'évènement'),
+(20, 'Blablacadabra', 'évènement');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
