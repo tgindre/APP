@@ -42,7 +42,7 @@
         </div>
         <?php } ?>
             <div class="profil">   
-                <form method="post" action="../controller/modif_even_C.php" id="confirm_suppr" onclick="return(confirm('Etes-vous sûr de vouloir supprimer cette entrée?'));">
+                <form method="post" action="../controller/modif_even_C.php" id="confirm_suppr" onclick="return(confirm('Etes-vous sûr de vouloir supprimer cette évènement?'));">
                 <input type="hidden" name="numero" value=<?php echo $i?> />
                 <input class="supprimer" type="submit" name="supprimer" value="Supprimer" /><br/>
                 </form>
