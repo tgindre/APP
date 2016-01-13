@@ -22,7 +22,7 @@
         </div>
         <?php } ?>
         <div class="profil">   
-                <form method="post" action="../controller/modif_profil_C.php" id="confirm_suppr" onclick="return(confirm('Etes-vous sûr de vouloir supprimer cette entrée?'));">             
+                <form method="post" action="../controller/modif_profil_C.php" id="confirm_suppr" onclick="return(confirm('Etes-vous sûr de vouloir supprimer votre profile?'));">             
                 <input class="supprimer" type="submit" name="supprimer" value="Supprimer" /><br/>
                 </form>
         </div>
