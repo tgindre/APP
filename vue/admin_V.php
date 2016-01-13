@@ -1,4 +1,4 @@
-﻿<?php include('../model/model.php');
+<?php include('../model/model.php');
 
 if(!isset($_SESSION['admin']) OR !$_SESSION['admin'])
 {
@@ -12,7 +12,7 @@ if(!isset($_SESSION['admin']) OR !$_SESSION['admin'])
 	<head>
 	<meta charset="utf-8"/>
 	<title> Sharetime</title>
-	<link rel="stylesheet" href="style_app.css"/>
+	<link rel="stylesheet" href="style_APP.css"/>
 	</head>
 	<body>
     <?php $formulaire= '';

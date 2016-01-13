@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 	<head>
 	<meta charset="utf-8"/>
 	<title> Sharetime</title>
-	<link rel="stylesheet" href="style_app.css"/>
+	<link rel="stylesheet" href="style_APP.css"/>
 	<link rel="stylesheet" href="APPCSS.css"/>
 
 	</head>

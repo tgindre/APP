@@ -1,11 +1,11 @@
-﻿<?php include_once "../model/model.php"; ?>
+<?php include_once "../model/model.php"; ?>
 
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8"/>
 	<title> Sharetime</title>
-	<link rel="stylesheet" href="style_app.css"/>
+	<link rel="stylesheet" href="style_APP.css"/>
 </head>
 <body id="fond">
 	<?php include("entete_admin.php"); ?> 
