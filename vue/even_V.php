@@ -63,7 +63,32 @@
          <?php }
               echo '<p class="profil">' . htmlentities($_SESSION['nom_even'.$i]) .'<br/> '.htmlentities($_SESSION['description'.$i]).'<br/>'.htmlentities($_SESSION['type_even'.$i]).'<br/> '.htmlentities($_SESSION['adresse_even'.$i]).'</p>'; 
               echo '<p class="profil"> Type de public : '.htmlentities($_SESSION['type_public'.$i]).'<br/> ' . htmlentities($date) .'<br/> Horaire '.htmlentities($_SESSION['horaire'.$i]). '<br/> Tarif : '.htmlentities($tarif).'<br/> Nombre de place : '.htmlentities($_SESSION['nb_participants'.$i]).'<br/> </p>';
-        }
+        } if(isset($_SESSION['pseudo'])){ ?>
+            <form method="post" action="commentaires_c.php">
+   <p>
+       <label for="note">Quel note metteriez-vous ?</label><br />
+       <select name="list_note" id="note">
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+           <option value="6">6</option>
+           <option value="7">7</option>
+           <option value="8">8</option>
+		   <option value="9">9</option>
+           <option value="10">10</option>
+       </select>
+   </p>
+
+	<p> Comment avez-vous trouvez cet évènement ?</p>
+	
+	<p>
+		<input type="text" name="Commentaire" placeholder="taper votre commentaire ici" />
+		<input type="submit" value="Publier" />
+	</p>
+	</form>
+      <?php  }
         } else {
               switch ($_GET['modifier']) {
         case 0: ?>
