@@ -158,7 +158,10 @@
                     <input type="hidden" name="numero" value=<?php echo $i?> />
                     <input class="valider" type="submit" name="modif_nb_place" value="modifier"/><br/>
                 </form>
-            </div> <?php
+				
+            </div>
+
+			<?php
         break;
               }
               }
