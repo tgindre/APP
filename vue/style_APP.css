@@ -535,6 +535,17 @@ label {
     padding-right:20px;
     width : 80px;
 }
+.boutton_je_m'inscris{
+	line-height: 0%;
+	height: 2em;
+	-moz-border-radius:1px;
+	-webkit-border-radius:1px;
+	border-radius:1px;
+	border: 1px solid #000000;
+        position : relative;
+        right : 10%;
+        top : 333px;
+}
 
 /**/
 #even_suppr{

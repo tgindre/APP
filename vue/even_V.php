@@ -88,6 +88,9 @@
 		<input type="submit" value="Publier" />
 	</p>
 	</form>
+	<form name="Inscr_even" method="post" action="#">
+        <input class="boutton_je_m'inscris" type="submit" name="Valide" value="Je m'inscris"/>
+    </form>
       <?php  }
         } else {
               switch ($_GET['modifier']) {
