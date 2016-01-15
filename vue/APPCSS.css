@@ -48,7 +48,7 @@ body{
 
 
 .q1 , .q2, .q3, .q4{
-	border: 3px rgb(255,130,128) solid;
+	border: 3px rgb(111,0,55) solid;
 	border-radius: 8px;
 	max-width: 90%;
 	margin: auto-left;
@@ -102,7 +102,9 @@ em{
 
  .call, .create, .find, .f{
 	 text-decoration: underline;
-	 font-size:19px;
+	 font-weight:bold;
+	 font-size:21px;
+	 color:rgb(255,130,128);
  }
 .create:hover{
 	color : #ff8410;
