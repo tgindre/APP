@@ -1,6 +1,6 @@
 <?php
 include_once "../model/model.php";
-include_once "../controller/forum_addPost.class.php";
+include_once "../controller/forum_addpost.class.php";
 
 
 if(isset($_POST['name']) AND isset($_POST['sujet'])){
@@ -23,8 +23,7 @@ if(isset($_POST['name']) AND isset($_POST['sujet'])){
 <head>
 	<meta charset='utf-8' />
 	<title>Forum de ShareTime</title>
-	<meta name="author" content="Timothee Gindre">
-	<link rel="stylesheet" href="style_APP.css"/>
+	<link rel="stylesheet" href="style_app.css"/>
 </head>
 <body>
 	<?php include("entete.php"); ?>
@@ -53,7 +52,7 @@ if(isset($_POST['name']) AND isset($_POST['sujet'])){
 			<?php
 
 			$select = "post";
-			include "../model/forum_index_M.php";
+			include "../model/forum_index_m.php";
 
 			?>
 			<br><a href="forum_index.php?categorie=<?php echo $_GET['categorie']; ?>" >Autres sujets</a>
@@ -65,7 +64,7 @@ if(isset($_POST['name']) AND isset($_POST['sujet'])){
 					<?php
 
 					$select ="utilisateur";
-					include "../model/forum_index_M.php";
+					include "../model/forum_index_m.php";
 	
 					if(isset($utilisateur['photo']) && $utilisateur['photo']!=''){ ?>
         
@@ -126,7 +125,7 @@ if(isset($_POST['name']) AND isset($_POST['sujet'])){
 
 			?>
 
-			<a href="forum_addSujet.php?categorie=<?php echo $_GET['categorie']; ?>">Ajouter un sujet</a> ou <a href="forum_index.php">Autres catégories</a>
+			<a href="forum_addsujet.php?categorie=<?php echo $_GET['categorie']; ?>">Ajouter un sujet</a> ou <a href="forum_index.php">Autres catégories</a>
 			
 			<?php
 			}
@@ -136,7 +135,7 @@ if(isset($_POST['name']) AND isset($_POST['sujet'])){
 			}
 
 			$select ="sujet";
-			include "../model/forum_index_M.php";
+			include "../model/forum_index_m.php";
 
 			
 			while($reponse = $requete->fetch()){
@@ -155,7 +154,7 @@ if(isset($_POST['name']) AND isset($_POST['sujet'])){
 
 			
 			$select ="categorie";
-			include "../model/forum_index_M.php";
+			include "../model/forum_index_m.php";
 
 			while($reponse = $requete->fetch()){
 			?>

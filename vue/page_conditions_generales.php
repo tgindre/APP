@@ -3,7 +3,7 @@
 	<head>
 	<meta charset="utf-8"/>
 	<title> Sharetime</title>
-	<link rel="stylesheet" href="style_APP.css"/>
+	<link rel="stylesheet" href="style_app.css"/>
 
 	</head>
 	<body>
@@ -95,13 +95,3 @@ Le Membre doit disposer des compétences, des matériels et des logiciels requis
 
 		</body>
 </html>
-
-	
-
-
-	
-	
-
-		
-	
-

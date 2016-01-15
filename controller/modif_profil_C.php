@@ -7,11 +7,11 @@ $nom = '';
 if (isset($_POST['image_profil'])) {
     if ($_FILES['image']['error'] > 0) {
         $erreur = 0;
-        header('Location: ../vue/profil_V.php?erreur=' . $erreur);
+        header('Location: ../vue/profil_v.php?erreur=' . $erreur);
     }
     if ($_FILES['image']['size'] > $maxsize) {
         $erreur = 1;
-        header('Location: ../vue/profil_V.php?erreur=' . $erreur);
+        header('Location: ../vue/profil_v.php?erreur=' . $erreur);
     }
     $extensions_valides = array('jpg', 'jpeg', 'gif', 'png');
     //1. strrchr renvoie l'extension avec le point (« . »).
@@ -20,7 +20,7 @@ if (isset($_POST['image_profil'])) {
     $extension_upload = strtolower(substr(strrchr($_FILES['image']['name'], '.'), 1));
     if (!in_array($extension_upload, $extensions_valides)) {
         $erreur = 2;
-        header('Location: ../vue/profil_V.php?erreur=' . $erreur);
+        header('Location: ../vue/profil_v.php?erreur=' . $erreur);
     } else {
         $nom = "../vue/image/profil/{$_SESSION['id']}.{$extension_upload}";
         $resultat = move_uploaded_file($_FILES['image']['tmp_name'], $nom);
@@ -28,7 +28,7 @@ if (isset($_POST['image_profil'])) {
     }
     modif_utilisateur('photo', $nom, $_SESSION['id']);
     $_SESSION['photo'] = $nom;
-    header('Location: ../vue/profil_V.php');
+    header('Location: ../vue/profil_v.php');
 }
 
     if (isset($_POST['modifier_pseudo'])) {
@@ -38,7 +38,7 @@ if (isset($_POST['image_profil'])) {
         $result=verif_select('mail', $_POST['mail']);
         if($result){
             $erreur = 3;
-            header('Location: ../vue/profil_V.php?erreur='. $erreur);   
+            header('Location: ../vue/profil_v.php?erreur='. $erreur);   
         } else {
             modif_utilisateur('mail', $_POST['mail'], $_SESSION['id']);       
         }
@@ -67,7 +67,7 @@ if (isset($_POST['image_profil'])) {
         if (isset($_POST['supprimer'])) {
         supprime_utilisateur($_SESSION['id']);
         $suppr=42;
-        header('Location: ../vue/profil_V.php?suppr='.$suppr);
+        header('Location: ../vue/profil_v.php?suppr='.$suppr);
         exit();
     }
     if (isset($_POST['modifier_mdp'])) {
@@ -76,15 +76,15 @@ if (isset($_POST['image_profil'])) {
            if($_POST['password'] == $_POST['password_verif']){ 
             if (!(strlen($_POST['password'])>=6)){
                 $error =5;
-                header('Location: ../vue/profil_V.php?erreur='.$error);
+                header('Location: ../vue/profil_v.php?erreur='.$error);
         } else {
             $pass_hache = sha1('gz' . htmlspecialchars($_POST['password']));// Hachage du mot de passe pour le crypter
             $insert=modif_utilisateur('pass', $_POST['password'], $_SESSION['id']);
-            header('Location: ../vue/profil_V.php');
+            header('Location: ../vue/profil_v.php');
           }           
         } else {
             $error = 4;
-            header('Location: ../vue/profil_V.php?erreur='.$error);
+            header('Location: ../vue/profil_v.php?erreur='.$error);
         }
        } 
     }
@@ -103,4 +103,4 @@ if (isset($_POST['image_profil'])) {
     $_SESSION['ville'] = $connect['ville'];
     $_SESSION['pays'] = $connect['pays'];
     $_SESSION['photo'] = $connect['photo'];
-    header('Location: ../vue/profil_V.php');
+    header('Location: ../vue/profil_v.php');

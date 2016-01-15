@@ -5,7 +5,7 @@
 <head>
 	<meta charset="utf-8"/>
 	<title> Sharetime</title>
-	<link rel="stylesheet" href="style_APP.css"/>
+	<link rel="stylesheet" href="style_app.css"/>
 </head>
 <body id="fond">
 	<?php include("entete_admin.php"); ?> 
@@ -18,7 +18,7 @@
 			{
 				?>
 				<!-- Modifier ou supprimer un sujet -->
-				<form name="categorie" method="post" action="../controller/aide_admin_C.php">
+				<form name="categorie" method="post" action="../controller/aide_admin_c.php">
 					<input type="text" name="id_aide" value="<?php echo $reponse['id']; ?>" hidden>
 					<p class="cou1"><?php echo $reponse['question'] ; ?></p>
 					<p class="tiret"><?php echo $reponse['reponse'] ; ?></p>
@@ -32,7 +32,7 @@
 			?>
 
 		<!-- Ajouter une nouvelle question et une nouvelle réponse -->
-		<form name="categorie" method="post" action="../controller/aide_admin_C.php">
+		<form name="categorie" method="post" action="../controller/aide_admin_c.php">
 			<input type="text" name="add_question" value="Nouveau titre"><br>
 			<textarea name="add_reponse">Nouvelle explication</textarea>
 			<input type="submit" name="add_aide" value="Ajouter">

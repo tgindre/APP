@@ -11,7 +11,7 @@ if(!isset($_SESSION['admin']) OR !$_SESSION['admin'])
     <head>
         <meta charset="utf-8"/>
         <title> Sharetime</title>
-        <link rel="stylesheet" href="style_APP.css"/>
+        <link rel="stylesheet" href="style_app.css"/>
     </head>
        <body>
            <?php include('entete_admin.php');
@@ -37,7 +37,7 @@ if(!isset($_SESSION['admin']) OR !$_SESSION['admin'])
            include('formulaire.php');
            
            if(!(isset($_GET['recherche']) && $_GET['recherche'])){
-           include('../controller/trouver_utilisateur_C_admin.php');
+           include('../controller/trouver_utilisateur_c_admin.php');
            }
            $i=$premiereven;
            while($i<=$derniereven){

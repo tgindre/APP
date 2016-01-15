@@ -1,6 +1,6 @@
 <?php
 include_once "../model/model.php";
-include_once "../controller/forum_addSujet.class.php";
+include_once "../controller/forum_addsujet.class.php";
 
 if(isset($_POST['name']) AND isset($_POST['sujet'])){
 
@@ -23,9 +23,8 @@ if(isset($_POST['name']) AND isset($_POST['sujet'])){
 <head>
 	<meta charset='utf-8' />
 	<title>Mon super forum !</title>
-	<meta name="author" content="Timothee Gindre">
 	<link rel="stylesheet" type="text/css" href="forum_general.css" />
-	<link rel="stylesheet" href="style_APP.css"/>
+	<link rel="stylesheet" href="style_app.css"/>
 	<link href='http://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css' >
 </head>
 <body>
@@ -34,7 +33,7 @@ if(isset($_POST['name']) AND isset($_POST['sujet'])){
 	<div id="Cforum">
 		<?php echo 'Bienvenue : ' . $_SESSION['pseudo'] . ' ! - <a href="forum_deconnexion.php">Deconnexion</a> '; ?>
 
-		<form method="post" action="forum_addSujet.php?categorie=<?php echo $_GET['categorie']; ?>" >
+		<form method="post" action="forum_addsujet.php?categorie=<?php echo $_GET['categorie']; ?>" >
 			<p>
 				<br><input type="text" name="name" placeholder="Nom du sujet..." /><br>
 				<textarea name="sujet" placeholder="Contenu du sujet..." ></textarea>

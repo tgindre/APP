@@ -39,7 +39,7 @@ class addSujet{
 	public function insert(){
 
 		$insert = "sujet";
-		include "../model/forum_index_M.php";
+		include "../model/forum_index_m.php";
 
 		return 1;
 

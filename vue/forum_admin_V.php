@@ -1,6 +1,6 @@
 <?php
 include_once "../model/model.php";
-include_once "../controller/forum_addPost.class.php";
+include_once "../controller/forum_addpost.class.php";
 
 if(!isset($_SESSION['admin']) OR !$_SESSION['admin'])
 {
@@ -27,8 +27,7 @@ if(isset($_POST['name']) AND isset($_POST['sujet'])){
 <head>
 	<meta charset='utf-8' />
 	<title>Administration du forum</title>
-	<meta name="author" content="Timothee Gindre">
-	<link rel="stylesheet" href="style_APP.css"/>
+	<link rel="stylesheet" href="style_app.css"/>
 </head>
 <body>
 	<?php include("entete_admin.php"); ?>
@@ -50,7 +49,7 @@ if(isset($_POST['name']) AND isset($_POST['sujet'])){
 			<?php 
 
 			$select = "post";
-			include "../model/forum_index_M.php";
+			include "../model/forum_index_m.php";
 
 			?>
 			<br><a href="forum_admin_V.php?categorie=<?php echo $_GET['categorie']; ?>" >Autres sujets</a>
@@ -62,7 +61,7 @@ if(isset($_POST['name']) AND isset($_POST['sujet'])){
 					<?php
 
 					$select ="utilisateur";
-					include "../model/forum_index_M.php";
+					include "../model/forum_index_m.php";
 
 					if(isset($utilisateur['photo']) && $utilisateur['photo']!=''){ ?>
         
@@ -81,7 +80,7 @@ if(isset($_POST['name']) AND isset($_POST['sujet'])){
 					echo $utilisateur['pseudo'] . ' : ';
 					echo '<br>' . $reponse['contenu'];
 					?>
-					<form name="categorie" method="post" action="../controller/forum_admin_C.php">
+					<form name="categorie" method="post" action="../controller/forum_admin_c.php">
 						
 						<input type="text" name="name_categorie" value="<?php echo $_GET['categorie']; ?>" hidden>
 						<input type="text" name="name_sujet" value="<?php echo $_GET['sujet']; ?>" hidden>
@@ -102,7 +101,7 @@ if(isset($_POST['name']) AND isset($_POST['sujet'])){
 			if(isset($_SESSION['pseudo']))
 			{
 				?>
-				<form method="post" action="forum_admin_V.php?categorie=<?php echo $_GET['categorie'];?>&sujet=<?php echo $_GET['sujet']; ?>">
+				<form method="post" action="forum_admin_v.php?categorie=<?php echo $_GET['categorie'];?>&sujet=<?php echo $_GET['sujet']; ?>">
 					<textarea name="sujet" placeholder="Votre message..."></textarea>
 					<input type="hidden" name="name" value="<?php echo $_GET['sujet']; ?>">
 					<input type="submit" value="Ajouter à la conversation">
@@ -135,7 +134,7 @@ if(isset($_POST['name']) AND isset($_POST['sujet'])){
 
 			?>
 
-			<a href="forum_admin_V.php">Autres catégories</a>
+			<a href="forum_admin_v.php">Autres catégories</a>
 			
 			<?php
 			}
@@ -145,14 +144,14 @@ if(isset($_POST['name']) AND isset($_POST['sujet'])){
 			}
 
 			$select ="sujet";
-			include "../model/forum_index_M.php";
+			include "../model/forum_index_m.php";
 
 			while($reponse = $requete->fetch()){
 				?>
 				<div class="categories">
 					
 					<!-- Modifier ou supprimer un sujet -->
-					<form name="categorie" method="post" action="../controller/forum_admin_C.php">
+					<form name="categorie" method="post" action="../controller/forum_admin_c.php">
 						<a href="forum_admin_V.php?categorie=<?php echo $_GET['categorie']; ?>&sujet=<?php echo $reponse['name']; ?>"><?php echo $reponse['name']; ?></a>
 						<input type="text" name="id_sujet" value="<?php echo $reponse['id']; ?>" hidden>
 						<input type="text" name="name_categorie" value="<?php echo $_GET['categorie']; ?>" hidden>
@@ -165,7 +164,7 @@ if(isset($_POST['name']) AND isset($_POST['sujet'])){
 			}
 			?>
 			<br> <!-- Ajouter un sujet -->
-			<form name="categorie" method="post" action="../controller/forum_admin_C.php">
+			<form name="categorie" method="post" action="../controller/forum_admin_c.php">
 				<input type="text" name="name_categorie" value="<?php echo $_GET['categorie']; ?>" hidden>
 				<input type="text" name="name_sujet">
 				<input type="submit" name="addSujet" value="Ajouter un sujet"/>
@@ -176,7 +175,7 @@ if(isset($_POST['name']) AND isset($_POST['sujet'])){
 		else { //Si on est sur une page normale
 
 			$select ="categorie";
-			include "../model/forum_index_M.php";
+			include "../model/forum_index_m.php";
 			
 			while($reponse = $requete->fetch()){
 			?>
@@ -184,8 +183,8 @@ if(isset($_POST['name']) AND isset($_POST['sujet'])){
 			<div class='categories'>
 				
 				<!-- Modifier ou supprimer une catégorie -->
-				<form name="categorie" method="post" action="../controller/forum_admin_C.php">
-					<a href="forum_admin_V.php?categorie=<?php echo $reponse['name']; ?>"><?php echo $reponse['name']; ?></a>
+				<form name="categorie" method="post" action="../controller/forum_admin_c.php">
+					<a href="forum_admin_v.php?categorie=<?php echo $reponse['name']; ?>"><?php echo $reponse['name']; ?></a>
 					<input type="text" name="id_categorie" value="<?php echo $reponse['id']; ?>" hidden>
 					<input type="text" name="name_categorie">
 					<input id="categorie" type="submit" name="suppCategorie" value="Supprimer"/>
@@ -199,7 +198,7 @@ if(isset($_POST['name']) AND isset($_POST['sujet'])){
 			}
 			?>
 			<br> <!-- Ajouter une catégorie -->
-			<form name="categorie" method="post" action="../controller/forum_admin_C.php"><!-- Ajouter une catégorie -->
+			<form name="categorie" method="post" action="../controller/forum_admin_c.php"><!-- Ajouter une catégorie -->
 				<input type="text" name="nom_categorie">
 				<input type="submit" name="addCategorie" value="Ajouter une catégorie"/>
 			</form>

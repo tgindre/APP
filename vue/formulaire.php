@@ -3,7 +3,7 @@ if ($formulaire == 'inscription') {
     ?>
     <div id="formulaire">
         <p> Rejoignez-vous, c'est tout simple</p>
-        <form name="inscription" onsubmit="return verif_champ()" method="post" action="../controller/inscription_C.php">
+        <form name="inscription" onsubmit="return verif_champ()" method="post" action="../controller/inscription_c.php">
             <?php if (isset($_SESSION['erreur']['nom'])) { ?> 
                 <input class="inscriptions" type="text" name="nom" value='<?php echo $_SESSION['erreur']['nom'] ?>'/>
             <?php } else { ?>
@@ -42,7 +42,7 @@ if ($formulaire == 'inscription') {
 
 <?php } if ($formulaire == 'recherche') {
     ?>
-    <form name="recherche" method="post" action="../controller/recherche_C.php">
+    <form name="recherche" method="post" action="../controller/recherche_c.php">
         <input class="recherche" type="text" name="date" placeholder="jj/mm/aaaa">
         <input class="recherche" type="text" name="lieu" placeholder="Lieu">
         <input class="recherche" type="text" name="type_even" placeholder="type d'évènement">
@@ -53,7 +53,7 @@ if ($formulaire == 'inscription') {
     ?>
     <div id = "formulaire2"> 
         <p> Identification </p> <br/>
-        <form name="Identification" method="post" action="../controller/connexion_C.php">
+        <form name="Identification" method="post" action="../controller/connexion_c.php">
             <input class="Identification" type="email" name="mail" placeholder="Email"> </br>
             <input class="Identification" type="password" name="password" placeholder="Mot de passe"></br>
             <input class="connexion" type="submit" name="connexion" value="Connexion"/>
@@ -61,7 +61,7 @@ if ($formulaire == 'inscription') {
                 <p id='erreur'> <?php echo $erreur; ?> </p>
             <?php } ?>
             <p class="ID" ><a href="page_apresmdpoublier.php"> Mot de passe oublié ? </a></br>
-                <a href="inscription_V.php"> Pas encore inscrit ? Viens t'inscrire gratuitement !</a></p>
+                <a href="inscription_v.php"> Pas encore inscrit ? Viens t'inscrire gratuitement !</a></p>
         </form>
     </div>
     <?php
@@ -80,20 +80,20 @@ if ($formulaire == 'inscription') {
     ?>
     <div id = "formulaire2"> 
         <p> Identification </p>
-        <form name="Identification" method="post" action="../controller/connexion_C.php">
+        <form name="Identification" method="post" action="../controller/connexion_c.php">
             <?php echo "Vos identifiants vous ont été envoyés à l'adresse email saisie.</br>"; ?>
             <input class="Identification" type="email" name="mail" placeholder="Email"> </br>
             <input class="Identification" type="password" name="password" placeholder="Mot de passe"></br>
             <input class="connexion" type="submit" name="connexion" value="Connexion"/>
             <p class="ID" ><a href="page_apresmdpoublier.php"> Mot de passe oublié ? </a></br>
-                <a href="inscription_V.php"> Pas encore inscrit ? Viens t'inscrire gratuitement !</a></p>
+                <a href="inscription_v.php"> Pas encore inscrit ? Viens t'inscrire gratuitement !</a></p>
         </form>
     </div>
 <?php } if ($formulaire == 'evenement') {
     ?>       
     <div id="creation_even">
         <h1>Création d'évènement</h1>
-        <form name="creation_evenement" method="post" action="../controller/creation_even_C.php">
+        <form name="creation_evenement" method="post" action="../controller/creation_even_c.php">
             <label class="creation">Nom de l'évènement :</label><input class="creation" type="text" name="nom_even"/><br/>
             <label class="creation">Descriptions de l'évènement : </label><textarea class="creation" name="description" rows="4"></textarea><br/>
             <label class="creation">Type d'évènement </label><input class="creation" type="text" name="type_even"/><br/>
@@ -125,7 +125,7 @@ if ($formulaire == 'recherche_avancée') {
     ?>
     <div id="recherche_avancée">
         <h1>Recherche d'évènement</h1>
-        <form name="creation_evenement" method="post" action="../controller/trouver_even_C.php">
+        <form name="creation_evenement" method="post" action="../controller/trouver_even_c.php">
             <label class="creation">Nom de l'évènement :</label><input class="creation" type="text" name="nom_even"/><br/>
             <label class="creation">Type d'évènement :</label><input class="creation" type="text" name="type_even"/><br/>
             <label class="creation">Lieu :</label><input class="creation" type="text" name="lieu"/><br/>                    
@@ -147,7 +147,7 @@ if ($formulaire == 'recherche_avancée') {
 <?php } if ($formulaire == 'recherche_avancée_admin') { ?>
     <div id="recherche_avancée">
         <h1>Recherche d'évènement</h1>
-        <form name="creation_evenement" method="post" action="../controller/trouver_even_C_admin.php">
+        <form name="creation_evenement" method="post" action="../controller/trouver_even_c_admin.php">
             <label class="creation">Nom de l'évènement :</label><input class="creation" type="text" name="nom_even"/><br/>
             <label class="creation">Type d'évènement :</label><input class="creation" type="text" name="type_even"/><br/>
             <label class="creation">Lieu :</label><input class="creation" type="text" name="lieu"/><br/>                    
@@ -169,7 +169,7 @@ if ($formulaire == 'recherche_avancée') {
 <?php } if ($formulaire == 'utilisateur_admin') { ?>
     <div id="recherche_avancée">
         <h1>Recherche d'utilisateur</h1>
-        <form name="creation_evenement" method="post" action="../controller/trouver_utilisateur_C_admin.php">
+        <form name="creation_evenement" method="post" action="../controller/trouver_utilisateur_c_admin.php">
             <label class="creation">Nom de l'utilisateur :</label><input class="creation" type="text" name="nom"/><br/>
             <label class="creation">Prénom de l'utilisateur : </label><input class="creation" type="text" name="prenom"/><br/>
             <label class="creation">Pseudo de l'utilisateur :</label><input class="creation" type="text" name="pseudo"/><br/>

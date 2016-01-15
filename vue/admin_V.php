@@ -12,13 +12,13 @@ if(!isset($_SESSION['admin']) OR !$_SESSION['admin'])
 	<head>
 	<meta charset="utf-8"/>
 	<title> Sharetime</title>
-	<link rel="stylesheet" href="style_APP.css"/>
+	<link rel="stylesheet" href="style_app.css"/>
 	</head>
 	<body>
     <?php $formulaire= '';
     include("entete_admin.php"); 
     include("bandeau.php");?>
-        <a  class="modif_photo" href="admin_V.php?bandeau='1'">Modifier</a><br/>    
+        <a  class="modif_photo" href="admin_v.php?bandeau='1'">Modifier</a><br/>    
 	  <h1 id="slogan_description_admin">Espace administrateur</h1>
          <?php if(!(isset($_GET['bandeau']) || isset($_GET['accueil']))){ ?>
 	<div id="description_admin">
@@ -30,7 +30,7 @@ if(!isset($_SESSION['admin']) OR !$_SESSION['admin'])
         <li>de modérer les commentaires et les messages du forum</li>
         <li>d’administrer la rubrique d’aide en ligne</li>
 		</ul>
-    <a  class="modif_photo" href="admin_V.php?accueil='1'">Modifier</a><br/>
+    <a  class="modif_photo" href="admin_v.php?accueil='1'">Modifier</a><br/>
 	</div>
 
 	<p id="slogan2"> Où que tu sois, il y a un évènement pour toi ! </p>
@@ -47,7 +47,7 @@ if(!isset($_SESSION['admin']) OR !$_SESSION['admin'])
          ?>
         <div>
         <h1>Image bandeau</h1>
-        <form method="post" action="../controller/modif_photo_C.php" enctype="multipart/form-data">
+        <form method="post" action="../controller/modif_photo_c.php" enctype="multipart/form-data">
             <label for="mon_fichier">Fichier (tous formats | max. 1 Mo) :</label><br />
             <input type="hidden" name="MAX_FILE_SIZE" value="4194304" />
             <input type="file" name="image" id="mon_fichier" /><br />
@@ -58,7 +58,7 @@ if(!isset($_SESSION['admin']) OR !$_SESSION['admin'])
                ?>
                  <div>
        <h1>Image accueil</h1>
-        <form method="post" action="../controller/modif_photo_C.php" enctype="multipart/form-data">
+        <form method="post" action="../controller/modif_photo_c.php" enctype="multipart/form-data">
             <label for="mon_fichier">Fichier (tous formats | max. 1 Mo) :</label><br />
             <input type="hidden" name="MAX_FILE_SIZE" value="4194304" />
             <input type="file" name="image" id="mon_fichier" /><br />

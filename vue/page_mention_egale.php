@@ -3,7 +3,7 @@
 	<head>
 	<meta charset="utf-8"/>
 	<title> Sharetime</title>
-	<link rel="stylesheet" href="style_APP.css"/>
+	<link rel="stylesheet" href="style_app.css"/>
 
 	</head>
 	<body>
@@ -32,7 +32,7 @@ Ainsi, vous pouvez exiger que soient rectifiées, complétées, clarifiées, mis
 </div>	
 <?php include("pied_de_page.php"); ?>
 
-		</body>
+	</body>
 </html>
 
 	

@@ -30,7 +30,7 @@ class addPost{
 	public function insert(){
 
 		$insert = "post";
-		include "../model/forum_index_M.php";
+		include "../model/forum_index_m.php";
 
 		return 1;
 

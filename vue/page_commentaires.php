@@ -4,7 +4,7 @@
 	<head>
 	<meta charset="utf-8"/>
 	<title> Sharetime</title>
-	<link rel="stylesheet" href="style_APP.css"/>
+	<link rel="stylesheet" href="style_app.css"/>
 	</head>
 	<body>
     <?php include("entete.php"); ?>
@@ -37,7 +37,7 @@ $req->closeCursor();
 
 	<form method="post" action="page_commentaires.php">
    <p>
-       <label for="note">Comment avvez vous trouvé cet énènement?</label><br />
+       <label for="note">Comment avez vous trouvé cet évènement?</label><br />
        <select name="list_note" id="note">
            <option value="1">1</option>
            <option value="2">2</option>
@@ -70,6 +70,4 @@ $req->closeCursor();
 	?>
 	
 	</body>
-	
-
-	
+</html>

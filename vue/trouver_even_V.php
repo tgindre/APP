@@ -5,7 +5,7 @@
     <head>
         <meta charset="utf-8"/>
         <title> Sharetime</title>
-        <link rel="stylesheet" href="style_APP.css"/>
+        <link rel="stylesheet" href="style_app.css"/>
     </head>
     <body>
         <?php
@@ -28,7 +28,7 @@
         include('formulaire.php');
 
         if (!(isset($_GET['recherche']) && $_GET['recherche'])) {
-            include('../controller/trouver_even_C.php');
+            include('../controller/trouver_even_c.php');
         }
         if (!isset($nombreDePages)) {
             if (isset($_GET['nbp'])) {
@@ -41,7 +41,7 @@
         while ($i <= $derniereven) {
             ?>
             <div class ="trouver_even">
-                <a href="even_V.php?nb=<?php echo $i ?>" >
+                <a href="even_v.php?nb=<?php echo $i ?>" >
     <?php echo'<div><span class="nom_even">' . htmlentities($_SESSION['ville_even' . $i]) . '</span></div>';
 
     if (isset($_SESSION['photo_even' . $i]) && $_SESSION['photo_even' . $i] != '') {
@@ -69,7 +69,7 @@ echo 'Page : ';
 
 for ($p = 1; $p <= $nombreDePages; $p++) {
     ?>
-                <a href='trouver_even_V.php?page= <?php echo $p ?>&nbp=<?php echo $nombreDePages ?>&recherche=<?php echo $_GET['recherche'] ?>' > <?php echo $p ?>  </a> 
+                <a href='trouver_even_v.php?page= <?php echo $p ?>&nbp=<?php echo $nombreDePages ?>&recherche=<?php echo $_GET['recherche'] ?>' > <?php echo $p ?>  </a> 
 
 <?php }
 ?>

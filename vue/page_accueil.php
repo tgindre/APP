@@ -4,7 +4,7 @@
 	<head>
 	<meta charset="utf-8"/>
 	<title> Sharetime</title>
-	<link rel="stylesheet" href="style_APP.css"/>
+	<link rel="stylesheet" href="style_app.css"/>
 	</head>
 	<body>
     <?php $formulaire= 'recherche'; 
@@ -26,15 +26,15 @@
 	<p id = "slogan3" > Trouvez votre bonheur en recherchant dans le fil d'actualité l'évènement, près de chez vous, qui vous correspond </p>
 
        <div class ="conteneur">
-      <?php include('../controller/trouver_even_C.php');
+      <?php include('../controller/trouver_even_c.php');
            $i=1;
            while($i<=$nb_even){
         /*$_SESSION['n_even']=$i;  Pour reconnaitre l'evenement dans la page even_V */
                if(isset($_SESSION['photo_even'.$i])&& $_SESSION['photo_even'.$i]!=''){ ?>
-           <div class="even"> <a href="even_V.php?nb=<?php echo $i?>" >
+           <div class="even"> <a href="even_v.php?nb=<?php echo $i?>" >
            <img class="images" src="<?php echo $_SESSION['photo_even'.$i] ?>" alt="photo de l'évènement"><p class="text_image"><?php echo $_SESSION['nom_even'.$i]?></p> </a> </div>
         <?php } else { ?>
-          <div class="even"> <a href="even_V.php?nb=<?php echo $i?>" >
+          <div class="even"> <a href="even_v.php?nb=<?php echo $i?>" >
            <img class="images" src="image/point-d-interrogation2.jpg" alt="photo de l'évènement"><p class="text_image"><?php echo $_SESSION['nom_even'.$i]?></p> </a> </div>
             <?php }
             $i++; 
@@ -44,7 +44,7 @@
        </div>
 
 			<div id = "recherche_avance"> <p> Recherche avancées <br/>
-				<a href="trouver_even_V.php" id ="app">Appuyer ici</a> </p>
+				<a href="trouver_even_v.php" id ="app">Appuyer ici</a> </p>
 			</div>
 
         <?php

@@ -29,12 +29,12 @@ if(isset($_POST['connexion'])){
     }
 
     if(isset($erreur)){
-        header('Location: ../vue/connexion_V.php?erreur='.$erreur);
+        header('Location: ../vue/connexion_v.php?erreur='.$erreur);
     }else{
         $connexion->closeCursor();
         header('Location: ../vue/page_accueil.php');
     }
 }else{
-    header('Location: ../vue/connexion_V.php');
+    header('Location: ../vue/connexion_v.php');
 }
 

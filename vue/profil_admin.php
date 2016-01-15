@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8"/>
         <title>Sharetime</title>
-        <link rel="stylesheet" href="style_APP.css"/>
+        <link rel="stylesheet" href="style_app.css"/>
     </head>
     <body>
         <?php $formulaire='';
@@ -26,7 +26,7 @@
         </div>
         <?php } ?>
         <div class="profil">   
-                <form method="post" action="../controller/modif_profil_C.php" id="confirm_suppr" onclick="return(confirm('Etes-vous sûr de vouloir supprimer cette entrée?'));">
+                <form method="post" action="../controller/modif_profil_c.php" id="confirm_suppr" onclick="return(confirm('Etes-vous sûr de vouloir supprimer cette entrée?'));">
                 <input type="hidden" name="numero" value=<?php echo $i?> />
                 <input class="supprimer" type="submit" name="supprimer" value="Supprimer" /><br/>
                 </form>
@@ -39,7 +39,7 @@
             /* modification du profil ligne par ligne*/ 
             switch ($_GET['modifier']) { 
         case 0: ?>
-        <form method="post" action="../controller/modif_profil_admin_C.php" enctype="multipart/form-data">
+        <form method="post" action="../controller/modif_profil_admin_c.php" enctype="multipart/form-data">
             <label for="mon_fichier">Fichier (tous formats | max. 1 Mo) :</label><br />
             <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
             <input type="file" name="image" id="mon_fichier" /><br />
@@ -50,7 +50,7 @@
         break;
         case 1: ?>
                 <div id="creation_even">
-                <form name="inscription" method="post" action="../controller/modif_profil_admin_C.php">
+                <form name="inscription" method="post" action="../controller/modif_profil_admin_c.php">
                     <label class="creation">Pseudo</label><input class="creation" type="text" name="pseudo" placeholder="Pseudo"/><br/>
                     <input type="hidden" name="numero" value=<?php echo $i?> />
                     <input class="valider" type="submit" name="modifier_pseudo" value="modifier"/><br/>
@@ -59,7 +59,7 @@
         break;
             case 2: ?>
                 <div id="creation_even">
-                <form name="inscription" method="post" action="../controller/modif_profil_admin_C.php">
+                <form name="inscription" method="post" action="../controller/modif_profil_admin_c.php">
                     <label class="creation">Adresse mail :</label><input class="creation" type="email" name="mail" placeholder="Email"/><br/>
                     <input type="hidden" name="numero" value=<?php echo $i?> />
                     <input class="valider" type="submit" name="modifier_mail" value="modifier"/><br/>
@@ -68,7 +68,7 @@
         break;
                 case 3: ?>
                 <div id="creation_even">
-                <form name="inscription" method="post" action="../controller/modif_profil_admin_C.php">
+                <form name="inscription" method="post" action="../controller/modif_profil_admin_c.php">
                     <label class="creation">Nom :</label><input class="creation" type="text" name="nom" placeholder="Nom"/><br/>
                     <input type="hidden" name="numero" value=<?php echo $i?> />
                     <input class="valider" type="submit" name="modifier_nom" value="modifier"/><br/>
@@ -77,7 +77,7 @@
         break;
                 case 4: ?>
                 <div id="creation_even">
-                <form name="inscription" method="post" action="../controller/modif_profil_admin_C.php">
+                <form name="inscription" method="post" action="../controller/modif_profil_admin_c.php">
                     <label class="creation">Prénom :</label><input class="creation" type="text" name="prenom" placeholder="prenom"/><br/>
                     <input type="hidden" name="numero" value=<?php echo $i?> />
                     <input class="valider" type="submit" name="modifier_prenom" value="modifier"/><br/>
@@ -86,7 +86,7 @@
         break;
                 case 5: ?>
                 <div id="creation_even">
-                <form name="inscription" method="post" action="../controller/modif_profil_admin_C.php">
+                <form name="inscription" method="post" action="../controller/modif_profil_admin_c.php">
                     <label class="creation">Date de naissance : </label><input class="creation" type="text" name="date" /><br/>
                     <input type="hidden" name="numero" value=<?php echo $i?> />
                     <input class="valider" type="submit" name="modifier_date_n" value="modifier"/><br/>
@@ -95,7 +95,7 @@
         break;
                 case 6: ?>
                 <div id="creation_even">
-                <form name="inscription" method="post" action="../controller/modif_profil_admin_C.php">
+                <form name="inscription" method="post" action="../controller/modif_profil_admin_c.php">
                     <label class="creation">Adresse</label><input class="creation" type="text" name="adresse" placeholder="Adresse"/><br/>
                     <input type="hidden" name="numero" value=<?php echo $i?> />
                     <input class="valider" type="submit" name="modifier_adresse" value="modifier"/><br/>
@@ -104,7 +104,7 @@
         break;
                 case 7: ?>
                 <div id="creation_even">
-                <form name="inscription" method="post" action="../controller/modif_profil_admin_C.php">
+                <form name="inscription" method="post" action="../controller/modif_profil_admin_c.php">
                     <label class="creation">Code Postal :</label><input class="creation" type="text" name="code_postal" placeholder="Code Postal"/><br/>
                     <input type="hidden" name="numero" value=<?php echo $i?> />
                     <input class="valider" type="submit" name="modifier_code_postal" value="modifier"/><br/>
@@ -113,7 +113,7 @@
         break;
                 case 8: ?>
                 <div id="creation_even">
-                <form name="inscription" method="post" action="../controller/modif_profil_admin_C.php">
+                <form name="inscription" method="post" action="../controller/modif_profil_admin_c.php">
                     <label class="creation">Ville :</label><input class="creation" type="text" name="ville" placeholder="Ville"/><br/>
                     <input type="hidden" name="numero" value=<?php echo $i?> />
                     <input class="valider" type="submit" name="modifier_ville" value="modifier"/><br/>
@@ -122,7 +122,7 @@
         break;
                 case 9: ?>
                 <div id="creation_even">
-                <form name="inscription" method="post" action="../controller/modif_profil_admin_C.php">
+                <form name="inscription" method="post" action="../controller/modif_profil_admin_c.php">
                     <label class="creation">Pays :</label><input class="creation" type="text" name="pays" placeholder="Pays"/><br/>
                     <input type="hidden" name="numero" value=<?php echo $i?> />
                     <input class="valider" type="submit" name="modifier_pays" value="modifier"/><br/>
@@ -131,7 +131,7 @@
         break;
                 case 10: ?>
                 <div id="creation_even">
-                <form name="inscription" method="post" action="../controller/modif_profil_admin_C.php">
+                <form name="inscription" method="post" action="../controller/modif_profil_admin_c.php">
                     Administrateur: 
                     <label class="creation">Oui</label><input class="creation" type="radio" name="admin" value="oui"/><br/>
                     <label class="creation">Non</label><input class="creation" type="radio" name="admin" value="non"/><br/>
@@ -166,7 +166,7 @@
       <?php     }
 ?>
            
-<?php        include('../controller/profil_admin_C.php');
+<?php        include('../controller/profil_admin_c.php');
         
         $k=1;
         if (isset($even)){

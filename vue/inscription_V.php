@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8"/>
         <title> Sharetime</title>
-        <link rel="stylesheet" href="style_APP.css"/>
+        <link rel="stylesheet" href="style_app.css"/>
         <script type="text/javascript" src="app.js"></script>
     </head>
     <body>
@@ -19,13 +19,13 @@
         $erreur= "Vos deux mots de passe ne sont pas les mêmes";
         break;
         case 2:
-        $erreur= "Probleme dans l'insertion du formulaire dans la base de donnée";
+        $erreur= "Problème dans l'insertion du formulaire dans la base de donnée";
         break;
         case 3:
         $erreur= "Ce mail est déjà pris";
         break;
         case 4:
-        $erreur= "Le mot de pass doit avoir au moins 6 caractères";
+        $erreur= "Le mot de passe doit avoir au moins 6 caractères";
         break;
 
     }

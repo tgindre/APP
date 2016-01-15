@@ -37,5 +37,5 @@ if(isset($_POST['recherche'])){
 }
   $req->closeCursor();      
 }
-    header('Location: ../vue/trouver_even_V.php?nbp='.$nombreDePages.'&recherche='.$recherche);
+    header('Location: ../vue/trouver_even_v.php?nbp='.$nombreDePages.'&recherche='.$recherche);
 

@@ -16,5 +16,5 @@ if(isset($_POST['supp_aide'])){
 	supprime_aide($_POST['id_aide']);
 }
 
-header('Location: ../vue/aide_admin_V.php')
+header('Location: ../vue/aide_admin_v.php')
 ?>

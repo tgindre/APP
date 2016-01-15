@@ -3,7 +3,7 @@
 	<head>
 	<meta charset="utf-8"/>
 	<title> Sharetime</title>
-	<link rel="stylesheet" href="style_APP.css"/>
+	<link rel="stylesheet" href="style_app.css"/>
 
 	</head>
 	<body>
@@ -13,7 +13,7 @@
 
 <div id="fond"> 
 	<p class="contact"> Dites-nous si vous avez une question ou besoin d'un conseil ! </p> 	
-        <form method="POST" action="traitement php">
+        <form method="POST" action="traitement.php">
 	<p>
 		<label for="ameliorer">
 		Sujet
@@ -49,9 +49,9 @@
 
 	
 			<div id = "recherche_avance"> <p> Recherche avancées <br/>
-				<a href="trouver_even_V.php" id ="app">Appuyer ici</a> </p>
+				<a href="trouver_even_v.php" id ="app">Appuyer ici</a> </p>
 			</div>
 
-   <?php include("pied_de_page.php")?>
+   <?php include("pied_de_page.php") ; ?>
 	</body>
 </html>
