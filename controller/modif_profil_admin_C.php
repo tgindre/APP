@@ -39,7 +39,7 @@ if (isset($_POST['image_profil'])) {
         modif_utilisateur('mail', $_POST['mail'], $_SESSION['id'.$i]);
     }
     if (isset($_POST['modifier_nom'])) {
-        modif_utilisateur('nom', $_POST['pseudo'], $_SESSION['id'.$i]);  
+        modif_utilisateur('nom', $_POST['nom'], $_SESSION['id'.$i]);  
     }
     if (isset($_POST['modifier_prenom'])) {
         modif_utilisateur('prenom', $_POST['prenom'], $_SESSION['id'.$i]);  
