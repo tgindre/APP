@@ -63,10 +63,21 @@
          <?php }
               echo '<p class="profil">' . htmlentities($_SESSION['nom_even'.$i]) .'<br/> '.htmlentities($_SESSION['description'.$i]).'<br/>'.htmlentities($_SESSION['type_even'.$i]).'<br/> '.htmlentities($_SESSION['adresse_even'.$i]).'</p>'; 
               echo '<p class="profil"> Type de public : '.htmlentities($_SESSION['type_public'.$i]).'<br/> ' . htmlentities($date) .'<br/> Horaire '.htmlentities($_SESSION['horaire'.$i]). '<br/> Tarif : '.htmlentities($tarif).'<br/> Nombre de place : '.htmlentities($_SESSION['nb_participants'.$i]).'<br/> </p>';
-        } if(isset($_SESSION['pseudo'])){ ?>
-            <form method="post" action="commentaires_c.php">
+        } if(isset($_SESSION['pseudo'])){
+            include("../controller/commentaires_c.php");
+           /* echo 'Spectateurs :'.$_SESSION['moyenne'];*/
+            if(isset($_SESSION['com']) && $_SESSION['com']){
+            $j=0;
+            while($j<=$_SESSION['nb_com']){
+?>          <p class="info" ><strong><?php echo htmlspecialchars($_SESSION['pseudo'.$j]); ?></strong> le <?php echo $_SESSION['date'.$j]; ?></p>
+            <p class="contenu"><?php echo nl2br(htmlspecialchars($_SESSION['contenu'.$j])); ?></p>
+            <?php $j++;
+            }
+            } ?>
+        
+            <form method="post" action="../controller/commentaires_c.php">
    <p>
-       <label for="note">Quel note metteriez-vous ?</label><br />
+       <label for="note">Comment avez vous trouvé cet énènement?</label><br />
        <select name="list_note" id="note">
            <option value="1">1</option>
            <option value="2">2</option>
@@ -81,11 +92,9 @@
        </select>
    </p>
 
-	<p> Comment avez-vous trouvez cet évènement ?</p>
+	<p> Quelque chose à dire ? </br>
 	
-	<p>
-		<input type="text" name="Commentaire" placeholder="taper votre commentaire ici" />
-		<input type="submit" value="Publier" />
+		<input type="text" name="contenu" placeholder="taper votre commentaire ici"/>
 	</p>
 	</form>
 	<!--bouton pour s'inscrir-->

@@ -52,3 +52,14 @@ function creation_aide($question,$reponse){
    $rep=true;
     return($rep);
 }
+
+function creation_com($contenue,$list_note){
+    global $bdd;
+    $insert = $bdd->prepare('INSERT INTO commentaire (avis,list_note) VALUES(:contenue, :list_note)');
+    $insert->execute(array(
+        'contenue'=>$contenue,
+        'list_note'=>$list_note
+        ));
+   $rep=true;
+    return($rep);
+}

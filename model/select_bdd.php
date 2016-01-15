@@ -183,8 +183,25 @@ function moyenne_note ($id_even){
     global $bdd;
     $requete_moyenne = $bdd->prepare("SELECT AVG(list_note) AS moyenne FROM commentaire WHERE id_event= :id_even ");
     $requete_moyenne->execute(array(
-            '$id_even' => $donnees)
+            'id_even' => $id_even)
             );
     $resultat = $requete_moyenne->fetch();
     return($resultat);
+}
+function select_com($id_even){
+    global $bdd;
+    $requete= $bdd->prepare('SELECT * FROM commentaire WHERE id_even= :id_even ORDER BY date');
+    $requete->execute(array(
+            'id_even' => $id_even)
+            );
+    $resultat = $requete->fetch();
+    return($resultat);
+}
+function select_utilisateur_com ($id_utilisateur){
+    global $bdd;
+    $requete= $bdd->prepare('SELECT * FROM utilisateur WHERE ID_utilisateur = :id_utilisateur');
+    $requete->execute(array(
+            'id_utilisateur' => $id_utilisateur)
+            );
+    return($requete);
 }
