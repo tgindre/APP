@@ -42,7 +42,7 @@
         </div>
         <?php } ?>
             <div class="profil">   
-                <form method="post" action="../controller/modif_even_C.php" id="confirm_suppr" onclick="return(confirm('Etes-vous sûr de vouloir supprimer cette entrée?'));">
+                <form method="post" action="../controller/modif_even_C.php" id="confirm_suppr" onclick="return(confirm('Etes-vous sûr de vouloir supprimer cette évènement?'));">
                 <input type="hidden" name="numero" value=<?php echo $i?> />
                 <input class="supprimer" type="submit" name="supprimer" value="Supprimer" /><br/>
                 </form>
@@ -63,7 +63,35 @@
          <?php }
               echo '<p class="profil">' . htmlentities($_SESSION['nom_even'.$i]) .'<br/> '.htmlentities($_SESSION['description'.$i]).'<br/>'.htmlentities($_SESSION['type_even'.$i]).'<br/> '.htmlentities($_SESSION['adresse_even'.$i]).'</p>'; 
               echo '<p class="profil"> Type de public : '.htmlentities($_SESSION['type_public'.$i]).'<br/> ' . htmlentities($date) .'<br/> Horaire '.htmlentities($_SESSION['horaire'.$i]). '<br/> Tarif : '.htmlentities($tarif).'<br/> Nombre de place : '.htmlentities($_SESSION['nb_participants'.$i]).'<br/> </p>';
-        }
+        } if(isset($_SESSION['pseudo'])){ ?>
+            <form method="post" action="commentaires_c.php">
+   <p>
+       <label for="note">Quel note metteriez-vous ?</label><br />
+       <select name="list_note" id="note">
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+           <option value="6">6</option>
+           <option value="7">7</option>
+           <option value="8">8</option>
+		   <option value="9">9</option>
+           <option value="10">10</option>
+       </select>
+   </p>
+
+	<p> Comment avez-vous trouvez cet évènement ?</p>
+	
+	<p>
+		<input type="text" name="Commentaire" placeholder="taper votre commentaire ici" />
+		<input type="submit" value="Publier" />
+	</p>
+	</form>
+	<form name="Inscr_even" method="post" action="#">
+        <input class="boutton_je_m'inscris" type="submit" name="Valide" value="Je m'inscris"/>
+    </form>
+      <?php  }
         } else {
               switch ($_GET['modifier']) {
         case 0: ?>
@@ -158,7 +186,10 @@
                     <input type="hidden" name="numero" value=<?php echo $i?> />
                     <input class="valider" type="submit" name="modif_nb_place" value="modifier"/><br/>
                 </form>
-            </div> <?php
+				
+            </div>
+
+			<?php
         break;
               }
               }

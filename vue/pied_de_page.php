@@ -7,7 +7,6 @@
 			<li><a href="page_conditions_generales.php">Conditions générales<span class="tiret">|</span></a></li>
 			<li><a href="page_politique_de_confidentialite.php">Politique de confidentialite<span class="tiret">|</span></a></li>
 			<li><a href="page_mention_egale.php">Mention egale<span class="tiret">|</span></a></li>
-			<li><a href="#">Langues <span class="tiret">|</span></a></li>
 		</ul>
 	<p id="reseaux_sociaux"> Rejoignez-nous sur : </p>
 

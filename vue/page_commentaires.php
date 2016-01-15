@@ -25,7 +25,6 @@ while ($donnees = $req->fetch())
 {
 	$req2 = $bdd->prepare('SELECT * FROM utilisateur WHERE ID_utilisateur = :ID_utilisateur');
 	$req2->execute(array('ID_utilisateur'=>$donnees['utilisateur']));
-	
 	$utilisateur = $req2->fetch();
 	
 ?>
@@ -56,7 +55,7 @@ $req->closeCursor();
 	<p> Comment avez-vous trouvez cet évènement ?</p>
 	
 	<p>
-		<input type="text" name="Commentaire" placeholder="taper votre commentaire ici" size="80px" />
+		<input type="text" name="Commentaire" placeholder="taper votre commentaire ici" />
 		<input type="submit" value="Publier" />
 	</p>
 	</form>
