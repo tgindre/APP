@@ -88,6 +88,7 @@
 		<input type="submit" value="Publier" />
 	</p>
 	</form>
+	<!--bouton pour s'inscrir-->
 	<form name="Inscr_even" method="post" action="#">
         <input class="boutton_inscris" type="submit" name="Valide" value="Je m'inscris"/>
     </form>
