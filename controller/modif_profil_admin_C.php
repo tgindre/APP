@@ -56,7 +56,17 @@ if (isset($_POST['image_profil'])) {
         if (isset($_POST['modifier_ville'])) {
             modif_utilisateur('ville', $_POST['ville'], $_SESSION['id'.$i]);   
     }
-        if (isset($_POST['modifier_pays'])) {   
+        if (isset($_POST['modifier_pays'])) {
+        modif_utilisateur('pays', $_POST['pays'], $_SESSION['id'.$i]);   
+    }
+
+        if (isset($_POST['modifier_admin'])) {
+            if($_POST['admin'] == "oui"){
+                modif_utilisateur('administrateur', 1, $_SESSION['id'.$i]);
+            }
+            else{
+                modif_utilisateur('administrateur', 0, $_SESSION['id'.$i]);
+            } 
     }
         if (isset($_POST['supprimer'])) {
         supprime_utilisateur($_SESSION['id_createur'.$i]);

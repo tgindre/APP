@@ -133,10 +133,10 @@
                 <div id="creation_even">
                 <form name="inscription" method="post" action="../controller/modif_profil_admin_C.php">
                     Administrateur: 
-                    <label class="creation">Oui</label><input class="creation" type="radio" name="admin"/><br/>
-                     <label class="creation">Non</label><input class="creation" type="radio" name="admin"/><br/>
+                    <label class="creation">Oui</label><input class="creation" type="radio" name="admin" value="oui"/><br/>
+                    <label class="creation">Non</label><input class="creation" type="radio" name="admin" value="non"/><br/>
                     <input type="hidden" name="numero" value=<?php echo $i?> />
-                    <input class="valider" type="submit" name="modifier_pays" value="modifier"/><br/>
+                    <input class="valider" type="submit" name="modifier_admin" value="modifier"/><br/>
                 </form>
             </div> <?php    
         break;

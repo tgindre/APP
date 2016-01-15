@@ -188,8 +188,9 @@ if(isset($_POST['name']) AND isset($_POST['sujet'])){
 					<a href="forum_admin_V.php?categorie=<?php echo $reponse['name']; ?>"><?php echo $reponse['name']; ?></a>
 					<input type="text" name="id_categorie" value="<?php echo $reponse['id']; ?>" hidden>
 					<input type="text" name="name_categorie">
-					<input id="categorie" type="submit" name="modifCategorie" value="Modifier"/>
 					<input id="categorie" type="submit" name="suppCategorie" value="Supprimer"/>
+					<input id="categorie" type="submit" name="modifCategorie" value="Modifier"/>
+					
 				</form>
 				
 			</div>
