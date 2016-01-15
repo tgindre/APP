@@ -177,3 +177,14 @@ function verif_select($champ, $donnees){
     $resultat = $verification->fetch();
     return($resultat);
 }
+
+/* Commentaire */
+function moyenne_note ($id_even){
+    global $bdd;
+    $requete_moyenne = $bdd->prepare("SELECT AVG(list_note) AS moyenne FROM commentaire WHERE id_event= :id_even ");
+    $requete_moyenne->execute(array(
+            '$id_even' => $donnees)
+            );
+    $resultat = $requete_moyenne->fetch();
+    return($resultat);
+}

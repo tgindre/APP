@@ -31,7 +31,8 @@
     }
 } 
         include("bandeau.php");
-        include("pied_de_page.php"); 
+        include("pied_de_page.php");
+        /*$_SESSION = array();*/
         ?>
 
     </body>

@@ -10,11 +10,10 @@
     <?php include("entete.php"); ?>
 	
 <?php
-
-$requete_moyenne = mysql_query("SELECT AVG(list_note) FROM commentaire "); 
-$moyenne = mysql_result($requete_moyenne,0); 
-echo 'Spectateurs : . $moyenne . '
-?>
+$requete_moyenne = $bdd->query("SELECT AVG(list_note) AS moyenne FROM commentaire "); 
+$moyenne = $requete_moyenne->fetch();
+echo 'Spectateurs :' . $moyenne['moyenne'] ; ?>
+	
 	<h2>Commentaires</h2>
 
 <?php
@@ -35,9 +34,10 @@ while ($donnees = $req->fetch())
 $req->closeCursor();
 ?>
 
+
 	<form method="post" action="page_commentaires.php">
    <p>
-       <label for="note">Quel note metteriez-vous ?</label><br />
+       <label for="note">Comment avvez vous trouvé cet énènement?</label><br />
        <select name="list_note" id="note">
            <option value="1">1</option>
            <option value="2">2</option>
@@ -52,13 +52,22 @@ $req->closeCursor();
        </select>
    </p>
 
-	<p> Comment avez-vous trouvez cet évènement ?</p>
+	<p> Quelque chose à dire ? </br>
 	
+		<input type="text" name="contenu" placeholder="taper votre commentaire ici" size="80px" />
+		<input type="submit" name="publier" value="publier" />
 	<p>
 		<input type="text" name="Commentaire" placeholder="taper votre commentaire ici" />
 		<input type="submit" value="Publier" />
 	</p>
 	</form>
+	
+	<?php
+ if(isset($_POST['publier'])){
+	$req = $bdd->prepare('INSERT INTO commentaire (avis,list_note) VALUES(?, ?)');
+	$req->execute(array($_POST['contenu'], $_POST['list_note']));  
+ }
+	?>
 	
 	</body>
 	

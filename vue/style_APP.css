@@ -262,8 +262,13 @@ footer{
 	text-align: center;
 	font-size: 1.5em;
 }
+footer ul {
+    margin: 0px; 
+    padding-bottom :15px;
+}
 
 #logo2{
+    margin: 15px;
         height : 142px;
         overflow: hidden;
         -webkit-border-radius:120px;
