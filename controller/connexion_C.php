@@ -1,4 +1,4 @@
-<?php include('../model/connexion_M.php');
+<?php include('../model/connexion_m.php');
 
 if(isset($_POST['connexion'])){
     //vérifie qu'on a appuyer sur le bouton de connexion
