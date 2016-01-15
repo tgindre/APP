@@ -66,9 +66,22 @@ if(isset($_POST['name']) AND isset($_POST['sujet'])){
 
 					$select ="utilisateur";
 					include "../model/forum_index_M.php";
-					
-					echo $utilisateur['pseudo'] . ' : ';
-					echo '<br>' . $reponse['contenu'] . '<br>';
+	
+					if(isset($utilisateur['photo']) && $utilisateur['photo']!=''){ ?>
+        
+        				
+            				<h5><img src ="<?php echo $_SESSION['photo'] ?>" alt="Photo de profil">
+       	 				
+        			<?php
+        			}
+        			else { ?>
+        				
+            				<h5><img src ="image/point-d-interrogation2.jpg" alt="?">
+        				
+        				<?php
+        			}
+					echo $utilisateur['pseudo'] . '</h5>';
+					echo '<p>' . $reponse['contenu'] . '</p>';
 					echo $reponse['date'];
 				?>
 				</div>
