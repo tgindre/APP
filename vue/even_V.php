@@ -96,6 +96,7 @@
 	
 		<input type="text" name="contenu" placeholder="taper votre commentaire ici"/>
 	</p>
+        <input type="submit" name="publier" value="publier" />
 	</form>
 	<!--bouton pour s'inscrir-->
 	<form name="Inscr_even" method="post" action="#">
