@@ -55,7 +55,7 @@ function creation_aide($question,$reponse){
 
 function creation_com($contenu,$list_note, $id, $id_even){
     global $bdd;
-    $insert = $bdd->prepare('INSERT INTO commentaire (contenu, list_note, utilisateur, id_event, date) VALUES (:contenu, :list_note,:id,:id_even, NOW()');
+    $insert = $bdd->prepare('INSERT INTO commentaire (contenu, list_note, utilisateur, id_event, date) VALUES (:contenu, :list_note,:id,:id_even, NOW())');
     $insert->execute(array(
         'contenu'=>$contenu,
         'list_note'=>$list_note,
