@@ -65,7 +65,7 @@
               echo '<p class="profil"> Type de public : '.htmlentities($_SESSION['type_public'.$i]).'<br/> ' . htmlentities($date) .'<br/> Horaire '.htmlentities($_SESSION['horaire'.$i]). '<br/> Tarif : '.htmlentities($tarif).'<br/> Nombre de place : '.htmlentities($_SESSION['nb_participants'.$i]).'<br/> </p>';
         } if(isset($_SESSION['pseudo'])){
             include("../controller/commentaires_c.php");
-           /* echo 'Spectateurs :'.$_SESSION['moyenne'];*/
+            echo 'Spectateurs :'.$_SESSION['moyenne'];
             if(isset($_SESSION['com']) && $_SESSION['com']){
             $j=0;
             while($j<=$_SESSION['nb_com']){
@@ -96,6 +96,7 @@
 	
 		<input type="text" name="contenu" placeholder="taper votre commentaire ici"/>
 	</p>
+        <input type="hidden" name="numero" value=<?php echo $i?> />
         <input type="submit" name="publier" value="publier" />
 	</form>
 	<!--bouton pour s'inscrir-->

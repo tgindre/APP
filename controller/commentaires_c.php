@@ -3,6 +3,11 @@ include('../model/modif_bdd.php');
 include('../model/select_bdd.php');
 include('../model/cree_bdd.php');
 
+ if(isset($_POST['publier'])){
+        $i=$_POST['numero'];
+	$ins = creation_com($_POST['contenu'],$_POST['list_note']);
+        header('Location: ../vue/even_v.php?nb='.$i);
+ }
 $requete_moyenne = moyenne_note($_SESSION['id_even'.$i]);
 $_SESSION['moyenne']=$requete_moyenne;
 
@@ -21,6 +26,3 @@ while ($donnees = $req->fetch())
         $j++;       
 }
 }
- if(isset($_POST['publier'])){
-	$ins = creation_com($_POST['contenu'],$_POST['list_note']);  
- }
