@@ -190,12 +190,11 @@ function moyenne_note ($id_even){
 }
 function select_com($id_even){
     global $bdd;
-    $requete= $bdd->prepare('SELECT * FROM commentaire WHERE id_even= :id_even ORDER BY date');
+    $requete= $bdd->prepare('SELECT * FROM commentaire WHERE id_event= :id_even ORDER BY date DESC');
     $requete->execute(array(
             'id_even' => $id_even)
             );
-    $resultat = $requete->fetch();
-    return($resultat);
+    return($requete);
 }
 function select_utilisateur_com ($id_utilisateur){
     global $bdd;

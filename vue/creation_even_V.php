@@ -9,7 +9,6 @@
     <body>
 
         <?php 
-             $formulaire = '';
         include("entete.php");
         $formulaire = '';        
         if (isset($_SESSION['pseudo'])) {
@@ -31,6 +30,7 @@
         } else {
             include("bandeau.php"); ?>
         <h1 class="erreur"> Vous devez être connecté pour pouvoir créer un évenement </h1>
+        <p class="lien"> <a href='connexion_v.php'>Se connecter</a>      <a href='inscription_v.php'>S'inscrire</a></p>
         <?php }
         include("pied_de_page.php"); ?>
 

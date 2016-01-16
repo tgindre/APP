@@ -379,6 +379,8 @@ footer ul {
 }
 .conteneur {
   width: 100%;
+  margin-left : 120px;
+ margin-right : 120px;
 }
 .spacer {
   clear: both;
@@ -498,6 +500,13 @@ label {
     margin:5px;
     
 }
+.lien{
+    text-align:center;
+    margin : 0px;
+}
+.lien a {
+    margin-left : 30px;
+}
 
 #creation_valider{
     background-color:pink;
@@ -547,10 +556,18 @@ label {
 	-webkit-border-radius:1px;
 	border-radius:1px;
 	border: 1px solid #000000;
-        position : relative;
-        right : 10%;
-        top : 333px;
+        margin-left :100px
 }
+.commentaire {
+    font-size : 22px;
+    margin-left : 390px;
+}
+.commentaire_post{
+ margin :10px;    
+}
+#button_com{    
+    margin-left : 555px;
+} 
 
 /**/
 #even_suppr{

@@ -15,7 +15,7 @@
 			<li><a href="gerer_utilisateur.php">Gérer les utilisateurs <span class="tiret">|</span></a></li>
 			<li><a href="aide_v.php">Gérer l'aide <span class="tiret">|</span></a></li>
 			<li><a href="forum_admin_v.php">Gérer le Forum  <span class="tiret">|</span></a></li>
-                        <li><a href="admin_v.php">Espace administrateur<span class="tiret">|</span></a></li>
+                        <li><a href="admin_v.php">Mode administrateur<span class="tiret">|</span></a></li>
 		</ul>
                 </nav>
 

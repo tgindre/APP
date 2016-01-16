@@ -64,40 +64,35 @@
               echo '<p class="profil">' . htmlentities($_SESSION['nom_even'.$i]) .'<br/> '.htmlentities($_SESSION['description'.$i]).'<br/>'.htmlentities($_SESSION['type_even'.$i]).'<br/> '.htmlentities($_SESSION['adresse_even'.$i]).'</p>'; 
               echo '<p class="profil"> Type de public : '.htmlentities($_SESSION['type_public'.$i]).'<br/> ' . htmlentities($date) .'<br/> Horaire '.htmlentities($_SESSION['horaire'.$i]). '<br/> Tarif : '.htmlentities($tarif).'<br/> Nombre de place : '.htmlentities($_SESSION['nb_participants'.$i]).'<br/> </p>';
         } if(isset($_SESSION['pseudo'])){
-            include("../controller/commentaires_c.php");
-            echo 'Spectateurs :'.$_SESSION['moyenne'];
-            if(isset($_SESSION['com']) && $_SESSION['com']){
-            $j=0;
+            include("../controller/commentaires_c.php");?>
+        <p class="profil">Spectateurs : <?php echo $_SESSION['moyenne']; ?></p>
+           <?php if(isset($_SESSION['com']) && $_SESSION['com']){
+            $j=1;
             while($j<=$_SESSION['nb_com']){
-?>          <p class="info" ><strong><?php echo htmlspecialchars($_SESSION['pseudo'.$j]); ?></strong> le <?php echo $_SESSION['date'.$j]; ?></p>
-            <p class="contenu"><?php echo nl2br(htmlspecialchars($_SESSION['contenu'.$j])); ?></p>
+?>          <p class="profil" ><strong><?php echo htmlspecialchars($_SESSION['pseudo'.$j]); ?></strong> le <?php echo $_SESSION['date'.$j]; ?></p>
+            <p class="profil"><?php echo nl2br(htmlspecialchars($_SESSION['contenu'.$j])); ?></p>
             <?php $j++;
             }
             } ?>
         
             <form method="post" action="../controller/commentaires_c.php">
    <p>
-       <label for="note">Comment avez vous trouvé cet énènement?</label><br />
-       <select name="list_note" id="note">
+       <label for="note" class="commentaire" >Comment avez vous trouvé cet énènement?</label><br />
+       <select class="commentaire_post" name="list_note" id="note">
            <option value="1">1</option>
            <option value="2">2</option>
            <option value="3">3</option>
            <option value="4">4</option>
            <option value="5">5</option>
-           <option value="6">6</option>
-           <option value="7">7</option>
-           <option value="8">8</option>
-		   <option value="9">9</option>
-           <option value="10">10</option>
        </select>
    </p>
 
-	<p> Quelque chose à dire ? </br>
-	
-		<input type="text" name="contenu" placeholder="taper votre commentaire ici"/>
+	<p class="profil"> Quelque chose à dire ? </br>
+	<textarea class="commentaire_post" name="contenu" placeholder="taper votre commentaire ici" rows="2"></textarea>
+		<!--<input class="commentaire_post" type="text" name="contenu" placeholder="taper votre commentaire ici"/>-->
 	</p>
         <input type="hidden" name="numero" value=<?php echo $i?> />
-        <input type="submit" name="publier" value="publier" />
+        <input id="button_com" type="submit" name="publier" value="publier" />
 	</form>
 	<!--bouton pour s'inscrir-->
 	<form name="Inscr_even" method="post" action="#">
