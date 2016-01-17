@@ -1,5 +1,4 @@
-<?php include("../model/model.php");
-    include('../model/select_bdd.php');?>
+<?php include("../model/model.php");?>
 <html>
     <head>
         <meta charset="utf-8"/>
@@ -100,8 +99,9 @@
 	</form>
 	<!--bouton pour s'inscrir-->
         <?php $res=select_inscription ($_SESSION['id'],$_SESSION['id_even'.$i]);
-                if($res!=false){?>
-	<form name="Inscr_even" method="post" action="#">
+                if($res==false){?>
+	<form name="Inscr_even" method="post" action="../controller/inscr_even_c.php">
+         <input type="hidden" name="numero" value=<?php echo $i?> />   
         <input class="boutton_inscris" type="submit" name="Valide" value="Je m'inscris"/>
     </form>
                 <?php }else {echo 'Vous etes deja inscrit à l\'évènement'; } }

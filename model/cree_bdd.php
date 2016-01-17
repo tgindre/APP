@@ -65,3 +65,10 @@ function creation_com($contenu,$list_note, $id, $id_even){
    $rep=true;
     return($rep);
 }
+function participer_even($id_utilisateur,$id_even){
+	global $bdd;
+	$insert =$bdd->prepare('INSERT INTO inscrit_even (ID_utilisateur,ID_even) VALUES (:id_utilisateur,:id_even)');
+	$insert->execute(array(
+	    'id_utilisateur'=>$id_utilisateur,
+		'id_even'=>$id_even));
+}
