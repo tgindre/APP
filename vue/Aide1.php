@@ -48,9 +48,13 @@
 		<div class="q1">
 			<li><strong class="trouver">Je voudrais trouver un évènement.</strong></br>
 					<em>	Pour cela rien de plus simple!
-						Cliquez sur recherches avancées dans la bar d'accueil puis renseignez les différents champs et enfin appuyez sur entrée. 
+						Cliquez sur recherche avancée dans la bar d'accueil puis renseignez les différents champs et enfin appuyez sur entrée. 
 						Il ne vous reste plus qu'à faire votre choix parmi les différents évènements proposés!
+
+						</br>Pour accéder à la page "Trouver un évènement" <a href="trouver_even_V.php" class="find">cliquez-ici</a>
+
 						Pour accéder à la page "Trouver un évènement" <a href="trouver_even_v.php" class="find">cliquez-ici</a>
+
 			</em></li>
 		</div>
 		
@@ -61,7 +65,11 @@
 						<em>Peut-être avez-vous mal renseigné certains champs dans la recherche avancée, ou peut-être vous êtes vous trompés sur l'othographe du
 						nom de l'évènement... 
 						sinon c'est tout simplement que l'évènement n'existe pas ou plus!
+
+						</br>Pour accéder à la page "Trouver un évènement" <a href="trouver_even_V.php" class="find">cliquez-ici</a>
+
 						Pour accéder à la page "Trouver un évènement" <a href="trouver_even_v.php" class="find">cliquez-ici</a>
+
 						</em>
 			</li>
 		</div>
@@ -72,14 +80,22 @@
 			<li><strong class="creation">Je souhaiterais créer un évènement.</strong></br>
 						<em>Pour cela renseignez tous les champs de la page <em>"Proposer un évènement".</em>
 						Il est possible de proposer plusieurs évènements à la fois.
+
+						</br>Pour accéder à la page "Créer un évènement" <a href="creation_even_V.php" class="create">cliquez-ici</a>
+
 						Pour accéder à la page "Créer un évènement" <a href="creation_even_v.php" class="create">cliquez-ici</a>
+
 						</em>
 			</li>
 		</div>
 
 		<div class="q4">
 			<li><strong class="contact">Pour toutes autres informations/questions supplémentaires</strong></br>
+
+						<em>N'hésitez pas à vous référer au manuel utilisateur en cliquant </em><a href="Contactez-nous.php" class="call" >ici!</a>
+
 						<em>N'hésitez pas à vous référez au manuel utilisateur en cliquant <a href="contactez-nous.php" class="call" >ici!</a>
+
 						</br>ou à défaut pensez à vérifier que les réponses à vos questions ne sont pas dans le <a href="forum_index.php" class="f" >forum!</a>
 						</em>
 			</li>
