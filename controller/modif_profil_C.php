@@ -28,7 +28,7 @@ if (isset($_POST['image_profil'])) {
     }
     modif_utilisateur('photo', $nom, $_SESSION['id']);
     $_SESSION['photo'] = $nom;
-    header('Location: ../vue/profil_v.php');
+    header('Location: ../vue/profil_v.php?modifier=0');
 }
 
     if (isset($_POST['modifier_pseudo'])) {
@@ -80,7 +80,7 @@ if (isset($_POST['image_profil'])) {
         } else {
             $pass_hache = sha1('gz' . htmlspecialchars($_POST['password']));// Hachage du mot de passe pour le crypter
             $insert=modif_utilisateur('pass', $_POST['password'], $_SESSION['id']);
-            header('Location: ../vue/profil_v.php');
+            header('Location: ../vue/profil_v.php?modifier=0');
           }           
         } else {
             $error = 4;
@@ -103,4 +103,4 @@ if (isset($_POST['image_profil'])) {
     $_SESSION['ville'] = $connect['ville'];
     $_SESSION['pays'] = $connect['pays'];
     $_SESSION['photo'] = $connect['photo'];
-    header('Location: ../vue/profil_v.php');
+    header('Location: ../vue/profil_v.php?modifier=0');

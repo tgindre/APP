@@ -19,9 +19,9 @@ while ($donnees = $req->fetch())
 {
 	$req2 =select_utilisateur_com ($donnees['utilisateur']);
 	$utilisateur = $req2->fetch();
-        $_SESSION['pseudo'.$j]=$utilisateur['pseudo'];
-        $_SESSION['date'.$j]=$donnees['date'];
-        $_SESSION['contenu'.$j]=$donnees['contenu'];
+        $_SESSION['pseudo'.$i.$j]=$utilisateur['pseudo'];
+        $_SESSION['date'.$i.$j]=$donnees['date'];
+        $_SESSION['contenu'.$i.$j]=$donnees['contenu'];
         $_SESSION['nb_com']=$j;
         $j++;       
 }

@@ -28,19 +28,6 @@ function select_evenement_cree($nom,$id){
     $rep=$select->fetch();
     return($rep);
 }
-/*function select_evenement_cree($champ,$id, $lieu, $date, $type_even, $type_public){
-    global $bdd;
-    $select = $bdd->prepare('SELECT * FROM evenement WHERE nom_even LIKE :nom AND (adresse_even LIKE :lieu OR ville_even LIKE :lieu) AND type_even LIKE :type_even AND type_public LIKE :type_public AND ID_createur = :id  ORDER BY ID_even DESC LIMIT 0, 1');
-    $select->execute(array(
-       'nom'=>$nom,
-        'id'=>$id,
-        'lieu' => $lieu,
-        'type_even' => $type_even,
-        'type_public' => $type_public)
-            );
-    $rep=$select->fetch();
-    return($rep);
-}*/
 
 function recherche($lieu,$date,$type_even){
         global $bdd;  
@@ -203,4 +190,16 @@ function select_utilisateur_com ($id_utilisateur){
             'id_utilisateur' => $id_utilisateur)
             );
     return($requete);
+}
+
+/* inscription*/
+function select_inscription ($id_utilisateur,$id_even){
+    global $bdd;
+    $requete= $bdd->prepare('SELECT * FROM  inscrit_even WHERE (ID_utilisateur = :id_utilisateur AND ID_even= :id_even)');
+    $requete->execute(array(
+            'id_utilisateur' => $id_utilisateur,
+            'id_even' => $id_even)
+            );
+    $resultat = $requete->fetch();
+    return($resultat);
 }

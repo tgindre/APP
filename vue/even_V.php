@@ -1,4 +1,5 @@
-<?php include("../model/model.php") ?>
+<?php include("../model/model.php");
+    include('../model/select_bdd.php');?>
 <html>
     <head>
         <meta charset="utf-8"/>
@@ -64,16 +65,19 @@
               echo '<p class="profil">' . htmlentities($_SESSION['nom_even'.$i]) .'<br/> '.htmlentities($_SESSION['description'.$i]).'<br/>'.htmlentities($_SESSION['type_even'.$i]).'<br/> '.htmlentities($_SESSION['adresse_even'.$i]).'</p>'; 
               echo '<p class="profil"> Type de public : '.htmlentities($_SESSION['type_public'.$i]).'<br/> ' . htmlentities($date) .'<br/> Horaire '.htmlentities($_SESSION['horaire'.$i]). '<br/> Tarif : '.htmlentities($tarif).'<br/> Nombre de place : '.htmlentities($_SESSION['nb_participants'.$i]).'<br/> </p>';
         } if(isset($_SESSION['pseudo'])){
-            include("../controller/commentaires_c.php");?>
-        <p class="profil">Spectateurs : <?php echo $_SESSION['moyenne']; ?></p>
+            include("../controller/commentaires_c.php");
+            $j=1;?>
+        <p class="profil">Moyenne note : <?php if ($_SESSION['moyenne']!=''){echo $_SESSION['moyenne'];}
+        else {echo 'ne possède pas encore de note';}?></p>
            <?php if(isset($_SESSION['com']) && $_SESSION['com']){
-            $j=1;
+               if(isset($_SESSION['pseudo'.$i.$j])){            
             while($j<=$_SESSION['nb_com']){
-?>          <p class="profil" ><strong><?php echo htmlspecialchars($_SESSION['pseudo'.$j]); ?></strong> le <?php echo $_SESSION['date'.$j]; ?></p>
-            <p class="profil"><?php echo nl2br(htmlspecialchars($_SESSION['contenu'.$j])); ?></p>
+?>          <p class="profil" ><strong><?php echo htmlspecialchars($_SESSION['pseudo'.$i.$j]); ?></strong> le <?php echo $_SESSION['date'.$i.$j]; ?></p>
+            <p class="profil"><?php echo nl2br(htmlspecialchars($_SESSION['contenu'.$i.$j])); ?></p>
             <?php $j++;
             }
-            } ?>
+            }
+           }?>
         
             <form method="post" action="../controller/commentaires_c.php">
    <p>
@@ -95,10 +99,12 @@
         <input id="button_com" type="submit" name="publier" value="publier" />
 	</form>
 	<!--bouton pour s'inscrir-->
+        <?php $res=select_inscription ($_SESSION['id'],$_SESSION['id_even'.$i]);
+                if($res!=false){?>
 	<form name="Inscr_even" method="post" action="#">
         <input class="boutton_inscris" type="submit" name="Valide" value="Je m'inscris"/>
     </form>
-      <?php  }
+                <?php }else {echo 'Vous etes deja inscrit à l\'évènement'; } }
         } else {
               switch ($_GET['modifier']) {
         case 0: ?>
@@ -220,7 +226,6 @@
            } else { ?>
         <h1 id='even_suppr'>Evènement supprimer</h1>
       <?php     }
-         
             include("pied_de_page.php"); ?>
        </body>
 
