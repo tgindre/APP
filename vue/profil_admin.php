@@ -33,7 +33,7 @@
         </div>
     <?php
               echo '<p class="profil"> Pseudo : ' . htmlentities($_SESSION['pseudo'.$i]) .' <span class=\'modifier\'><a href="profil_admin.php?modifier=1&nb='.$i.'">Modifier</a></span><br/> Email : '.htmlentities($_SESSION['mail'.$i]).' <span class=\'modifier\'><a href="profil_admin.php?modifier=2&nb='.$i.'">Modifier</a></span><br/> Nom : '. htmlentities($_SESSION['nom'.$i]) . ' <span class=\'modifier\'><a href="profil_admin.php?modifier=3&nb='.$i.'">Modifier</a></span><br/> Prénom : '.htmlentities($_SESSION['prenom'.$i]).'<span class=\'modifier\'><a href="profil_admin.php?modifier=4&nb='.$i.'">Modifier</a></span><br/> Date de naissance : ' . htmlentities($_SESSION['date_n'.$i]) .' <span class=\'modifier\'><a href="profil_admin.php?modifier=5&nb='.$i.'">Modifier</a></span></p>'; 
-              echo '<p class="profil"> Adresse : '.htmlentities($_SESSION['adresse'.$i]).' <span class=\'modifier\'><a href="profil_admin.php?modifier=6&nb='.$i.'">Modifier</a></span><br/> Code postal : '. htmlentities($_SESSION['code_postal'.$i]) . ' <span class=\'modifier\'><a href="profil_admin.php?modifier=7&nb='.$i.'">Modifier</a></span><br/> Ville : '.htmlentities($_SESSION['ville'.$i]).' <span class=\'modifier\'><a href="profil_admin.php?modifier=8&nb='.$i.'">Modifier</a></span><br/> Pays : '.htmlentities($_SESSION['pays'.$i]).' <span class=\'modifier\'><a href="profil_admin.php?modifier=9&nb='.$i.'">Modifier</a></span></p> Administrateur : '.htmlentities($_SESSION['admin'.$i]).' <span class=\'modifier\'><a href="profil_admin.php?modifier=10&nb='.$i.'">Modifier</a></span></p>';
+              echo '<p class="profil"> Adresse : '.htmlentities($_SESSION['adresse'.$i]).' <span class=\'modifier\'><a href="profil_admin.php?modifier=6&nb='.$i.'">Modifier</a></span><br/> Code postal : '. htmlentities($_SESSION['code_postal'.$i]) . ' <span class=\'modifier\'><a href="profil_admin.php?modifier=7&nb='.$i.'">Modifier</a></span><br/> Ville : '.htmlentities($_SESSION['ville'.$i]).' <span class=\'modifier\'><a href="profil_admin.php?modifier=8&nb='.$i.'">Modifier</a></span><br/> Pays : '.htmlentities($_SESSION['pays'.$i]).' <span class=\'modifier\'><a href="profil_admin.php?modifier=9&nb='.$i.'">Modifier</a></span><br>Administrateur : '.htmlentities($_SESSION['admin'.$i]).' <span class=\'modifier\'><a href="profil_admin.php?modifier=10&nb='.$i.'">Modifier</a></span></p>';
         } else {
             
             /* modification du profil ligne par ligne*/ 
@@ -131,12 +131,13 @@
         break;
                 case 10: ?>
                 <div id="creation_even">
+                Administrateur:
                 <form name="inscription" method="post" action="../controller/modif_profil_admin_c.php">
-                    Administrateur: 
-                    <label class="creation">Oui</label><input class="creation" type="radio" name="admin" value="oui"/><br/>
-                    <label class="creation">Non</label><input class="creation" type="radio" name="admin" value="non"/><br/>
+                    
+                    Oui<input type="radio" name="admin" value="oui"/><br>
+                    Non<input type="radio" name="admin" value="non"/>
                     <input type="hidden" name="numero" value=<?php echo $i?> />
-                    <input class="valider" type="submit" name="modifier_admin" value="modifier"/><br/>
+                    <input class="valider" type="submit" name="modifier_admin" value="modifier"/><br>
                 </form>
             </div> <?php    
         break;
