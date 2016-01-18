@@ -104,7 +104,11 @@
          <input type="hidden" name="numero" value=<?php echo $i?> />   
         <input class="boutton_inscris" type="submit" name="Valide" value="Je m'inscris"/>
     </form>
-                <?php }else {echo 'Vous etes deja inscrit à l\'évènement'; } }
+                <?php }else {echo 'Vous etes deja inscrit à l\'évènement'; }  
+                } else { ?>
+        <p class="lien"> Vous devez être connecté pour pouvoir vous inscrire à cet evenement 
+            <a href='connexion_v.php'>Se connecter</a>      <a href='inscription_v.php'>S'inscrire</a></p>
+        <?php }
         } else {
               switch ($_GET['modifier']) {
         case 0: ?>
