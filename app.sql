@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 13 Janvier 2016 à 10:52
+-- Généré le :  Mar 19 Janvier 2016 à 09:53
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -65,6 +65,34 @@ INSERT INTO `categories` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `commentaire`
+--
+
+CREATE TABLE IF NOT EXISTS `commentaire` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `utilisateur` int(11) NOT NULL,
+  `contenu` text NOT NULL,
+  `date` datetime NOT NULL,
+  `id_event` int(61) NOT NULL,
+  `list_note` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Contenu de la table `commentaire`
+--
+
+INSERT INTO `commentaire` (`id`, `utilisateur`, `contenu`, `date`, `id_event`, `list_note`) VALUES
+(1, 18, 'Cet événement est super ! ', '2016-01-08 11:18:16', 0, 8),
+(2, 15, 'J''ai bien aimmé cet évenement mais il a été un peu long', '2016-01-13 06:16:14', 0, 6),
+(3, 0, 'salut', '0000-00-00 00:00:00', 0, 6),
+(4, 20, '', '0000-00-00 00:00:00', 37, 5),
+(5, 8, 'salut', '2016-01-16 21:20:05', 37, 2),
+(6, 20, 'salut', '2016-01-17 22:20:03', 37, 1);
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `evenement`
 --
 
@@ -86,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `evenement` (
   `image` varchar(255) NOT NULL,
   `lien` varchar(255) NOT NULL,
   PRIMARY KEY (`ID_even`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=38 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=39 ;
 
 --
 -- Contenu de la table `evenement`
@@ -104,22 +132,30 @@ INSERT INTO `evenement` (`ID_even`, `ID_createur`, `nom_even`, `description`, `t
 (22, 15, 'test', '', '', '', '', '', '', '', '', 0, 0, 0, '../vue/image/even/22.jpg', ''),
 (34, 20, 'Paris', '', '', '', 'Paris', '3-8 ans', '', '', '', 0, 0, 0, '../vue/image/even/34.jpg', ''),
 (36, 20, 'test', '', '', '', 'Paris', '3-8 ans', '', '', '', 0, 0, 0, '../vue/image/even/36.jpg', ''),
-(37, 20, 'test2', '', '', '', 'Paris', '', '', '', '', 0, 0, 0, '../vue/image/even/37.jpeg', '');
+(37, 20, 'test2', '', '', '', 'Paris', '', '', '', '', 0, 0, 0, '../vue/image/even/37.jpeg', ''),
+(38, 28, 'test', '', '', '', '', '', '', '', '', 0, 0, 0, '', '');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `images`
+-- Structure de la table `inscrit_even`
 --
 
-CREATE TABLE IF NOT EXISTS `images` (
-  `ID_images` int(11) NOT NULL AUTO_INCREMENT,
-  `ID_even` int(11) NOT NULL,
-  `ID_utilisateur` int(11) NOT NULL,
-  `type` varchar(255) NOT NULL,
-  `url` varchar(255) NOT NULL,
-  PRIMARY KEY (`ID_images`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+CREATE TABLE IF NOT EXISTS `inscrit_even` (
+  `ID_utilisateur` int(50) NOT NULL,
+  `ID_even` int(100) NOT NULL,
+  `ID` int(255) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Contenu de la table `inscrit_even`
+--
+
+INSERT INTO `inscrit_even` (`ID_utilisateur`, `ID_even`, `ID`) VALUES
+(20, 37, 1),
+(8, 37, 2),
+(20, 36, 3);
 
 -- --------------------------------------------------------
 
@@ -223,7 +259,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `administrateur` tinyint(1) NOT NULL,
   `photo` varchar(255) NOT NULL,
   PRIMARY KEY (`ID_utilisateur`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
 
 --
 -- Contenu de la table `utilisateur`
@@ -237,11 +273,12 @@ INSERT INTO `utilisateur` (`ID_utilisateur`, `mail`, `pass`, `nom`, `prenom`, `p
 (17, 'tg@isep.fr', '77', 'Robot', 'Arthur', '', '10/04/1995', '', 0, '', '', 0, 0, ''),
 (18, 'loup@gmail.com', '7dd31c3941a04e5f02807370fc874e499a4ccc83', 'robin', 'jean-loup', 'loup', '', '', 0, '', '', 0, 0, ''),
 (19, 'w@gmail.com', '09f1a00e7abc100fa1b5cea39822ef78d44836d4', '', '', 'waylander', '', '', 0, '', '', 0, 0, ''),
-(20, 'kylos@gmail.com', 'ea335aad029b41054de085d042d6bf4c012aa42b', '', 'anakin', 'Kylos', '12/12/2015', '42 rue de la soif', 92130, 'Paris', 'Terre', 0, 1, '../vue/image/profil/20.jpg'),
+(20, 'kylos@gmail.com', 'ea335aad029b41054de085d042d6bf4c012aa42b', 'robin', 'anakin', 'Kylos', '12/12/2015', '42 rue de la soif', 92130, 'Paris', 'Terre', 0, 1, '../vue/image/profil/20.jpg'),
 (21, 'p@gmail.com', '47cea9280fde92638622c302e688a0df43ae5c70', 'paul', 'atreides', ' Muad Dib', '24/12/10186 ', 'dune', 0, 'Caladan', 'Arrakis', 0, 0, '../vue/image/profil/21.jpg'),
-(25, 'c@gmail.com', '2b1fc0ee952f8b93cbadd420bb4124ed3ec1b590', '', '', 'c', '', '', 0, '', '', 0, 0, ''),
+(25, 'c@gmail.com', '2b1fc0ee952f8b93cbadd420bb4124ed3ec1b590', 'robin', '', 'c', '', '', 0, '', '', 0, 0, ''),
 (26, 'a@gmail.com', '6d9364d12e4b9b44e17a5f91c2471916416bac43', '', '', 'a', '', '', 0, '', '', 0, 0, '../vue/image/profil/26.jpeg'),
-(27, 'b@gmail.com', 'b216116be179dd4d90953d05704813ecb18a43a7', '', '', 'b', '', '', 0, '', '', 0, 0, '../vue/image/profil/27.jpg');
+(27, 'b@gmail.com', 'b216116be179dd4d90953d05704813ecb18a43a7', 'robin', 'akira', 'kaamelott', '', '', 0, '', '', 0, 1, '../vue/image/profil/27.jpg'),
+(28, 'herve.feller@gmail.com', '9968975ce7193bfe1fd157a631d0e6e1977c6854', 'feller', '', 'Feller', '', '', 0, '', '', 0, 0, '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
