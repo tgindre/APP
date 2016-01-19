@@ -620,7 +620,11 @@ label {
 }
 
 /* Espace administrateur */
-#admin_admin_liste li {
+#mode_admin{
+   color:yellow; 
+}
+
+#admin_liste li {
     margin-top : 10px;
 }
 
@@ -677,4 +681,15 @@ label {
 
 .presentation{
     text-align:center;
+    font-size:20px;
+    width :50%;
+    margin:auto;
+}
+#fondateur{
+    padding:0px;
+    margin:0px;
+    font-size: 27px;
+}
+.pres_titre{
+    text-decoration:underline;
 }

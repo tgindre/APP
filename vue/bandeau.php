@@ -3,5 +3,7 @@
         <?php include("formulaire.php"); ?>
 	<p id ="slogan"> Partage ton temps, <br/>
 	rencontre des gens </p>
-	<p>Venez participer, proposer, promouvoir à plus de 500 évènements dans toute la France </p>     
+	<?php if(!($formulaire=='connexion')){?>
+        <p>Venez participer, proposer, promouvoir à plus de 500 évènements dans toute la France </p>
+        <?php } ?>
         </div>

@@ -11,11 +11,12 @@
 	<?php $formulaire= 'recherche'; 
     include("entete.php"); 
     include("nom.php");
-    ?>   <div class="presentation"><h1>Qui sommes-nous ?</h1>
+    ?>   <div class="presentation">
+        <h1 class="pres_titre">Qui sommes-nous ?</h1>
         <p>Nous sommes une association à but non lucratif réalisant un site web permettant aux utilisateurs de proposer,
         promouvoir et participer à des évènements en tout genre tels que des pique-niques géants, concerts, spectacles de danse, brocantes, expositions, conférences, etc.</p>
-        <h1>Fondateur</h1>
-        <h2>Matthieu Manceny</h2>
+        <h1 class="pres_titre">Fondateur</h1>
+        <h6 id="fondateur">Matthieu Manceny</h6>
         <div><p>Enseigant chercheur en informatique, docteur en bioinformatique/ingénieur en informatique</p>
             <p>Matthieu Manceny est le fondateur de ShareTime.<br/>
             Entrepreneur depuis quelques années, il a tout d'abord obtenu un doctorat en Bioinformatique et conduit une thèse sur 
