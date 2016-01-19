@@ -2,7 +2,7 @@
 
 if (isset($select)){
 	if ($select == "post"){
-		$requete = $bdd->prepare('SELECT * FROM postSujet WHERE sujet= :sujet ');
+		$requete = $bdd->prepare('SELECT * FROM postsujet WHERE sujet= :sujet ');
 		$requete->execute(array('sujet'=>$_GET['sujet']));
 	}
 
@@ -24,7 +24,7 @@ if (isset($select)){
 
 if (isset($insert)){
 	if ($insert == "post"){
-		$requete2 = $this->bdd->prepare('INSERT INTO postSujet(propri,contenu,date,sujet) VALUES(:propri,:contenu,NOW(),:sujet)');
+		$requete2 = $this->bdd->prepare('INSERT INTO postsujet(propri,contenu,date,sujet) VALUES(:propri,:contenu,NOW(),:sujet)');
 		$requete2->execute(array('propri'=>$_SESSION['id'],'contenu' => $this->sujet,'sujet'=> $this->name));
 	}
 
@@ -32,7 +32,7 @@ if (isset($insert)){
 		$requete = $this->bdd->prepare('INSERT INTO sujet(name,categorie) VALUES(:name,:categorie)');
 		$requete->execute(array('name' => $this->name,'categorie'=> $this->categorie));
 
-		$requete2 = $this->bdd->prepare('INSERT INTO postSujet(propri,contenu,date,sujet) VALUES(:propri,:contenu,NOW(),:sujet)');
+		$requete2 = $this->bdd->prepare('INSERT INTO postsujet(propri,contenu,date,sujet) VALUES(:propri,:contenu,NOW(),:sujet)');
 		$requete2->execute(array('propri'=>$_SESSION['id'],'contenu' => $this->sujet,'sujet'=> $this->name));
 	}
 }

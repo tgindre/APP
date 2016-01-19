@@ -78,7 +78,7 @@ function supprime_sujet($id){
 
 function modif_post($id,$contenu) {
     global $bdd;
-    $req = $bdd->prepare('UPDATE postSujet SET contenu= :contenu WHERE id= :id');
+    $req = $bdd->prepare('UPDATE postsujet SET contenu= :contenu WHERE id= :id');
     $req->execute(array(
         'id' => $id,
         'contenu' => $contenu)
@@ -88,7 +88,7 @@ function modif_post($id,$contenu) {
 
 function supprime_post($id){
     global $bdd;
-    $req = $bdd->prepare('DELETE FROM postSujet WHERE id= :id');
+    $req = $bdd->prepare('DELETE FROM postsujet WHERE id= :id');
     $req->execute(array(
         'id' => $id)
     );

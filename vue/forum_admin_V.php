@@ -52,7 +52,7 @@ if(isset($_POST['name']) AND isset($_POST['sujet'])){
 			include "../model/forum_index_m.php";
 
 			?>
-			<br><a href="forum_admin_V.php?categorie=<?php echo $_GET['categorie']; ?>" >Autres sujets</a>
+			<br><a href="forum_admin_v.php?categorie=<?php echo $_GET['categorie']; ?>" >Autres sujets</a>
 			<?php
 			while($reponse = $requete->fetch())
 			{
@@ -152,7 +152,7 @@ if(isset($_POST['name']) AND isset($_POST['sujet'])){
 					
 					<!-- Modifier ou supprimer un sujet -->
 					<form name="categorie" method="post" action="../controller/forum_admin_c.php">
-						<a href="forum_admin_V.php?categorie=<?php echo $_GET['categorie']; ?>&sujet=<?php echo $reponse['name']; ?>"><?php echo $reponse['name']; ?></a>
+						<a href="forum_admin_v.php?categorie=<?php echo $_GET['categorie']; ?>&sujet=<?php echo $reponse['name']; ?>"><?php echo $reponse['name']; ?></a>
 						<input type="text" name="id_sujet" value="<?php echo $reponse['id']; ?>" hidden>
 						<input type="text" name="name_categorie" value="<?php echo $_GET['categorie']; ?>" hidden>
 						<input type="text" name="name_sujet">
