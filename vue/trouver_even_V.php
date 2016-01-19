@@ -11,7 +11,6 @@
         <?php
         include('entete.php');
         include('nom.php');
-        $nb_even = 10;
         $nombreParPage = 5;
         $formulaire = 'recherche_avancée';
         if (!isset($_GET['page'])) {
