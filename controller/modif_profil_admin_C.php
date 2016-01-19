@@ -69,7 +69,7 @@ if (isset($_POST['image_profil'])) {
             } 
     }
         if (isset($_POST['supprimer'])) {
-        supprime_utilisateur($_SESSION['id_createur'.$i]);
+        supprime_utilisateur($_SESSION['id'.$i]);
         $suppr=42;
         header('Location: ../vue/profil_admin.php?suppr='.$suppr);
         exit();

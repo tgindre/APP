@@ -422,6 +422,17 @@ footer ul {
 .inscriptions {
     border : solid;
 }
+.acceptation{
+    font-size:10px;
+    text-align : left;
+    padding:2px;
+    margin-left : 15px;
+    margin-top:10px;
+    width: 200px;
+}
+.acceptation_check{
+    margin: 20px;
+}
 #erreur{
     color : red;
     font-size : 14px;

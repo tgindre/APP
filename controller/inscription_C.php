@@ -15,7 +15,10 @@ if(isset($_POST['inscr']))
                 header('Location: ../vue/inscription_v.php?erreur='.$error);
         } else {
             $pass_hache = sha1('gz' . htmlspecialchars($_POST['password']));// Hachage du mot de passe pour le crypter
-        
+            if($_POST['acceptation']!='on'){
+                $error =5;
+                header('Location: ../vue/inscription_v.php?erreur='.$error);
+            } else{
             if ($_POST['genre']=='Femme')
             {
                 $genre=True;
@@ -52,6 +55,7 @@ if(isset($_POST['inscr']))
                 header('Location: ../vue/inscription_v.php?erreur='.$error);
             }
         }
+            }
         }
         else
         {

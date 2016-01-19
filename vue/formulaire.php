@@ -19,7 +19,7 @@ if ($formulaire == 'inscription') {
             <?php } ?>
                 <input class="inscriptions" type="radio" name="genre" value="Femme"/>Femme<input class="inscriptions" type="radio" name="genre" value="Homme" checked="checked"/>Homme<br/>
             <?php if (isset($_SESSION['erreur']['pseudo'])) { ?>
-                <input class="information" type="text" name="pseudo" value='<?php echo $_SESSION['erreur']['pseudo'] ?>'/><br/>
+                <input id="pseudo" class="information" type="text" name="pseudo" value='<?php echo $_SESSION['erreur']['pseudo'] ?>'/>
             <?php } else { ?>
                 <input id="pseudo" class="information" type="text" name="pseudo" placeholder="Pseudo"/>
             <?php } if (isset($_SESSION['erreur']['mail'])) { ?>
@@ -36,6 +36,7 @@ if ($formulaire == 'inscription') {
             <input class="inscriptions" type="text" name="code_postal" placeholder="Code Postal"/>
             <input class="inscriptions" type="text" name="ville" placeholder="Ville"/><br/>
             <input class="inscriptions" type="text" name="pays" placeholder="Pays"/><br/>
+            <label class="acceptation">J'accepte les conditions d'utilisation</label><input id="acceptation" class="acceptation_check" type="checkbox" name="acceptation"/><br/>
             <input class="valider" type="submit" name="inscr" value="Je m'inscris"/>
         </form>
     </div>

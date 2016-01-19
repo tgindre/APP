@@ -26,7 +26,7 @@
         </div>
         <?php } ?>
         <div class="profil">   
-                <form method="post" action="../controller/modif_profil_c.php" id="confirm_suppr" onclick="return(confirm('Etes-vous sûr de vouloir supprimer cette entrée?'));">
+                <form method="post" action="../controller/modif_profil_admin_c.php" id="confirm_suppr" onclick="return(confirm('Etes-vous sûr de vouloir supprimer cette entrée?'));">
                 <input type="hidden" name="numero" value=<?php echo $i?> />
                 <input class="supprimer" type="submit" name="supprimer" value="Supprimer" /><br/>
                 </form>
@@ -162,9 +162,7 @@
                 }
             
         }
-    } else {?>
-        <h1 id='even_suppr'>Evènement supprimer</h1>
-      <?php     }
+    
 ?>
            
 <?php        include('../controller/profil_admin_c.php');
@@ -197,6 +195,9 @@
         else {
             echo '<h1 class="profil">Aucun évènement créé</h1>' ;
         }
+        } else {?>
+        <h1 id='even_suppr'>Utilisateur supprimer</h1>
+      <?php     }
              include("pied_de_page.php"); ?>
        </body>
 

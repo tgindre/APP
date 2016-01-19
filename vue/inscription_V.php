@@ -27,6 +27,9 @@
         case 4:
         $erreur= "Le mot de passe doit avoir au moins 6 caractères";
         break;
+        case 5:
+        $erreur= "Il faut accepter les conditions d'utilisations";
+        break;
 
     }
 } 
