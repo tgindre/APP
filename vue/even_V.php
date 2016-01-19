@@ -28,6 +28,7 @@
               }
         if(!isset($_SESSION['id'])){$_SESSION['id']=-1;}
         if($_SESSION['id_createur'.$i]==$_SESSION['id']){
+            /* partie pour le créateur*/
         echo'<div> <span class="nom_even">'.htmlentities($_SESSION['ville_even'.$i]) .'</span><a href="even_v.php?modifier=4&nb='.$i.'">Modifier</a></div>';
         if(isset($_SESSION['photo_even'.$i]) && $_SESSION['photo_even'.$i]!=''){
         ?>
@@ -64,8 +65,11 @@
               echo '<p class="profil">' . htmlentities($_SESSION['nom_even'.$i]) .'<br/> '.htmlentities($_SESSION['description'.$i]).'<br/>'.htmlentities($_SESSION['type_even'.$i]).'<br/> '.htmlentities($_SESSION['adresse_even'.$i]).'</p>'; 
               echo '<p class="profil"> Type de public : '.htmlentities($_SESSION['type_public'.$i]).'<br/> ' . htmlentities($date) .'<br/> Horaire '.htmlentities($_SESSION['horaire'.$i]). '<br/> Tarif : '.htmlentities($tarif).'<br/> Nombre de place : '.htmlentities($_SESSION['nb_participants'.$i]).'<br/> </p>';
         } if(isset($_SESSION['pseudo'])){
+            /*Partie utilisateur connnecté*/
             include("../controller/commentaires_c.php");
-            $j=1;?>
+            $j=1;
+            /* $i : numéro de l'évènement 
+               $j : numéro du commentaire */?>
         <p class="profil">Moyenne note : <?php if ($_SESSION['moyenne']!=''){echo $_SESSION['moyenne'];}
         else {echo 'ne possède pas encore de note';}?></p>
            <?php if(isset($_SESSION['com']) && $_SESSION['com']){
@@ -92,7 +96,6 @@
 
 	<p class="profil"> Quelque chose à dire ? </br>
 	<textarea class="commentaire_post" name="contenu" placeholder="taper votre commentaire ici" rows="2"></textarea>
-		<!--<input class="commentaire_post" type="text" name="contenu" placeholder="taper votre commentaire ici"/>-->
 	</p>
         <input type="hidden" name="numero" value=<?php echo $i?> />
         <input id="button_com" type="submit" name="publier" value="publier" />
@@ -111,6 +114,7 @@
         <?php }
         } else {
               switch ($_GET['modifier']) {
+                  /* Partie modification*/ 
         case 0: ?>
         <form method="post" action="../controller/modif_even_C.php" enctype="multipart/form-data">
             <label for="mon_fichier">Fichier (tous formats | max. 1 Mo) :</label><br />

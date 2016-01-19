@@ -12,8 +12,8 @@ if (isset($_POST['recherche_av']) || (isset($_GET['recherche']) && $_GET['recher
     }
     $nb = nb_recherche_avancee($_POST['nom_even'], $_POST['lieu'], $_POST['date_even'], $_POST['type_even'], $_POST['type_public']);
     $totalDesMessages = $nb['nb_messages'];
-    $nombreDePages = ceil($totalDesMessages / $nombreParPage); // ciel renvoie le nombre entier supérieur
-
+    $nombreDePages = ceil($totalDesMessages / $nombreParPage); // ciel renvoie le nombre entier supérieur    
+    
     $req = recherche_avancee($_POST['nom_even'], $_POST['lieu'], $_POST['date_even'], $_POST['type_even'], $_POST['type_public']);
     while ($donnees = $req->fetch()) {
         $_SESSION['id_createur' . $i] = $donnees['ID_createur'];

@@ -203,3 +203,13 @@ function select_inscription ($id_utilisateur,$id_even){
     $resultat = $requete->fetch();
     return($resultat);
 }
+
+function select_createur ($id_utilisateur){
+    global $bdd;
+    $requete= $bdd->prepare('SELECT * FROM  utilisateur WHERE (ID_utilisateur = :id_utilisateur)');
+    $requete->execute(array(
+            'id_utilisateur' => $id_utilisateur)
+            );
+    $resultat = $requete->fetch();
+    return($resultat);
+}
