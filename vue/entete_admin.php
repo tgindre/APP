@@ -13,7 +13,7 @@
 			<li><a href="page_accueil.php"><span class="tiret">|</span> Accueil <span class="tiret">|</span></a></li>
 			<li><a href="gerer_even.php">Gérer les évènements <span class="tiret">|</span></a></li>
 			<li><a href="gerer_utilisateur.php">Gérer les utilisateurs <span class="tiret">|</span></a></li>
-			<li><a href="aide_v.php">Gérer l'aide <span class="tiret">|</span></a></li>
+			<li><a href="aide1.php">Aide <span class="tiret">|</span></a></li>
 			<li><a href="forum_admin_v.php">Gérer le Forum  <span class="tiret">|</span></a></li>
                         <li><a href="admin_v.php">Mode administrateur<span class="tiret">|</span></a></li>
 		</ul>
