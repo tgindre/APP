@@ -24,7 +24,7 @@
               if($_SESSION['date_debut'.$i]==$_SESSION['date_fin'.$i]){
                   $date=$_SESSION['date_debut'.$i];
               } else {
-                 $date='du '.$_SESSION['date_debut'.$i].'au '.$_SESSION['date_fin'.$i].''; 
+                 $date='du '.$_SESSION['date_debut'.$i].' au '.$_SESSION['date_fin'.$i].''; 
               }
         if(!isset($_SESSION['id'])){$_SESSION['id']=-1;}
         if($_SESSION['id_createur'.$i]==$_SESSION['id']){
